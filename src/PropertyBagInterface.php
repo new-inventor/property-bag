@@ -1,0 +1,62 @@
+<?php
+/**
+ * Project: TP messaging service
+ * User: george
+ * Date: 29.08.17
+ */
+
+namespace NewInventor\PropertyBag;
+
+
+use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
+
+interface PropertyBagInterface
+{
+    /**
+     * @param string $name
+     * @param mixed  $value
+     *
+     * @return $this
+     * @throws PropertyNotFoundException
+     */
+    public function set(string $name, $value);
+    
+    /**
+     * @param string $name
+     *
+     * @return mixed
+     * @throws PropertyNotFoundException
+     */
+    public function get(string $name);
+    
+    /**
+     * @param string $name
+     *
+     * @return string|null
+     * @throws PropertyNotFoundException
+     */
+    public function getFormatted(string $name): ?string;
+    
+    /**
+     * Returns multidimensional array of strings
+     * @return array
+     */
+    public function toFormattedArray(): array;
+    
+    public function toRawArray(): array;
+    
+    /**
+     * @param $name
+     *
+     * @throws PropertyNotFoundException
+     */
+    public function failIfNotExist($name): void;
+    
+    /**
+     * @return static
+     * @throws PropertyNotFoundException
+     */
+    public static function make();
+    
+    public function load(array $properties = []);
+}
