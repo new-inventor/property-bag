@@ -8,6 +8,11 @@
 namespace NewInventor\PropertyBag;
 
 
+use NewInventor\PropertyBag\Normalizer\CurrencyNormalizer;
+use NewInventor\PropertyBag\Normalizer\EmailNormalizer;
+use NewInventor\PropertyBag\Normalizer\MccNormalizer;
+use NewInventor\PropertyBag\Normalizer\PhoneNormalizer;
+use NewInventor\PropertyBag\Normalizer\RegExpNormalizer;
 use Psr\SimpleCache\CacheInterface;
 use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
 use NewInventor\PropertyBag\Formatter\ArrayFormatter;
@@ -85,16 +90,21 @@ class PropertyBag implements PropertyBagInterface
         ArrayNormalizer::class;
         BoolNormalizer::class;
         CsvRowNormalizer::class;
+        CurrencyNormalizer::class;
         DateTimeNormalizer::class;
+        EmailNormalizer::class;
         EmptyNormalizer::class;
         EnumNormalizer::class;
         FloatNormalizer::class;
         FloatRangeNormalizer::class;
         IntNormalizer::class;
         IntRangeNormalizer::class;
+        MccNormalizer::class;
         NormalizerInterface::class;
+        PhoneNormalizer::class;
         PropertyBagNormalizer::class;
         RangeNormalizer::class;
+        RegExpNormalizer::class;
         StringNormalizer::class;
         Property::class;
         __CLASS__;
