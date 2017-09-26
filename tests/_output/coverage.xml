@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1506432443">
-  <project timestamp="1506432443">
+<coverage generated="1506432874">
+  <project timestamp="1506432874">
     <package name="NewInventor\PropertyBag">
       <file name="/home/george/www/property-bag/src/CountriesAndRegions.php">
         <class name="CountriesAndRegions" namespace="NewInventor\PropertyBag">
@@ -147,12 +147,12 @@
         <class name="AbstractFormatter" namespace="NewInventor\PropertyBag\Formatter">
           <metrics complexity="7" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="11" coveredelements="9"/>
         </class>
-        <line num="13" type="method" name="make" visibility="public" complexity="1" crap="1" count="30"/>
-        <line num="17" type="stmt" count="30"/>
-        <line num="20" type="method" name="format" visibility="public" complexity="3" crap="3" count="23"/>
-        <line num="22" type="stmt" count="23"/>
+        <line num="13" type="method" name="make" visibility="public" complexity="1" crap="1" count="29"/>
+        <line num="17" type="stmt" count="29"/>
+        <line num="20" type="method" name="format" visibility="public" complexity="3" crap="3" count="22"/>
+        <line num="22" type="stmt" count="22"/>
         <line num="23" type="stmt" count="3"/>
-        <line num="25" type="stmt" count="23"/>
+        <line num="25" type="stmt" count="22"/>
         <line num="27" type="stmt" count="6"/>
         <line num="35" type="method" name="validateInputTypes" visibility="protected" complexity="1" crap="2" count="0"/>
         <line num="38" type="stmt" count="0"/>
@@ -197,18 +197,20 @@
       </file>
       <file name="/home/george/www/property-bag/src/Formatter/BoolFormatter.php">
         <class name="BoolFormatter" namespace="NewInventor\PropertyBag\Formatter">
-          <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
+          <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
         </class>
-        <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
-        <line num="28" type="stmt" count="8"/>
-        <line num="29" type="stmt" count="8"/>
-        <line num="30" type="stmt" count="8"/>
-        <line num="32" type="method" name="formatInputValue" visibility="public" complexity="3" crap="3" count="3"/>
-        <line num="34" type="stmt" count="3"/>
-        <line num="37" type="method" name="validateInputTypes" visibility="public" complexity="1" crap="1" count="8"/>
-        <line num="39" type="stmt" count="8"/>
-        <line num="40" type="stmt" count="3"/>
-        <metrics loc="40" ncloc="27" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
+        <line num="28" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="30" type="stmt" count="7"/>
+        <line num="31" type="stmt" count="7"/>
+        <line num="32" type="stmt" count="7"/>
+        <line num="33" type="stmt" count="7"/>
+        <line num="34" type="stmt" count="7"/>
+        <line num="36" type="method" name="formatInputValue" visibility="public" complexity="3" crap="3" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="41" type="method" name="validateInputTypes" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="43" type="stmt" count="7"/>
+        <line num="44" type="stmt" count="3"/>
+        <metrics loc="44" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
       </file>
       <file name="/home/george/www/property-bag/src/Formatter/DateTimeFormatter.php">
         <class name="DateTimeFormatter" namespace="NewInventor\PropertyBag\Formatter">
@@ -643,6 +645,6 @@
     <file name="/home/george/www/property-bag/src/PropertyBagInterface.php">
       <metrics loc="61" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="33" loc="4709" ncloc="4059" classes="27" methods="97" coveredmethods="96" conditionals="0" coveredconditionals="0" statements="348" coveredstatements="347" elements="445" coveredelements="443"/>
+    <metrics files="33" loc="4713" ncloc="4061" classes="27" methods="97" coveredmethods="96" conditionals="0" coveredconditionals="0" statements="350" coveredstatements="349" elements="447" coveredelements="445"/>
   </project>
 </coverage>

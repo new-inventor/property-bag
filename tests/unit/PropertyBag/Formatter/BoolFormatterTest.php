@@ -31,15 +31,11 @@ class BoolFormatterTest extends \Codeception\Test\Unit
         $formatter = BoolFormatter::make('true', 'false');
         $this->assertSame('true', $formatter->format(true));
         $this->assertSame('false', $formatter->format(false));
+        $formatter = BoolFormatter::make(1, 0);
+        $this->assertSame(1, $formatter->format(true));
+        $this->assertSame(0, $formatter->format(false));
         $this->expectException(TypeException::class);
         $formatter->format('');
-    }
-    
-    public function testFormatter1()
-    {
-        $formatter = BoolFormatter::make();
-        $this->expectException(TypeException::class);
-        $formatter->format(1);
     }
     
     public function testFormatter2()

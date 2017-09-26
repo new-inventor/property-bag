@@ -22,14 +22,18 @@ class BoolFormatter extends AbstractFormatter
      *
      * @param string $true
      * @param string $false
+     *
+     * @throws \NewInventor\TypeChecker\Exception\TypeException
      */
-    public function __construct(string $true = '1', string $false = '0')
+    public function __construct($true = '1', $false = '0')
     {
+        TypeChecker::check($true)->tstring()->tint()->fail();
+        TypeChecker::check($false)->tstring()->tint()->fail();
         $this->true = $true;
         $this->false = $false;
     }
     
-    public function formatInputValue($value): ?string
+    public function formatInputValue($value)
     {
         return $value ? $this->true : $this->false;
     }

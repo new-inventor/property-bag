@@ -10,7 +10,7 @@ namespace NewInventor\PropertyBag\Formatter;
 
 interface FormatterInterface
 {
-    public function format($value): ?string;
+    public function format($value);
     
     public static function make(...$config): FormatterInterface;
 }

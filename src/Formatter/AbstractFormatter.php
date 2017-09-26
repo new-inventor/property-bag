@@ -17,7 +17,7 @@ abstract class AbstractFormatter implements FormatterInterface
         return new static(...$config);
     }
     
-    public function format($value): ?string
+    public function format($value)
     {
         if ($value === null) {
             return null;
@@ -37,7 +37,7 @@ abstract class AbstractFormatter implements FormatterInterface
     
     }
     
-    protected function formatInputValue($value): ?string
+    protected function formatInputValue($value)
     {
         return (string)$value;
     }
