@@ -10,6 +10,7 @@ namespace NewInventor\PropertyBag;
 
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
 use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
+use NewInventor\TypeChecker\TypeChecker;
 
 class Property
 {
@@ -64,13 +65,20 @@ class Property
         return $this->value;
     }
     
-    public function getFormattedValue(): ?string
+    public function getFormattedValue()
     {
         if ($this->formatter !== null) {
             return $this->formatter->format($this->value);
         }
+        if(TypeChecker::check($this->value)->tscalar()->callback(
+            function ($value) {
+                return is_object($value) && method_exists($value, '__toString');
+            }
+        )->result()){
+            return is_scalar($this->value) ? $this->value : (string)$this->value;
+        }
         
-        return is_scalar($this->value) ? $this->value : (string)$this->value;
+        return $this->value;
     }
     
     /**

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1505744143">
-  <project timestamp="1505744143">
+<coverage generated="1506431771">
+  <project timestamp="1506431771">
     <package name="NewInventor\PropertyBag">
       <file name="/home/george/www/property-bag/src/CountriesAndRegions.php">
         <class name="CountriesAndRegions" namespace="NewInventor\PropertyBag">
@@ -22,33 +22,39 @@
       </file>
       <file name="/home/george/www/property-bag/src/Property.php">
         <class name="Property" namespace="NewInventor\PropertyBag">
-          <metrics complexity="11" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="24" coveredelements="24"/>
+          <metrics complexity="15" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="27" coveredelements="27"/>
         </class>
-        <line num="28" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="13"/>
-        <line num="30" type="stmt" count="13"/>
-        <line num="31" type="stmt" count="13"/>
-        <line num="33" type="method" name="setNormalizer" visibility="public" complexity="2" crap="2" count="10"/>
-        <line num="35" type="stmt" count="10"/>
-        <line num="37" type="stmt" count="10"/>
-        <line num="38" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="10"/>
-        <line num="44" type="method" name="setFormatter" visibility="public" complexity="1" crap="1" count="10"/>
-        <line num="46" type="stmt" count="10"/>
-        <line num="48" type="stmt" count="10"/>
-        <line num="51" type="method" name="setValue" visibility="public" complexity="2" crap="2" count="10"/>
-        <line num="53" type="stmt" count="10"/>
-        <line num="54" type="stmt" count="8"/>
-        <line num="56" type="stmt" count="10"/>
-        <line num="57" type="stmt" count="10"/>
-        <line num="62" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="10"/>
-        <line num="64" type="stmt" count="10"/>
-        <line num="67" type="method" name="getFormattedValue" visibility="public" complexity="3" crap="3" count="3"/>
-        <line num="69" type="stmt" count="3"/>
-        <line num="70" type="stmt" count="3"/>
-        <line num="73" type="stmt" count="2"/>
-        <line num="81" type="method" name="make" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="84" type="stmt" count="9"/>
-        <metrics loc="85" ncloc="63" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="24" coveredelements="24"/>
+        <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="31" type="stmt" count="14"/>
+        <line num="32" type="stmt" count="14"/>
+        <line num="34" type="method" name="setNormalizer" visibility="public" complexity="2" crap="2" count="10"/>
+        <line num="36" type="stmt" count="10"/>
+        <line num="38" type="stmt" count="10"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="10"/>
+        <line num="45" type="method" name="setFormatter" visibility="public" complexity="1" crap="1" count="10"/>
+        <line num="47" type="stmt" count="10"/>
+        <line num="49" type="stmt" count="10"/>
+        <line num="52" type="method" name="setValue" visibility="public" complexity="2" crap="2" count="11"/>
+        <line num="54" type="stmt" count="11"/>
+        <line num="55" type="stmt" count="8"/>
+        <line num="57" type="stmt" count="11"/>
+        <line num="58" type="stmt" count="11"/>
+        <line num="63" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="10"/>
+        <line num="65" type="stmt" count="10"/>
+        <line num="68" type="method" name="getFormattedValue" visibility="public" complexity="5" crap="5" count="4"/>
+        <line num="70" type="stmt" count="4"/>
+        <line num="71" type="stmt" count="3"/>
+        <line num="73" type="stmt" count="3"/>
+        <line num="74" type="method" name="anonymousFunction:74#322" complexity="2" crap="2" count="3"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="3"/>
+        <line num="77" type="stmt" count="3"/>
+        <line num="78" type="stmt" count="3"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="89" type="method" name="make" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="92" type="stmt" count="9"/>
+        <metrics loc="93" ncloc="71" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="22" elements="30" coveredelements="30"/>
       </file>
       <file name="/home/george/www/property-bag/src/PropertyBag.php">
         <class name="PropertyBag" namespace="NewInventor\PropertyBag">
@@ -643,6 +649,6 @@
     <file name="/home/george/www/property-bag/src/PropertyBagInterface.php">
       <metrics loc="61" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="33" loc="4708" ncloc="4058" classes="27" methods="97" coveredmethods="96" conditionals="0" coveredconditionals="0" statements="348" coveredstatements="347" elements="445" coveredelements="443"/>
+    <metrics files="33" loc="4716" ncloc="4066" classes="27" methods="98" coveredmethods="97" conditionals="0" coveredconditionals="0" statements="353" coveredstatements="352" elements="451" coveredelements="449"/>
   </project>
 </coverage>

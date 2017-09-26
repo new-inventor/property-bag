@@ -63,4 +63,22 @@ class PropertyTest extends Unit
         $property->setValue(false);
         $this->assertSame('0', $property->getFormattedValue());
     }
+    
+    public function testGetFormattedValue()
+    {
+        $property = new Property();
+        $property->setValue(true);
+        $this->assertTrue($property->getFormattedValue());
+        $property->setValue(1);
+        $this->assertSame(1, $property->getFormattedValue());
+        $property->setValue(1.3);
+        $this->assertSame(1.3, $property->getFormattedValue());
+        $property->setValue('qwe');
+        $this->assertSame('qwe', $property->getFormattedValue());
+        $property->setValue([]);
+        $this->assertSame([], $property->getFormattedValue());
+        $prop = new Property();
+        $property->setValue($prop);
+        $this->assertSame($prop, $property->getFormattedValue());
+    }
 }
