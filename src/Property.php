@@ -70,7 +70,7 @@ class Property
             return $this->formatter->format($this->value);
         }
         
-        return (string)$this->value;
+        return is_scalar($this->value) ? $this->value : (string)$this->value;
     }
     
     /**
