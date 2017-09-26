@@ -32,10 +32,10 @@ interface PropertyBagInterface
     /**
      * @param string $name
      *
-     * @return string|null
+     * @return mixed
      * @throws PropertyNotFoundException
      */
-    public function getFormatted(string $name): ?string;
+    public function getFormatted(string $name);
     
     /**
      * Returns multidimensional array of strings

@@ -159,10 +159,10 @@ class PropertyBag implements PropertyBagInterface
     /**
      * @param string $name
      *
-     * @return string|null
+     * @return mixed
      * @throws PropertyNotFoundException
      */
-    public function getFormatted(string $name): ?string
+    public function getFormatted(string $name)
     {
         $this->failIfNotExist($name);
         

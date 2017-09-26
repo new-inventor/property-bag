@@ -3235,40 +3235,14 @@ $coverage->setData(array (
       1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       2 => 'PropertyBag\\PropertyTest::testFormatter',
     ),
-    73 => 
+    74 => 
     array (
       0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
       1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       2 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
     ),
-    75 => 
-    array (
-      0 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    76 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    77 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    78 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    81 => 
-    array (
-      0 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    82 => NULL,
-    92 => 
+    75 => NULL,
+    85 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testCache',
@@ -3280,7 +3254,7 @@ $coverage->setData(array (
       7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       8 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    93 => NULL,
+    86 => NULL,
   ),
 ));
 $coverage->setTests(array (
