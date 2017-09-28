@@ -14,7 +14,7 @@ class CamelCaseNormalizer extends StringNormalizer
     {
         $value = parent::normalizeInputValue($value);
         $value = preg_replace_callback(
-            '/[^a-zA-Z0-9]+([a-zA-Z0-9])/',
+            '/[^a-zA-Z0-9]+([a-zA-Z])/',
             function ($matches) {
                 return strtoupper($matches[1]);
             },
