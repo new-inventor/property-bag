@@ -9,7 +9,9 @@ namespace TPMailSender\ApiBundle\Command;
 
 
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
+use NewInventor\PropertyBag\Normalizer\CamelCaseNormalizer;
 use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
+use NewInventor\PropertyBag\Normalizer\ScreamingCaseNormalizer;
 use NewInventor\TypeChecker\TypeChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,6 +27,21 @@ class GenerateBagCommand extends Command
     private $fileSystem;
     /** @var string */
     private $callPath;
+    
+    private $namespace = '';
+    private $className = '';
+    private $getters = [];
+    private $setters = [];
+    private $properties = [];
+    private $listProperties = [];
+    private $constProperties = [];
+    private $uses = [];
+    private $bag;
+    private $configPath;
+    private $outputPath;
+    private $baseNamespace;
+    private $force;
+    
     
     public function __construct($name = null)
     {
@@ -50,34 +67,34 @@ class GenerateBagCommand extends Command
     }
     
     /**
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      *
      * @return int|null|void
-     * @throws \Symfony\Component\Filesystem\Exception\IOException
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \LogicException
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $configPath = $this->getAbsolutePath($input->getArgument('config'));
-        $outputPath = $this->getAbsolutePath($input->getArgument('output-dir'));
-        $baseNamespace = $input->getOption('base-namespace');
-        $force = $input->getOption('force');
-        if (!is_dir($outputPath)) {
-            $this->fileSystem->mkdir($outputPath);
+        $this->configPath = $this->getAbsolutePath($input->getArgument('config'));
+        $this->outputPath = $this->getAbsolutePath($input->getArgument('output-dir'));
+        $this->baseNamespace = $input->getOption('base-namespace');
+        $this->force = $input->getOption('force');
+        if (!is_dir($this->outputPath)) {
+            $this->fileSystem->mkdir($this->outputPath);
         }
         $output->writeln('Start generation');
-        if (is_file($configPath)) {
-            $this->generateBagFromFile($configPath, $outputPath, $baseNamespace, $force);
-            $output->writeln("File '$configPath' processed");
-        } else if (is_dir($configPath)) {
-            $files = $this->getFilesInDir($configPath, ['yml']);
+        if (is_file($this->configPath)) {
+            $this->generateBagFromFile($this->configPath);
+            $output->writeln("File '$this->configPath' processed");
+        } else if (is_dir($this->configPath)) {
+            $files = $this->getFilesInDir($this->configPath, ['yml']);
             foreach ($files as $file) {
-                $this->generateBagFromFile($file, $outputPath, $baseNamespace, $force);
+                $this->generateBagFromFile($file);
                 $output->writeln("File '$file' processed");
             }
         }
+        $output->writeln('Generation complete');
     }
     
     protected function getFilesInDir(string $dir, array $extensions = [], array &$results = []): array
@@ -107,98 +124,203 @@ class GenerateBagCommand extends Command
         return $path;
     }
     
-    protected function generateBagFromFile(string $configPath, string $outputPath, string $baseNamespace, bool $force)
+    protected function generateBagFromFile($file)
     {
-        $config = Yaml::parse(file_get_contents($configPath));
-        $template = $this->getPropertyBagTemplate();
-        $namespace = $config['namespace'] ?? '';
-        $className = pathinfo($configPath, PATHINFO_FILENAME);
-        $template = str_replace(
+        $this->getters = [];
+        $this->setters = [];
+        $this->properties = [];
+        $this->listProperties = [];
+        $this->constProperties = [];
+        $this->uses = [];
+        $config = Yaml::parse(file_get_contents($file));
+        $this->bag = $this->getPropertyBagTemplate();
+        $this->namespace = $config['namespace'] ?? '';
+        $this->className = pathinfo($file, PATHINFO_FILENAME);
+        $this->bag = str_replace(
             ['%namespace%', '%class%'],
-            ["namespace $namespace", $className],
-            $template
+            ["namespace $this->namespace", $this->className],
+            $this->bag
         );
-        $getters = [];
-        $setters = [];
-        $properties = [];
-        foreach ($config['properties'] as $property => $propertyConfig) {
-            $propertyStr = str_replace('%name%', $property, $this->propertyTemplate());
-            $normalizer = '';
-            $formatter = '';
-            $default = '';
-            if (is_string($propertyConfig)) {
-                $normalizer = '->setNormalizer(' . $this->generateNormalizer($propertyConfig) . ')';
-            } else if (is_array($propertyConfig)) {
-                if (isset($propertyConfig['normalizer'])) {
-                    $normalizer = '->setNormalizer(' . $this->generateNormalizer($propertyConfig['normalizer']) . ')';
+        if (is_array($config['properties'])) {
+            foreach ($config['properties'] as $property => $propertyConfig) {
+                $screamingCasePropertyName = ScreamingCaseNormalizer::make()->normalize($property);
+                $camelCasePropertyName = CamelCaseNormalizer::make()->normalize($property);
+                $ucCamelCasePropertyName = ucfirst($camelCasePropertyName);
+                $listPropertyStr = $this->generateListProperty($screamingCasePropertyName);
+                $this->listProperties[] = '            ' . $listPropertyStr;
+                $this->constProperties[] = $this->generateConstProperty($property, $screamingCasePropertyName);
+                $this->properties[] = $this->generateProperty('            ' . $listPropertyStr, $propertyConfig);
+                if (isset($config['getters'])) {
+                    $this->getters[] = $this->generateGetter($config['getters'], $listPropertyStr, $ucCamelCasePropertyName);
                 }
-                if (isset($propertyConfig['formatter'])) {
-                    $formatter = '->setFormatter(' . $this->generateFormatter($propertyConfig['formatter']) . ')';
+                if (isset($config['setters'])) {
+                    $this->setters[] = $this->generateSetter($config['setters'], $listPropertyStr, $ucCamelCasePropertyName, $camelCasePropertyName);
                 }
-                if (isset($propertyConfig['default'])) {
-                    $default = $this->generateDefault($propertyConfig['default']);
-                }
-            }
-            $propertyStr = str_replace(
-                ['%normalizer%', '%formatter%', '%default%'],
-                [$normalizer, $formatter, $default],
-                $propertyStr
-            );
-            $properties[] = $propertyStr;
-            if (isset($config['getters']) && $config['getters']) {
-                $getterStr = str_replace(
-                    ['%name%', '%ucfirstName%'],
-                    [$property, ucfirst($property)],
-                    $this->getterTemplate()
-                );
-                $getters[] = $getterStr;
-            }
-            if (isset($config['setters']) && $config['setters']) {
-                $setterStr = str_replace(
-                    ['%name%', '%ucfirstName%'],
-                    [$property, ucfirst($property)],
-                    $this->setterTemplate()
-                );
-                $setters[] = $setterStr;
             }
         }
-        $template = str_replace(
-            ['%properties%', '%getters%', '%setters%'],
-            [implode(",\n", $properties), implode($getters), implode($setters)],
-            $template
+        $this->getters = array_filter($this->getters);
+        $this->setters = array_filter($this->setters);
+        $this->bag = str_replace(
+            ['%properties%', '%listProperties%', '%constProperties%', '%getters%', '%setters%'],
+            [
+                implode(",\n", $this->properties),
+                implode(",\n", $this->listProperties),
+                implode("\n", $this->constProperties),
+                implode("\n\n", $this->getters),
+                implode("\n\n", $this->setters),
+            ],
+            $this->bag
         );
-        /** @noinspection NotOptimalRegularExpressionsInspection */
-        preg_match_all('/\\\\?\w+(?:\\\\\w+)+(?=::|->|\(|\n)/', $template, $uses);
-        $uses = array_unique($uses[0]);
-        foreach ($uses as &$use) {
-            $use = str_replace('%class%', $use, $this->useTemplate());
-        }
-        unset($use);
-        $template = str_replace('%use%', implode($uses), $template);
-        /** @noinspection NotOptimalRegularExpressionsInspection */
-        $template = preg_replace('/(\\\\?\w+(?:\\\\\w+)*\\\\)(?=\w+(?:::|->|\(|\n))/', '', $template);
+        $dirName = $this->getOutputDirName($config['namespace']);
+        $fileName = $this->getOutputFileName($dirName);
+        $this->generateUses($config);
         
-        $dirName = str_replace(
+        if (!$this->force && file_exists($fileName)) {
+            $currentContent = file_get_contents($fileName);
+            $this->copyCustomCode($currentContent);
+            $this->mergeUses($currentContent);
+        }
+        $this->bag = str_replace('%use%', implode("\n", $this->uses), $this->bag);
+        /** @noinspection NotOptimalRegularExpressionsInspection */
+        $this->bag = preg_replace('/(\\\\?\w+(?:\\\\\w+)*\\\\)(?=\w+(?:::|->|\(|\n))/', '', $this->bag);
+        
+        $this->fileSystem->mkdir($dirName);
+        $this->fileSystem->dumpFile($fileName, $this->bag);
+    }
+    
+    protected function getOutputDirName($namespace)
+    {
+        return str_replace(
             '\\',
             '/',
-            $outputPath . DIRECTORY_SEPARATOR . str_replace($baseNamespace, '', $config['namespace'])
+            $this->outputPath . str_replace($this->baseNamespace, '', $namespace)
         );
-        $this->fileSystem->mkdir($dirName);
-        
-        $fileName = $dirName . DIRECTORY_SEPARATOR . $className . '.php';
-        $currentContent = file_get_contents($fileName);
-        if (
-            !$force &&
-            file_exists($fileName) &&
-            preg_match('/\\/\\/place custom code below\\n(.+)\\}/s', $currentContent, $matches)
-        ) {
-            $template = str_replace(
-                "//place custom code below\n",
-                "//place custom code below\n{$matches[1]}",
-                $template
+    }
+    
+    protected function getOutputFileName($dirName)
+    {
+        return $dirName . DIRECTORY_SEPARATOR . $this->className . '.php';
+    }
+    
+    protected function generateConstProperty(string $propertyName, string $camelCasePropertyName): string
+    {
+        return str_replace(
+            ['%capsName%', '%name%'],
+            [$camelCasePropertyName, $propertyName],
+            $this->constPropertyTemplate()
+        );
+    }
+    
+    protected function generateListProperty(string $camelCasePropertyName): string
+    {
+        return str_replace('%capsName%', $camelCasePropertyName, $this->listPropertyTemplate());
+    }
+    
+    protected function generateProperty(string $listPropertyStr, $propertyConfig): string
+    {
+        $propertyStr = str_replace('%listProperty%', $listPropertyStr, $this->propertyTemplate());
+        $normalizer = '';
+        $formatter = '';
+        $default = '';
+        if (is_string($propertyConfig)) {
+            $normalizer = '->setNormalizer(' . $this->generateNormalizer($propertyConfig) . ')';
+        } else if (is_array($propertyConfig)) {
+            if (isset($propertyConfig['normalizer'])) {
+                $normalizer =
+                    '->setNormalizer(' . $this->generateNormalizer($propertyConfig['normalizer']) . ')';
+            }
+            if (isset($propertyConfig['formatter'])) {
+                $formatter = '->setFormatter(' . $this->generateFormatter($propertyConfig['formatter']) . ')';
+            }
+            if (isset($propertyConfig['default'])) {
+                $default = $this->generateDefault($propertyConfig['default']);
+            }
+        }
+        return str_replace(
+            ['%normalizer%', '%formatter%', '%default%'],
+            [$normalizer, $formatter, $default],
+            $propertyStr
+        );
+    }
+    
+    protected function generateGetter($config, $propertyName, $ucCamelCasePropertyName): ?string
+    {
+        if ($this->canGenerateGetterOrSetter($config, $propertyName)) {
+            return str_replace(
+                ['%listPropertyName%', '%ucfirstName%'],
+                [$propertyName, $ucCamelCasePropertyName],
+                $this->getterTemplate()
             );
         }
-        $this->fileSystem->dumpFile($fileName, $template);
+        return null;
+    }
+    
+    protected function generateSetter($config, $propertyName, $ucCamelCasePropertyName, $camelCasePropertyName): ?string
+    {
+        if ($this->canGenerateGetterOrSetter($config, $propertyName)) {
+            return str_replace(
+                ['%listPropertyName%', '%ucfirstName%', '%varName%'],
+                [$propertyName, $ucCamelCasePropertyName, $camelCasePropertyName],
+                $this->setterTemplate()
+            );
+        }
+        return null;
+    }
+    
+    protected function generateUses($config)
+    {
+        /** @noinspection NotOptimalRegularExpressionsInspection */
+        preg_match_all('/\\\\?\w+(?:\\\\\w+)+(?=::|->|\(|\n)/', $this->bag, $matches);
+        $matches = array_unique($matches[0]);
+        foreach ($matches as $use) {
+            if ($use === $config['namespace'] . '\\' . $this->className) {
+                continue;
+            }
+            $this->uses[] = str_replace('%class%', $use, $this->useTemplate());
+        }
+    }
+    
+    protected function copyCustomCode($currentContent)
+    {
+        if (preg_match('/\\/\\/CustomCodeBegin.+?\\/\\/CustomCodeEnd/s', $currentContent, $matches)) {
+            $this->bag = preg_replace('/\\/\\/CustomCodeBegin.+?\\/\\/CustomCodeEnd/s', $matches[0], $this->bag);
+        }
+    }
+    
+    protected function mergeUses($currentContent)
+    {
+        if (preg_match('/namespace.*?;\s*((?:use .+?;\n)+)/s', $currentContent, $matches)) {
+            $usesCurrent = explode("\n", $matches[1]);
+            unset($usesCurrent[count($usesCurrent) - 1]);
+            if (count($this->uses) !== count($usesCurrent)) {
+                $this->uses = array_merge($usesCurrent, array_diff($this->uses, $usesCurrent));
+            }
+        }
+    }
+    
+    protected function canGenerateGetterOrSetter($config, $property)
+    {
+        return (
+                   is_bool($config) && $config
+               ) ||
+               (
+                   is_array($config) &&
+                   $config['generate'] &&
+                   (
+                       (
+                           isset($config['except']) &&
+                           !in_array($property, $config['except'], true)
+                       ) ||
+                       (
+                           isset($config['only']) &&
+                           in_array($property, $config['only'], true)
+                       ) ||
+                       (
+                           !isset($config['except']) &&
+                           !isset($config['only'])
+                       )
+                   )
+               );
     }
     
     protected function generateNormalizer($normalizer): string
@@ -245,6 +367,9 @@ class GenerateBagCommand extends Command
                 TypeChecker::check($parameter)->inner()->tscalar()->fail();
                 $data = [];
                 foreach ($parameter as $name => $value) {
+                    if(is_string($value)){
+                        $value = "'$value'";
+                    }
                     if ($name === 'as_is') {
                         $data[] = $value;
                     } else {
@@ -302,51 +427,73 @@ class GenerateBagCommand extends Command
 
 
 %use%
+
 class %class% extends NewInventor\PropertyBag\PropertyBag
 {
-    //Auto generated code begin
+    //CustomCodeBegin
+    
+    //CustomCodeEnd
+    
+    //GeneratedCodeBegin
+%constProperties%
+    
+    public static function availableProperties()
+    {
+        return [
+%listProperties%
+        ];
+    }
+    
     protected function getProperties(): array
     {
         return [
 %properties%
         ];
     }
-    %getters%%setters%
-    //Auto generated code end
-    //Place custom code below
+    
+%getters%
+
+%setters%
+    //GeneratedCodeEnd
 }';
+    }
+    
+    protected function listPropertyTemplate()
+    {
+        return 'self::%capsName%';
+    }
+    
+    protected function constPropertyTemplate()
+    {
+        return "    const %capsName% = '%name%';";
     }
     
     protected function getterTemplate()
     {
-        return '
-    public function get%ucfirstName%()
+        return '    public function get%ucfirstName%()
     {
-        return $this->properties[\'%name%\']->getValue();
-    }
-    ';
+        return $this->properties[%listPropertyName%]->getValue();
+    }';
     }
     
     protected function setterTemplate()
     {
-        return '
-    public function set%ucfirstName%($%name%)
+        return '    public function set%ucfirstName%($%varName%)
     {
-        $this->properties[\'%name%\']->setValue($%name%);
+        $this->properties[%listPropertyName%]->setValue($%varName%);
         
         return $this;
-    }
-    ';
+    }';
     }
     
     protected function useTemplate()
     {
-        return "use %class%;\n";
+        return 'use %class%;';
     }
     
     protected function propertyTemplate()
     {
-        return "            '%name%' => NewInventor\\PropertyBag\\Property::make(%default%)%normalizer%%formatter%";
+        return "%listProperty% => NewInventor\\PropertyBag\\Property::make(%default%)%normalizer%%formatter%";
     }
     
     protected function normalizerTemplate()

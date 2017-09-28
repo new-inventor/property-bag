@@ -1065,26 +1065,6 @@ $coverage->setData(array (
     ),
     33 => 
     array (
-    ),
-    35 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      13 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
-    ),
-    36 => 
-    array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
       2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
@@ -1104,20 +1084,19 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      13 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      2 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    41 => 
+    38 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -1133,7 +1112,7 @@ $coverage->setData(array (
       11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    42 => 
+    40 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -1149,76 +1128,84 @@ $coverage->setData(array (
       11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    44 => 
+    41 => NULL,
+    45 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    45 => NULL,
+    46 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+    ),
+    48 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+    ),
     49 => 
     array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      0 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    50 => 
+    51 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
     52 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    53 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
     55 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
     56 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+    ),
+    57 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+    ),
+    58 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
     59 => 
@@ -1227,31 +1214,7 @@ $coverage->setData(array (
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    60 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    61 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    62 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    63 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    65 => NULL,
+    61 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/IntNormalizer.php' => 
   array (
@@ -3402,51 +3365,6 @@ $coverage->setData(array (
   ),
   '/home/george/www/property-bag/src/Command/GenerateBagCommand.php' => 
   array (
-    30 => 
-    array (
-    ),
-    31 => 
-    array (
-    ),
-    32 => 
-    array (
-    ),
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
-    37 => 
-    array (
-    ),
-    38 => 
-    array (
-    ),
-    39 => 
-    array (
-    ),
-    40 => 
-    array (
-    ),
-    41 => 
-    array (
-    ),
-    42 => 
-    array (
-    ),
-    43 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    45 => 
-    array (
-    ),
-    46 => 
-    array (
-    ),
     47 => 
     array (
     ),
@@ -3457,6 +3375,33 @@ $coverage->setData(array (
     array (
     ),
     50 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    55 => 
+    array (
+    ),
+    56 => 
+    array (
+    ),
+    57 => 
+    array (
+    ),
+    58 => 
+    array (
+    ),
+    59 => 
+    array (
+    ),
+    60 => 
+    array (
+    ),
+    61 => 
     array (
     ),
     62 => 
@@ -3477,46 +3422,13 @@ $coverage->setData(array (
     67 => 
     array (
     ),
-    68 => 
-    array (
-    ),
-    69 => 
-    array (
-    ),
-    70 => 
-    array (
-    ),
-    71 => 
-    array (
-    ),
-    72 => 
-    array (
-    ),
-    73 => 
-    array (
-    ),
-    74 => 
-    array (
-    ),
-    75 => 
-    array (
-    ),
-    76 => 
-    array (
-    ),
-    77 => 
-    array (
-    ),
-    78 => 
-    array (
-    ),
-    79 => 
-    array (
-    ),
-    80 => 
-    array (
-    ),
     81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
     array (
     ),
     84 => 
@@ -3558,16 +3470,19 @@ $coverage->setData(array (
     96 => 
     array (
     ),
+    97 => 
+    array (
+    ),
     98 => 
     array (
     ),
     99 => 
     array (
     ),
-    102 => 
+    100 => 
     array (
     ),
-    103 => 
+    101 => 
     array (
     ),
     104 => 
@@ -3576,10 +3491,19 @@ $coverage->setData(array (
     105 => 
     array (
     ),
+    106 => 
+    array (
+    ),
     107 => 
     array (
     ),
     108 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    110 => 
     array (
     ),
     111 => 
@@ -3600,19 +3524,10 @@ $coverage->setData(array (
     116 => 
     array (
     ),
-    117 => 
-    array (
-    ),
     118 => 
     array (
     ),
     119 => 
-    array (
-    ),
-    120 => 
-    array (
-    ),
-    121 => 
     array (
     ),
     122 => 
@@ -3627,19 +3542,10 @@ $coverage->setData(array (
     125 => 
     array (
     ),
-    126 => 
-    array (
-    ),
     127 => 
     array (
     ),
     128 => 
-    array (
-    ),
-    129 => 
-    array (
-    ),
-    130 => 
     array (
     ),
     131 => 
@@ -3759,6 +3665,9 @@ $coverage->setData(array (
     169 => 
     array (
     ),
+    170 => 
+    array (
+    ),
     171 => 
     array (
     ),
@@ -3778,6 +3687,9 @@ $coverage->setData(array (
     array (
     ),
     177 => 
+    array (
+    ),
+    178 => 
     array (
     ),
     179 => 
@@ -3804,9 +3716,6 @@ $coverage->setData(array (
     188 => 
     array (
     ),
-    189 => 
-    array (
-    ),
     190 => 
     array (
     ),
@@ -3814,12 +3723,6 @@ $coverage->setData(array (
     array (
     ),
     192 => 
-    array (
-    ),
-    193 => 
-    array (
-    ),
-    194 => 
     array (
     ),
     195 => 
@@ -3843,19 +3746,13 @@ $coverage->setData(array (
     201 => 
     array (
     ),
-    202 => 
+    204 => 
     array (
     ),
     205 => 
     array (
     ),
     206 => 
-    array (
-    ),
-    207 => 
-    array (
-    ),
-    208 => 
     array (
     ),
     209 => 
@@ -3879,16 +3776,13 @@ $coverage->setData(array (
     215 => 
     array (
     ),
-    216 => 
-    array (
-    ),
     218 => 
     array (
     ),
     219 => 
     array (
     ),
-    222 => 
+    220 => 
     array (
     ),
     223 => 
@@ -3900,10 +3794,19 @@ $coverage->setData(array (
     225 => 
     array (
     ),
+    226 => 
+    array (
+    ),
     227 => 
     array (
     ),
     228 => 
+    array (
+    ),
+    229 => 
+    array (
+    ),
+    230 => 
     array (
     ),
     231 => 
@@ -3957,12 +3860,6 @@ $coverage->setData(array (
     247 => 
     array (
     ),
-    248 => 
-    array (
-    ),
-    249 => 
-    array (
-    ),
     250 => 
     array (
     ),
@@ -3984,6 +3881,9 @@ $coverage->setData(array (
     256 => 
     array (
     ),
+    257 => 
+    array (
+    ),
     258 => 
     array (
     ),
@@ -3997,6 +3897,12 @@ $coverage->setData(array (
     array (
     ),
     264 => 
+    array (
+    ),
+    265 => 
+    array (
+    ),
+    266 => 
     array (
     ),
     267 => 
@@ -4014,16 +3920,7 @@ $coverage->setData(array (
     271 => 
     array (
     ),
-    272 => 
-    array (
-    ),
-    273 => 
-    array (
-    ),
     274 => 
-    array (
-    ),
-    275 => 
     array (
     ),
     276 => 
@@ -4035,22 +3932,28 @@ $coverage->setData(array (
     278 => 
     array (
     ),
+    279 => 
+    array (
+    ),
     280 => 
     array (
     ),
     281 => 
     array (
     ),
+    282 => 
+    array (
+    ),
+    283 => 
+    array (
+    ),
     284 => 
     array (
     ),
-    285 => 
-    array (
-    ),
-    286 => 
-    array (
-    ),
     287 => 
+    array (
+    ),
+    288 => 
     array (
     ),
     289 => 
@@ -4059,7 +3962,7 @@ $coverage->setData(array (
     290 => 
     array (
     ),
-    293 => 
+    291 => 
     array (
     ),
     294 => 
@@ -4068,16 +3971,25 @@ $coverage->setData(array (
     295 => 
     array (
     ),
+    296 => 
+    array (
+    ),
+    297 => 
+    array (
+    ),
     298 => 
     array (
     ),
     299 => 
     array (
     ),
+    300 => 
+    array (
+    ),
     301 => 
     array (
     ),
-    304 => 
+    302 => 
     array (
     ),
     305 => 
@@ -4122,6 +4034,12 @@ $coverage->setData(array (
     318 => 
     array (
     ),
+    319 => 
+    array (
+    ),
+    320 => 
+    array (
+    ),
     321 => 
     array (
     ),
@@ -4143,7 +4061,7 @@ $coverage->setData(array (
     327 => 
     array (
     ),
-    328 => 
+    330 => 
     array (
     ),
     331 => 
@@ -4161,6 +4079,9 @@ $coverage->setData(array (
     335 => 
     array (
     ),
+    336 => 
+    array (
+    ),
     337 => 
     array (
     ),
@@ -4173,13 +4094,16 @@ $coverage->setData(array (
     340 => 
     array (
     ),
+    341 => 
+    array (
+    ),
     343 => 
     array (
     ),
     344 => 
     array (
     ),
-    345 => 
+    347 => 
     array (
     ),
     348 => 
@@ -4191,13 +4115,16 @@ $coverage->setData(array (
     350 => 
     array (
     ),
+    352 => 
+    array (
+    ),
     353 => 
     array (
     ),
-    354 => 
+    356 => 
     array (
     ),
-    355 => 
+    357 => 
     array (
     ),
     358 => 
@@ -4207,6 +4134,336 @@ $coverage->setData(array (
     array (
     ),
     360 => 
+    array (
+    ),
+    361 => 
+    array (
+    ),
+    362 => 
+    array (
+    ),
+    363 => 
+    array (
+    ),
+    364 => 
+    array (
+    ),
+    365 => 
+    array (
+    ),
+    366 => 
+    array (
+    ),
+    367 => 
+    array (
+    ),
+    368 => 
+    array (
+    ),
+    369 => 
+    array (
+    ),
+    370 => 
+    array (
+    ),
+    371 => 
+    array (
+    ),
+    372 => 
+    array (
+    ),
+    373 => 
+    array (
+    ),
+    374 => 
+    array (
+    ),
+    375 => 
+    array (
+    ),
+    376 => 
+    array (
+    ),
+    377 => 
+    array (
+    ),
+    378 => 
+    array (
+    ),
+    379 => 
+    array (
+    ),
+    380 => 
+    array (
+    ),
+    381 => 
+    array (
+    ),
+    382 => 
+    array (
+    ),
+    383 => 
+    array (
+    ),
+    384 => 
+    array (
+    ),
+    386 => 
+    array (
+    ),
+    387 => 
+    array (
+    ),
+    390 => 
+    array (
+    ),
+    391 => 
+    array (
+    ),
+    392 => 
+    array (
+    ),
+    395 => 
+    array (
+    ),
+    396 => 
+    array (
+    ),
+    397 => 
+    array (
+    ),
+    398 => 
+    array (
+    ),
+    399 => 
+    array (
+    ),
+    400 => 
+    array (
+    ),
+    401 => 
+    array (
+    ),
+    402 => 
+    array (
+    ),
+    403 => 
+    array (
+    ),
+    404 => 
+    array (
+    ),
+    405 => 
+    array (
+    ),
+    406 => 
+    array (
+    ),
+    408 => 
+    array (
+    ),
+    409 => 
+    array (
+    ),
+    412 => 
+    array (
+    ),
+    413 => 
+    array (
+    ),
+    414 => 
+    array (
+    ),
+    415 => 
+    array (
+    ),
+    417 => 
+    array (
+    ),
+    418 => 
+    array (
+    ),
+    421 => 
+    array (
+    ),
+    422 => 
+    array (
+    ),
+    423 => 
+    array (
+    ),
+    426 => 
+    array (
+    ),
+    427 => 
+    array (
+    ),
+    429 => 
+    array (
+    ),
+    432 => 
+    array (
+    ),
+    434 => 
+    array (
+    ),
+    435 => 
+    array (
+    ),
+    436 => 
+    array (
+    ),
+    438 => 
+    array (
+    ),
+    440 => 
+    array (
+    ),
+    441 => 
+    array (
+    ),
+    443 => 
+    array (
+    ),
+    444 => 
+    array (
+    ),
+    445 => 
+    array (
+    ),
+    446 => 
+    array (
+    ),
+    447 => 
+    array (
+    ),
+    448 => 
+    array (
+    ),
+    450 => 
+    array (
+    ),
+    451 => 
+    array (
+    ),
+    452 => 
+    array (
+    ),
+    453 => 
+    array (
+    ),
+    454 => 
+    array (
+    ),
+    455 => 
+    array (
+    ),
+    457 => 
+    array (
+    ),
+    459 => 
+    array (
+    ),
+    460 => 
+    array (
+    ),
+    461 => 
+    array (
+    ),
+    462 => 
+    array (
+    ),
+    465 => 
+    array (
+    ),
+    466 => 
+    array (
+    ),
+    467 => 
+    array (
+    ),
+    470 => 
+    array (
+    ),
+    471 => 
+    array (
+    ),
+    472 => 
+    array (
+    ),
+    475 => 
+    array (
+    ),
+    476 => 
+    array (
+    ),
+    477 => 
+    array (
+    ),
+    478 => 
+    array (
+    ),
+    479 => 
+    array (
+    ),
+    480 => 
+    array (
+    ),
+    483 => 
+    array (
+    ),
+    484 => 
+    array (
+    ),
+    485 => 
+    array (
+    ),
+    486 => 
+    array (
+    ),
+    488 => 
+    array (
+    ),
+    489 => 
+    array (
+    ),
+    490 => 
+    array (
+    ),
+    493 => 
+    array (
+    ),
+    494 => 
+    array (
+    ),
+    495 => 
+    array (
+    ),
+    498 => 
+    array (
+    ),
+    499 => 
+    array (
+    ),
+    500 => 
+    array (
+    ),
+    503 => 
+    array (
+    ),
+    504 => 
+    array (
+    ),
+    505 => 
+    array (
+    ),
+    508 => 
+    array (
+    ),
+    509 => 
+    array (
+    ),
+    510 => 
     array (
     ),
   ),

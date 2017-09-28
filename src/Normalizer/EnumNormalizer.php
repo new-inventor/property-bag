@@ -9,7 +9,6 @@ namespace NewInventor\PropertyBag\Normalizer;
 
 
 use NewInventor\PropertyBag\Exception\NormalizeException;
-use NewInventor\TypeChecker\TypeChecker;
 
 class EnumNormalizer extends AbstractNormalizer
 {
@@ -21,17 +20,13 @@ class EnumNormalizer extends AbstractNormalizer
     /**
      * EnumNormalizer constructor.
      *
-     * @param array|callable      $availableValues
+     * @param array      $availableValues
      * @param NormalizerInterface $normalizer
      *
      * @throws \NewInventor\TypeChecker\Exception\TypeException
      */
-    public function __construct($availableValues, NormalizerInterface $normalizer = null)
+    public function __construct(array $availableValues, NormalizerInterface $normalizer = null)
     {
-        TypeChecker::check($availableValues)-> tarray()->tcallable()->fail();
-        if(is_callable($availableValues)){
-            $availableValues = $availableValues();
-        }
         $this->availableValues = array_flip(array_unique($availableValues));
         $this->normalizer = $normalizer;
     }
