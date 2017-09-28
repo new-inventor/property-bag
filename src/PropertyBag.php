@@ -8,6 +8,7 @@
 namespace NewInventor\PropertyBag;
 
 
+use NewInventor\PropertyBag\Normalizer\CamelCaseNormalizer;
 use NewInventor\PropertyBag\Normalizer\CurrencyNormalizer;
 use NewInventor\PropertyBag\Normalizer\EmailNormalizer;
 use NewInventor\PropertyBag\Normalizer\MccNormalizer;
@@ -113,6 +114,7 @@ class PropertyBag implements PropertyBagInterface
         ArrayFormatter::class;
         DateTimeFormatter::class;
         FormatterInterface::class;
+        CamelCaseNormalizer::class;
     }
     
     protected function getProperties(): array
