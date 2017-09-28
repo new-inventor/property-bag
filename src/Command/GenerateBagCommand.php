@@ -5,7 +5,7 @@
  * Date: 27.09.17
  */
 
-namespace TPMailSender\ApiBundle\Command;
+namespace NewInventor\PropertyBag\Command;
 
 
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
