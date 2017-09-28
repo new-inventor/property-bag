@@ -71,6 +71,7 @@ class GenerateBagCommand extends Command
      * @param OutputInterface $output
      *
      * @return int|null|void
+     * @throws \Symfony\Component\Filesystem\Exception\IOException
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \LogicException
      */
