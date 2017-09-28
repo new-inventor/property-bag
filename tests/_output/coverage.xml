@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1506604922">
-  <project timestamp="1506604922">
+<coverage generated="1506605191">
+  <project timestamp="1506605191">
     <package name="TPMailSender\ApiBundle\Command">
       <file name="/home/george/www/property-bag/src/Command/GenerateBagCommand.php">
         <class name="GenerateBagCommand" namespace="TPMailSender\ApiBundle\Command">

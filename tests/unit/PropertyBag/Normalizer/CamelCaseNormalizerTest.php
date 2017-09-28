@@ -31,6 +31,7 @@ class CamelCaseNormalizerTest extends \Codeception\Test\Unit
         $this->assertSame('qweFqweDasd', $normalizer->normalize('qwe-fqwe_dasd'));
         $this->assertSame('qweFqweDasd', $normalizer->normalize('qwe fqwe_dasd'));
         $this->assertSame('qweFqweDasd0934', $normalizer->normalize('qwe fqwe_dasd093[4]'));
+        $this->assertSame('qweFqweDasd093SdfSdfsdf', $normalizer->normalize('qwe fqwe_dasd093[sdf][sdfsdf]'));
     }
     
     public function testNormalizer1()
