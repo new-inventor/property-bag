@@ -175,6 +175,8 @@ class GenerateBagCommand extends Command
         $dirName = $this->getOutputDirName($config['namespace']);
         $fileName = $this->getOutputFileName($dirName);
         $this->generateUses($config);
+        /** @noinspection NotOptimalRegularExpressionsInspection */
+        $this->bag = preg_replace('/(\\\\?\w+(?:\\\\\w+)*\\\\)(?=\w+(?:::|->|\(|\n))/', '', $this->bag);
         
         if (!$this->force && file_exists($fileName)) {
             $currentContent = file_get_contents($fileName);
@@ -182,8 +184,6 @@ class GenerateBagCommand extends Command
             $this->mergeUses($currentContent);
         }
         $this->bag = str_replace('%use%', implode("\n", $this->uses), $this->bag);
-        /** @noinspection NotOptimalRegularExpressionsInspection */
-        $this->bag = preg_replace('/(\\\\?\w+(?:\\\\\w+)*\\\\)(?=\w+(?:::|->|\(|\n))/', '', $this->bag);
         
         $this->fileSystem->mkdir($dirName);
         $this->fileSystem->dumpFile($fileName, $this->bag);
