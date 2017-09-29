@@ -14,8 +14,6 @@ class RangeNormalizer extends AbstractNormalizer
     protected $min;
     /** @var mixed|null */
     protected $max;
-    /** @var callable|null */
-    protected $compareFunction;
     
     /**
      * IntRangeNormalizer constructor.
@@ -24,19 +22,14 @@ class RangeNormalizer extends AbstractNormalizer
      * @param mixed|null    $max
      * @param callable|null $compareFunction
      */
-    public function __construct($min = null, $max = null, callable $compareFunction = null)
+    public function __construct($min = null, $max = null)
     {
         $this->min = $min;
         $this->max = $max;
-        $this->compareFunction = $compareFunction;
     }
     
     protected function normalizeInputValue($value)
     {
-        if ($this->compareFunction !== null) {
-            return $this->compareWithFunction($value);
-        }
-        
         return $this->compareDefault($value);
     }
     
@@ -47,19 +40,6 @@ class RangeNormalizer extends AbstractNormalizer
         }
         if ($this->min !== null && $value < $this->min) {
             $value = $this->min;
-        }
-        
-        return $value;
-    }
-    
-    protected function compareWithFunction($value)
-    {
-        $func = $this->compareFunction;
-        if ((int)$func($value, $this->min) === -1) {
-            $value = $this->min;
-        }
-        if ((int)$func($value, $this->max) === 1) {
-            $value = $this->max;
         }
         
         return $value;
