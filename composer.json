@@ -1,5 +1,5 @@
 {
-  "name": "new-inventor/data-structure",
+  "name": "new-inventor/property-bag",
   "license": "MIT",
   "description": "Property bag with automatic value normalizing and formatting",
   "minimum-stability": "dev",
@@ -25,7 +25,6 @@
   },
   "suggest": {
     "symfony/console": "3.3.*",
-    "symfony/yaml": "3.3.*",
-    "psr/simple-cache": "1.*"
+    "symfony/yaml": "3.3.*"
   }
 }
