@@ -1,5 +1,5 @@
 {
-  "name": "new-inventor/property-bag",
+  "name": "new-inventor/data-structure",
   "license": "MIT",
   "description": "Property bag with automatic value normalizing and formatting",
   "minimum-stability": "dev",
