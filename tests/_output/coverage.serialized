@@ -8,18 +8,18 @@ $coverage->setData(array (
   array (
     17 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
-      7 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      8 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      9 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      10 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      11 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
       12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
       14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
@@ -28,31 +28,27 @@ $coverage->setData(array (
       17 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
       18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
       19 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      20 => 'PropertyBag\\PropertyBagTest::testCache',
-      21 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      22 => 'PropertyBag\\PropertyBagTest::testGet',
-      23 => 'PropertyBag\\PropertyBagTest::testSet',
-      24 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      25 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      26 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      27 => 'PropertyBag\\PropertyBagTest::testLoad',
-      28 => 'PropertyBag\\PropertyTest::testFormatter',
+      20 => 'PropertyBag\\PropertyBagTest::testGet',
+      21 => 'PropertyBag\\PropertyBagTest::testSet',
+      22 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      23 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      24 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      25 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    18 => NULL,
-    22 => 
+    18 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
-      7 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      8 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      9 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      10 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      11 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
       12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
       14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
@@ -60,30 +56,65 @@ $coverage->setData(array (
       16 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
       17 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
       18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
-      19 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      20 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      21 => 'PropertyBag\\PropertyTest::testFormatter',
+      19 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      20 => 'PropertyBag\\PropertyBagTest::testGet',
+      21 => 'PropertyBag\\PropertyBagTest::testSet',
+      22 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      23 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      24 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      25 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    21 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
     ),
     23 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+      12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      15 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      16 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      17 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      19 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      20 => 'PropertyBag\\PropertyBagTest::testGet',
+      21 => 'PropertyBag\\PropertyBagTest::testSet',
+      22 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      23 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      24 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      25 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    25 => 
+    24 => NULL,
+    28 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
-      7 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      8 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      9 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      10 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      11 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
       12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
       14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
@@ -93,231 +124,489 @@ $coverage->setData(array (
       18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
       19 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
       20 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      21 => 'PropertyBag\\PropertyTest::testFormatter',
     ),
-    27 => 
+    29 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+    ),
+    31 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+      12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      15 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      16 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      17 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      19 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      20 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+    ),
+    33 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
       2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
       4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyTest::testFormatter',
     ),
-    28 => NULL,
-    38 => 
+    34 => NULL,
+    44 => 
     array (
     ),
-    42 => 
+    50 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      7 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      8 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      9 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      10 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      11 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+      12 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      13 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      14 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      15 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      16 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      17 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      18 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      19 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      20 => 'PropertyBag\\PropertyBagTest::testGet',
+      21 => 'PropertyBag\\PropertyBagTest::testSet',
+      22 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      23 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      24 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      25 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    43 => NULL,
+    51 => NULL,
+    55 => 
+    array (
+    ),
+    56 => NULL,
   ),
   '/home/george/www/property-bag/src/Formatter/BoolFormatter.php' => 
   array (
     30 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
     ),
     31 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
     ),
     32 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
     ),
     33 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
     ),
     34 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
     ),
     38 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
     39 => NULL,
     43 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
     44 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
-      2 => 'PropertyBag\\PropertyTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
-  ),
-  '/home/george/www/property-bag/src/Formatter/ArrayFormatter.php' => 
-  array (
-    27 => 
+    48 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
-    28 => 
+    49 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
-    35 => 
+    50 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
-    36 => NULL,
-    45 => 
+    52 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
-    47 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    48 => NULL,
     53 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    56 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter2',
+      2 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter3',
+      3 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter4',
+      4 => 'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    57 => NULL,
+    61 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    62 => NULL,
+  ),
+  '/home/george/www/property-bag/src/Formatter/CsvRowFormatter.php' => 
+  array (
+    31 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+    ),
+    32 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+    ),
+    39 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    40 => NULL,
+    47 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    48 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
     55 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
-    57 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    61 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    62 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
+    56 => NULL,
     63 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
     64 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
-    65 => 
+    71 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
-    67 => 
+    72 => NULL,
+    79 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
-    68 => 
+    80 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
     ),
-    72 => 
+    85 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    73 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    75 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    78 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-    ),
-    79 => NULL,
-    83 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
-    ),
-    84 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
-    ),
-    86 => 
-    array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
     87 => 
     array (
-      0 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter',
-      1 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6',
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
     ),
+    89 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    93 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    94 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    95 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    96 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    97 => 
+    array (
+    ),
+    99 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    100 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    102 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    103 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    106 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    109 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    110 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    111 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    112 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    113 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    114 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    116 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    118 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    119 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    121 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    122 => NULL,
+    126 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    127 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    128 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    130 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    131 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    133 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    134 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    135 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    136 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    137 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    139 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    140 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    142 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    143 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    147 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    148 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    149 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+    ),
+    151 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6',
+    ),
+    152 => NULL,
+    156 => 
+    array (
+    ),
+    157 => NULL,
   ),
   '/home/george/www/property-bag/src/Formatter/DateTimeFormatter.php' => 
   array (
@@ -325,39 +614,13 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       1 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
-      7 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\PropertyBagTest::testCache',
-      9 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      10 => 'PropertyBag\\PropertyBagTest::testGet',
-      11 => 'PropertyBag\\PropertyBagTest::testSet',
-      12 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      13 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      14 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      15 => 'PropertyBag\\PropertyBagTest::testLoad',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
     ),
     28 => 
     array (
       0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
       1 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
-      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
-      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
-      4 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
-      5 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
-      6 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
-      7 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\PropertyBagTest::testCache',
-      9 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      10 => 'PropertyBag\\PropertyBagTest::testGet',
-      11 => 'PropertyBag\\PropertyBagTest::testSet',
-      12 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      13 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      14 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      15 => 'PropertyBag\\PropertyBagTest::testLoad',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
     ),
     37 => 
     array (
@@ -384,6 +647,73 @@ $coverage->setData(array (
       1 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
       2 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
     ),
+    47 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      7 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\PropertyBagTest::testGet',
+      9 => 'PropertyBag\\PropertyBagTest::testSet',
+      10 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      11 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      12 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      13 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    48 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      7 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\PropertyBagTest::testGet',
+      9 => 'PropertyBag\\PropertyBagTest::testSet',
+      10 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      11 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      12 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      13 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    49 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      2 => 'PropertyBag\\PropertyBagTest::testGet',
+      3 => 'PropertyBag\\PropertyBagTest::testSet',
+      4 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      5 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      6 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      7 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    51 => 
+    array (
+      0 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter',
+      1 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter1',
+      2 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter2',
+      3 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter3',
+      4 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter4',
+      5 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter5',
+      6 => 'PropertyBag\\Formatter\\DateTimeFormatterTest::testFormatter6',
+      7 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\PropertyBagTest::testGet',
+      9 => 'PropertyBag\\PropertyBagTest::testSet',
+      10 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      11 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      12 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      13 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    52 => NULL,
+    56 => 
+    array (
+    ),
+    57 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/NormalizerInterface.php' => 
   array (
@@ -487,31 +817,186 @@ $coverage->setData(array (
       47 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
       48 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       49 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
-      50 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      51 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      52 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
-      53 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
-      54 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
-      55 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
-      56 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
-      57 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      58 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
-      59 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
-      60 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      61 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
-      62 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
-      63 => 'PropertyBag\\PropertyBagTest::testCache',
-      64 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      65 => 'PropertyBag\\PropertyBagTest::testGet',
-      66 => 'PropertyBag\\PropertyBagTest::testSet',
-      67 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      68 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      69 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      70 => 'PropertyBag\\PropertyBagTest::testLoad',
-      71 => 'PropertyBag\\PropertyTest::testNormalizer',
+      50 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      51 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      52 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      53 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      54 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      55 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      56 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      57 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      58 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      59 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      60 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      61 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      62 => 'PropertyBag\\PropertyBagTest::testGet',
+      63 => 'PropertyBag\\PropertyBagTest::testSet',
+      64 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      65 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      66 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      67 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    18 => NULL,
-    27 => 
+    18 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      10 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      11 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      12 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      13 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      14 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      15 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      16 => 'PropertyBag\\Normalizer\\EmptyNormalizerTest::testNormalizer',
+      17 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      18 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      19 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      20 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      21 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      22 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer',
+      23 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer1',
+      24 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer2',
+      25 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer3',
+      26 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      27 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      28 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      29 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      30 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer1',
+      32 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer2',
+      33 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer3',
+      34 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      35 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      36 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      37 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+      38 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      39 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      40 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      41 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      42 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      43 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      44 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      45 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      46 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      47 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      48 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      49 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+      50 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      51 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      52 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      53 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      54 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      55 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      56 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      57 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      58 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      59 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      60 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      61 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      62 => 'PropertyBag\\PropertyBagTest::testGet',
+      63 => 'PropertyBag\\PropertyBagTest::testSet',
+      64 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      65 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      66 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      67 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    21 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      6 => 'PropertyBag\\Normalizer\\EmptyNormalizerTest::testNormalizer',
+      7 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      9 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      10 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      11 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      12 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+      13 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      14 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+    ),
+    23 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      10 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      11 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      12 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      13 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      14 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      15 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      16 => 'PropertyBag\\Normalizer\\EmptyNormalizerTest::testNormalizer',
+      17 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      18 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      19 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      20 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      21 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      22 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer',
+      23 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer1',
+      24 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer2',
+      25 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer3',
+      26 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      27 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      28 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      29 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      30 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer1',
+      32 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer2',
+      33 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer3',
+      34 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      35 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      36 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      37 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+      38 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      39 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      40 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      41 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      42 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      43 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      44 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      45 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      46 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      47 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      48 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      49 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      50 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      51 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      52 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      53 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      54 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      55 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      56 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      57 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      58 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      59 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      60 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      61 => 'PropertyBag\\PropertyBagTest::testGet',
+      62 => 'PropertyBag\\PropertyBagTest::testSet',
+      63 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      64 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      65 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      66 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    24 => NULL,
+    33 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -569,29 +1054,26 @@ $coverage->setData(array (
       53 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
       54 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
       55 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      56 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      57 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      58 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
-      59 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
-      60 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
-      61 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
-      62 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
-      63 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      64 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
-      65 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
-      66 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      67 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
-      68 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
-      69 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      70 => 'PropertyBag\\PropertyBagTest::testGet',
-      71 => 'PropertyBag\\PropertyBagTest::testSet',
-      72 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      73 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      74 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      75 => 'PropertyBag\\PropertyBagTest::testLoad',
-      76 => 'PropertyBag\\PropertyTest::testNormalizer',
+      56 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      57 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      58 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      59 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      60 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      61 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      62 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      63 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      64 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      65 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      66 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      67 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      68 => 'PropertyBag\\PropertyBagTest::testGet',
+      69 => 'PropertyBag\\PropertyBagTest::testSet',
+      70 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      71 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      72 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      73 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    28 => 
+    34 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
@@ -609,7 +1091,7 @@ $coverage->setData(array (
       13 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
       14 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
     ),
-    30 => 
+    36 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -667,29 +1149,26 @@ $coverage->setData(array (
       53 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
       54 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
       55 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      56 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      57 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      58 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
-      59 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
-      60 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
-      61 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
-      62 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
-      63 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      64 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
-      65 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
-      66 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      67 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
-      68 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
-      69 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      70 => 'PropertyBag\\PropertyBagTest::testGet',
-      71 => 'PropertyBag\\PropertyBagTest::testSet',
-      72 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      73 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      74 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      75 => 'PropertyBag\\PropertyBagTest::testLoad',
-      76 => 'PropertyBag\\PropertyTest::testNormalizer',
+      56 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      57 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      58 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      59 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      60 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      61 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      62 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      63 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      64 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      65 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      66 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      67 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      68 => 'PropertyBag\\PropertyBagTest::testGet',
+      69 => 'PropertyBag\\PropertyBagTest::testSet',
+      70 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      71 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      72 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      73 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    31 => 
+    37 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -719,20 +1198,17 @@ $coverage->setData(array (
       25 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
       26 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
       27 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      28 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      29 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      30 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      31 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      32 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      33 => 'PropertyBag\\PropertyBagTest::testGet',
-      34 => 'PropertyBag\\PropertyBagTest::testSet',
-      35 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      36 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      37 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      38 => 'PropertyBag\\PropertyBagTest::testLoad',
-      39 => 'PropertyBag\\PropertyTest::testNormalizer',
+      28 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      29 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      30 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\PropertyBagTest::testGet',
+      32 => 'PropertyBag\\PropertyBagTest::testSet',
+      33 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      34 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      35 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      36 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    33 => 
+    39 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -759,21 +1235,18 @@ $coverage->setData(array (
       22 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
       23 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer',
       24 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      25 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      26 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      27 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      28 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      29 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      30 => 'PropertyBag\\PropertyBagTest::testGet',
-      31 => 'PropertyBag\\PropertyBagTest::testSet',
-      32 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      33 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      34 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      35 => 'PropertyBag\\PropertyBagTest::testLoad',
-      36 => 'PropertyBag\\PropertyTest::testNormalizer',
+      25 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      26 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      27 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      28 => 'PropertyBag\\PropertyBagTest::testGet',
+      29 => 'PropertyBag\\PropertyBagTest::testSet',
+      30 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      31 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      32 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      33 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    34 => NULL,
-    44 => 
+    40 => NULL,
+    50 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -799,9 +1272,8 @@ $coverage->setData(array (
       21 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
       22 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       23 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
-      24 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
-    53 => 
+    59 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -833,25 +1305,22 @@ $coverage->setData(array (
       27 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       28 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
       29 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      30 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      31 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      32 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      33 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      34 => 'PropertyBag\\PropertyBagTest::testGet',
-      35 => 'PropertyBag\\PropertyBagTest::testSet',
-      36 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      37 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      38 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      39 => 'PropertyBag\\PropertyBagTest::testLoad',
-      40 => 'PropertyBag\\PropertyTest::testNormalizer',
+      30 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      32 => 'PropertyBag\\PropertyBagTest::testGet',
+      33 => 'PropertyBag\\PropertyBagTest::testSet',
+      34 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      35 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      36 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      37 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    54 => 
+    60 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
       2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    57 => 
+    63 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -883,20 +1352,17 @@ $coverage->setData(array (
       27 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       28 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
       29 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      30 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
-      31 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
-      32 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
-      33 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      34 => 'PropertyBag\\PropertyBagTest::testGet',
-      35 => 'PropertyBag\\PropertyBagTest::testSet',
-      36 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      37 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      38 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      39 => 'PropertyBag\\PropertyBagTest::testLoad',
-      40 => 'PropertyBag\\PropertyTest::testNormalizer',
+      30 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      32 => 'PropertyBag\\PropertyBagTest::testGet',
+      33 => 'PropertyBag\\PropertyBagTest::testSet',
+      34 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      35 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      36 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      37 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    58 => NULL,
-    67 => 
+    64 => NULL,
+    73 => 
     array (
       0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\EmptyNormalizerTest::testNormalizer',
@@ -907,7 +1373,92 @@ $coverage->setData(array (
       6 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       7 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    68 => NULL,
+    74 => NULL,
+    78 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\CamelCaseNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      10 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      11 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      12 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      13 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      14 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      15 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      16 => 'PropertyBag\\Normalizer\\EmptyNormalizerTest::testNormalizer',
+      17 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      18 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      19 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      20 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      21 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      22 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer',
+      23 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer1',
+      24 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer2',
+      25 => 'PropertyBag\\Normalizer\\FloatNormalizerTest::testNormalizer3',
+      26 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      27 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      28 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      29 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      30 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer',
+      31 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer1',
+      32 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer2',
+      33 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer3',
+      34 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      35 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      36 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      37 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+      38 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      39 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      40 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      41 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      42 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      43 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      44 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      45 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      46 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      47 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      48 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      49 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+      50 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      51 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      52 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      53 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      54 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      55 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      56 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer',
+      57 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer1',
+      58 => 'PropertyBag\\Normalizer\\ScreamingCaseNormalizerTest::testNormalizer2',
+      59 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer',
+      60 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer1',
+      61 => 'PropertyBag\\Normalizer\\StringNormalizerTest::testNormalizer2',
+      62 => 'PropertyBag\\PropertyBagTest::testGet',
+      63 => 'PropertyBag\\PropertyBagTest::testSet',
+      64 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      65 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      66 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      67 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    79 => NULL,
+    83 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    84 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/StringNormalizer.php' => 
   array (
@@ -932,7 +1483,6 @@ $coverage->setData(array (
       16 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       17 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       18 => 'PropertyBag\\PropertyBagTest::testLoad',
-      19 => 'PropertyBag\\PropertyTest::testNormalizer',
     ),
     19 => 
     array (
@@ -966,7 +1516,6 @@ $coverage->setData(array (
       16 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       17 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       18 => 'PropertyBag\\PropertyBagTest::testLoad',
-      19 => 'PropertyBag\\PropertyTest::testNormalizer',
     ),
     21 => 
     array (
@@ -989,7 +1538,6 @@ $coverage->setData(array (
       16 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       17 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       18 => 'PropertyBag\\PropertyBagTest::testLoad',
-      19 => 'PropertyBag\\PropertyTest::testNormalizer',
     ),
     22 => 
     array (
@@ -1006,7 +1554,6 @@ $coverage->setData(array (
       10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       12 => 'PropertyBag\\PropertyBagTest::testLoad',
-      13 => 'PropertyBag\\PropertyTest::testNormalizer',
     ),
     26 => 
     array (
@@ -1023,80 +1570,56 @@ $coverage->setData(array (
       10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       12 => 'PropertyBag\\PropertyBagTest::testLoad',
-      13 => 'PropertyBag\\PropertyTest::testNormalizer',
     ),
     27 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/EnumNormalizer.php' => 
   array (
-    30 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      13 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
-    ),
     31 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      13 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      1 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
     32 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      13 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      1 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    36 => 
+    33 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      1 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    37 => 
+    34 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+    ),
+    38 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -1128,23 +1651,24 @@ $coverage->setData(array (
       11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    40 => NULL,
-    44 => 
+    41 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
-      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
-      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
-      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
-      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
-      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
-      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+      2 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      12 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
-    45 => 
+    42 => NULL,
+    46 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
@@ -1162,38 +1686,41 @@ $coverage->setData(array (
     47 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+      7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+      8 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer1',
+      9 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
+      10 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
+      11 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
+    ),
+    49 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
       2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    48 => 
+    50 => 
     array (
       0 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    50 => 
+    52 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
       2 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       3 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    51 => 
+    53 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    54 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-    ),
-    55 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
     56 => 
@@ -1214,7 +1741,107 @@ $coverage->setData(array (
       1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
       2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
     ),
-    60 => NULL,
+    59 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+    ),
+    60 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
+    ),
+    62 => NULL,
+    66 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    67 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    68 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    69 => 
+    array (
+    ),
+    71 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    74 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    75 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    77 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer1',
+      5 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer2',
+      6 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer3',
+      7 => 'PropertyBag\\Normalizer\\EnumNormalizerTest::testNormalizer4',
+    ),
+    78 => NULL,
+    82 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+    ),
+    83 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/IntNormalizer.php' => 
   array (
@@ -1242,7 +1869,6 @@ $coverage->setData(array (
       19 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer2',
       20 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer3',
       21 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
-      22 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
     18 => 
     array (
@@ -1254,7 +1880,6 @@ $coverage->setData(array (
       5 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer',
       6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
       7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
     22 => 
     array (
@@ -1266,7 +1891,6 @@ $coverage->setData(array (
       5 => 'PropertyBag\\Normalizer\\IntNormalizerTest::testNormalizer',
       6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
       7 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer',
-      8 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
     23 => NULL,
   ),
@@ -1276,17 +1900,13 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
     24 => 
     array (
       0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
     28 => 
     array (
@@ -1371,18 +1991,46 @@ $coverage->setData(array (
       1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
     52 => NULL,
+    56 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    57 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    58 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+    ),
+    60 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\ArrayNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      4 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    61 => NULL,
+    65 => 
+    array (
+    ),
+    66 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/BoolNormalizer.php' => 
   array (
-    26 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
-    ),
-    27 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
-    ),
-    28 => 
+    30 => 
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
@@ -1398,7 +2046,7 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
-    36 => 
+    35 => 
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
@@ -1406,16 +2054,93 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
+    38 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    39 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
     40 => 
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
-    41 => NULL,
-    45 => 
+    41 => 
     array (
       0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
     ),
-    46 => NULL,
+    42 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    46 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    47 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    48 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    50 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    51 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    54 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    55 => NULL,
+    59 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    60 => NULL,
+    64 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    65 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    66 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    67 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    70 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    71 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    72 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    75 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\BoolNormalizerTest::testNormalizer',
+    ),
+    76 => NULL,
+    80 => 
+    array (
+    ),
+    81 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/CamelCaseNormalizer.php' => 
   array (
@@ -1442,86 +2167,107 @@ $coverage->setData(array (
   ),
   '/home/george/www/property-bag/src/Normalizer/CsvRowNormalizer.php' => 
   array (
-    23 => 
+    27 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    24 => NULL,
-    33 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-    ),
+    28 => NULL,
     35 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    36 => NULL,
-    40 => 
+    36 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
-    ),
-    42 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
     ),
     43 => 
     array (
-      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
     ),
-    44 => 
+    44 => NULL,
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    59 => 
+    array (
+    ),
+    60 => NULL,
+    67 => 
+    array (
+    ),
+    68 => 
+    array (
+    ),
+    72 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
     ),
-    46 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
-    ),
-    47 => 
+    74 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
     ),
-    48 => 
+    75 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
     ),
-    49 => 
+    76 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    78 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    53 => 
+    79 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    80 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    81 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    54 => 
+    85 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    56 => 
+    86 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    57 => 
+    88 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    60 => 
+    89 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
     ),
-    61 => NULL,
+    92 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+    ),
+    93 => NULL,
+    97 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\CsvRowNormalizerTest::testNormalizer1',
+    ),
+    98 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/CurrencyNormalizer.php' => 
   array (
-    21 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
-    ),
     22 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
@@ -1530,11 +2276,11 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    25 => 
+    24 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    30 => 
+    26 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
@@ -1542,7 +2288,7 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    33 => 
+    32 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
@@ -1550,7 +2296,7 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    36 => 
+    35 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
@@ -1562,7 +2308,7 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    41 => 
+    39 => 
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
@@ -1582,9 +2328,13 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
     ),
-    47 => NULL,
+    46 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\CurrencyNormalizerTest::testSomeFeature',
+    ),
+    48 => NULL,
   ),
-  '/home/george/www/property-bag/src/Currencies.php' => 
+  '/home/george/www/property-bag/src/Accessory/Currencies.php' => 
   array (
   ),
   '/home/george/www/property-bag/src/Normalizer/DateTimeNormalizer.php' => 
@@ -1592,38 +2342,12 @@ $coverage->setData(array (
     26 => 
     array (
       0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
-      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
-      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
-      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      7 => 'PropertyBag\\PropertyBagTest::testCache',
-      8 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      9 => 'PropertyBag\\PropertyBagTest::testGet',
-      10 => 'PropertyBag\\PropertyBagTest::testSet',
-      11 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      12 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      13 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      14 => 'PropertyBag\\PropertyBagTest::testLoad',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
     ),
     27 => 
     array (
       0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
-      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
-      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
-      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      7 => 'PropertyBag\\PropertyBagTest::testCache',
-      8 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      9 => 'PropertyBag\\PropertyBagTest::testGet',
-      10 => 'PropertyBag\\PropertyBagTest::testSet',
-      11 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      12 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      13 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      14 => 'PropertyBag\\PropertyBagTest::testLoad',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
     ),
     31 => 
     array (
@@ -1707,6 +2431,75 @@ $coverage->setData(array (
       0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
     ),
     46 => NULL,
+    50 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      7 => 'PropertyBag\\PropertyBagTest::testGet',
+      8 => 'PropertyBag\\PropertyBagTest::testSet',
+      9 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      12 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    51 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      7 => 'PropertyBag\\PropertyBagTest::testGet',
+      8 => 'PropertyBag\\PropertyBagTest::testSet',
+      9 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      12 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    52 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      7 => 'PropertyBag\\PropertyBagTest::testGet',
+      8 => 'PropertyBag\\PropertyBagTest::testSet',
+      9 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      12 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    54 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\DateTimeNormalizerTest::testNormalizer5',
+      6 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      7 => 'PropertyBag\\PropertyBagTest::testGet',
+      8 => 'PropertyBag\\PropertyBagTest::testSet',
+      9 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      10 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      11 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      12 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    55 => NULL,
+    59 => 
+    array (
+    ),
+    60 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/EmailNormalizer.php' => 
   array (
@@ -2305,16 +3098,7 @@ $coverage->setData(array (
       5 => 'PropertyBag\\Normalizer\\EmailNormalizerTest::testNormalizer5',
       6 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer',
       7 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
-      8 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
-      9 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
-      10 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
-      11 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
-      12 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      13 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
-      14 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
-      15 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
-      16 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
-      17 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      8 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
     ),
     27 => 
     array (
@@ -2326,16 +3110,7 @@ $coverage->setData(array (
       5 => 'PropertyBag\\Normalizer\\EmailNormalizerTest::testNormalizer5',
       6 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer',
       7 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
-      8 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
-      9 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
-      10 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
-      11 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
-      12 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
-      13 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
-      14 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
-      15 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
-      16 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
-      17 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+      8 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
     ),
     31 => 
     array (
@@ -2431,6 +3206,62 @@ $coverage->setData(array (
       4 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
     ),
     46 => NULL,
+    50 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      1 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      6 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      7 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      8 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      9 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      10 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+    ),
+    51 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      1 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      6 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      7 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      8 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      9 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      10 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+    ),
+    52 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+    ),
+    54 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
+      1 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
+      5 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer',
+      6 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer1',
+      7 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer2',
+      8 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer3',
+      9 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer4',
+      10 => 'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer5',
+    ),
+    55 => NULL,
+    59 => 
+    array (
+    ),
+    60 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/EmptyNormalizer.php' => 
   array (
@@ -2478,16 +3309,12 @@ $coverage->setData(array (
     22 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
     ),
     23 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
     ),
     27 => 
     array (
@@ -2501,99 +3328,170 @@ $coverage->setData(array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
     ),
     30 => NULL,
+    34 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+    ),
+    35 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+    ),
+    36 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+    ),
+    38 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+    ),
+    39 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+    ),
+    41 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+    ),
+    42 => NULL,
+    46 => 
+    array (
+    ),
+    47 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/RangeNormalizer.php' => 
   array (
     27 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
-      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
     ),
     28 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
-      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
     ),
     29 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
-      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
-      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
-      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
-      8 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
     ),
     33 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     34 => NULL,
     38 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     39 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     41 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     42 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     45 => 
     array (
       0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      2 => 'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer',
     ),
     46 => NULL,
+    50 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    51 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    52 => 
+    array (
+    ),
+    54 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    55 => 
+    array (
+    ),
+    57 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\FloatRangeNormalizerTest::testNormalizer3',
+      4 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      5 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      6 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      7 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    58 => NULL,
+    62 => 
+    array (
+    ),
+    63 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/IntRangeNormalizer.php' => 
   array (
     21 => 
     array (
       0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
     ),
     22 => 
     array (
       0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
-      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
     ),
     26 => 
     array (
@@ -2607,9 +3505,47 @@ $coverage->setData(array (
       0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
     ),
     29 => NULL,
-  ),
-  '/home/george/www/property-bag/src/CountriesAndRegions.php' => 
-  array (
+    33 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    34 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    35 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+    ),
+    37 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    38 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+    ),
+    40 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer1',
+      2 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer2',
+      3 => 'PropertyBag\\Normalizer\\IntRangeNormalizerTest::testNormalizer3',
+    ),
+    41 => NULL,
+    45 => 
+    array (
+    ),
+    46 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/MccNormalizer.php' => 
   array (
@@ -2630,7 +3566,10 @@ $coverage->setData(array (
       4 => 'PropertyBag\\Normalizer\\MccNormalizerTest::testNormalizer4',
     ),
   ),
-  '/home/george/www/property-bag/src/MobileCountryCodes.php' => 
+  '/home/george/www/property-bag/src/Accessory/CountriesAndRegions.php' => 
+  array (
+  ),
+  '/home/george/www/property-bag/src/Accessory/MobileCountryCodes.php' => 
   array (
   ),
   '/home/george/www/property-bag/src/Normalizer/PhoneNormalizer.php' => 
@@ -2639,19 +3578,11 @@ $coverage->setData(array (
     array (
       0 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
-      2 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
-      3 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
-      4 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
-      5 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
     ),
     21 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer0',
-      2 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer1',
-      3 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer2',
-      4 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer3',
-      5 => 'PropertyBag\\Normalizer\\PhoneNormalizerTest::testNormalizer4',
     ),
     24 => 
     array (
@@ -2777,50 +3708,100 @@ $coverage->setData(array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
     ),
     54 => NULL,
+    58 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+    ),
+    59 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+    ),
+    60 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+    ),
+    62 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
+    ),
+    63 => NULL,
+    67 => 
+    array (
+    ),
+    68 => NULL,
   ),
   '/home/george/www/property-bag/src/PropertyBag.php' => 
   array (
-    51 => 
+    30 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    52 => 
+    31 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    53 => 
+    32 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    54 => 
+    33 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    38 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGet',
+    ),
+    43 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGet',
+    ),
+    48 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGet',
     ),
     55 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
+    ),
+    56 => 
+    array (
     ),
     57 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
-    58 => 
+    59 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
-    61 => 
+    60 => NULL,
+    71 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testGet',
@@ -2829,87 +3810,125 @@ $coverage->setData(array (
       4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
       5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       6 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    63 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    67 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-    ),
-    68 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-    ),
-    69 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-    ),
-    71 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
     ),
     72 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    76 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-    ),
-    77 => NULL,
-    81 => 
+    73 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\PropertyBagTest::testCache',
-      3 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    82 => 
+    75 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer1',
-      2 => 'PropertyBag\\PropertyBagTest::testCache',
-      3 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    86 => 
+    77 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    87 => NULL,
-    118 => 
+    78 => NULL,
+    88 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
     ),
-    122 => 
+    90 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testGet',
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
     ),
-    123 => NULL,
+    91 => NULL,
+    101 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+    ),
+    103 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+    ),
+    104 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+    ),
+    105 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+    ),
+    106 => NULL,
+    110 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+    ),
+    111 => NULL,
+    115 => 
+    array (
+      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    116 => NULL,
+    125 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+    ),
+    126 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+    ),
     127 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
     ),
     128 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
     ),
-    130 => 
+    132 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
+      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
     ),
-    131 => NULL,
-    142 => 
+    133 => NULL,
+    137 => 
+    array (
+      0 => 'PropertyBag\\PropertyBagTest::testGet',
+      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      2 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      3 => 'PropertyBag\\PropertyBagTest::testLoad',
+    ),
+    138 => NULL,
+    147 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testGet',
@@ -2919,126 +3938,7 @@ $coverage->setData(array (
       5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
       6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    143 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    145 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    146 => NULL,
-    156 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-    ),
-    158 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-    ),
-    159 => NULL,
-    169 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    171 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    172 => NULL,
-    181 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    182 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    183 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    186 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-    ),
-    187 => NULL,
-    191 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGet',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      3 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    192 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGet',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      3 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    193 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      1 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      2 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    194 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      1 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      2 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    195 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-    ),
-    197 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      1 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      2 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    200 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGet',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      3 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    201 => NULL,
-    210 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-      4 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      5 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      6 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      7 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    211 => 
+    148 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testGet',
@@ -3046,256 +3946,45 @@ $coverage->setData(array (
       3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
       4 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    213 => 
+    150 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-      4 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      5 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      6 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      7 => 'PropertyBag\\PropertyBagTest::testLoad',
+      1 => 'PropertyBag\\PropertyBagTest::testGet',
+      2 => 'PropertyBag\\PropertyBagTest::testSet',
+      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      6 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    227 => 
+    164 => 
     array (
-      0 => 'PropertyBag\\PropertyBagTest::testCache',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-      4 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      5 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      6 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      7 => 'PropertyBag\\PropertyBagTest::testLoad',
+      0 => 'PropertyBag\\PropertyBagTest::testGet',
+      1 => 'PropertyBag\\PropertyBagTest::testSet',
+      2 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
+      3 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
+      4 => 'PropertyBag\\PropertyBagTest::testToRawArray',
+      5 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    228 => NULL,
-    238 => 
+    165 => NULL,
+    175 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    239 => 
+    176 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    242 => 
+    179 => 
     array (
       0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
       1 => 'PropertyBag\\PropertyBagTest::testLoad',
     ),
-    243 => NULL,
+    180 => NULL,
   ),
   '/home/george/www/property-bag/src/PropertyBagInterface.php' => 
   array (
-  ),
-  '/home/george/www/property-bag/src/Property.php' => 
-  array (
-    31 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testConstructor',
-      10 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      11 => 'PropertyBag\\PropertyTest::testNormalizer',
-      12 => 'PropertyBag\\PropertyTest::testFormatter',
-      13 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    32 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testConstructor',
-      10 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      11 => 'PropertyBag\\PropertyTest::testNormalizer',
-      12 => 'PropertyBag\\PropertyTest::testFormatter',
-      13 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    36 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testNormalizer',
-    ),
-    38 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testNormalizer',
-    ),
-    39 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-    ),
-    42 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testNormalizer',
-    ),
-    43 => NULL,
-    47 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testFormatter',
-    ),
-    49 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-      9 => 'PropertyBag\\PropertyTest::testFormatter',
-    ),
-    50 => NULL,
-    54 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-      7 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      8 => 'PropertyBag\\PropertyTest::testNormalizer',
-      9 => 'PropertyBag\\PropertyTest::testFormatter',
-      10 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    55 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-      7 => 'PropertyBag\\PropertyTest::testNormalizer',
-    ),
-    57 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-      7 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      8 => 'PropertyBag\\PropertyTest::testNormalizer',
-      9 => 'PropertyBag\\PropertyTest::testFormatter',
-      10 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    58 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testGet',
-      2 => 'PropertyBag\\PropertyBagTest::testSet',
-      3 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-      7 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      8 => 'PropertyBag\\PropertyTest::testNormalizer',
-      9 => 'PropertyBag\\PropertyTest::testFormatter',
-      10 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    65 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      2 => 'PropertyBag\\PropertyBagTest::testGet',
-      3 => 'PropertyBag\\PropertyBagTest::testSet',
-      4 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      5 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      6 => 'PropertyBag\\PropertyBagTest::testLoad',
-      7 => 'PropertyBag\\PropertyTest::testConstructor',
-      8 => 'PropertyBag\\PropertyTest::testGetterSetter',
-      9 => 'PropertyBag\\PropertyTest::testNormalizer',
-    ),
-    66 => NULL,
-    70 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testFormatter',
-      3 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    71 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testFormatter',
-    ),
-    74 => 
-    array (
-      0 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      1 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      2 => 'PropertyBag\\PropertyTest::testGetFormattedValue',
-    ),
-    75 => NULL,
-    85 => 
-    array (
-      0 => 'PropertyBag\\Normalizer\\PropertyBagNormalizerTest::testNormalizer',
-      1 => 'PropertyBag\\PropertyBagTest::testCache',
-      2 => 'PropertyBag\\PropertyBagTest::testCacheProperties',
-      3 => 'PropertyBag\\PropertyBagTest::testGet',
-      4 => 'PropertyBag\\PropertyBagTest::testSet',
-      5 => 'PropertyBag\\PropertyBagTest::testGetFormatted',
-      6 => 'PropertyBag\\PropertyBagTest::testToFormattedArray',
-      7 => 'PropertyBag\\PropertyBagTest::testToRawArray',
-      8 => 'PropertyBag\\PropertyBagTest::testLoad',
-    ),
-    86 => NULL,
   ),
   '/home/george/www/property-bag/src/Normalizer/ScreamingCaseNormalizer.php' => 
   array (
@@ -3318,12 +4007,6 @@ $coverage->setData(array (
   ),
   '/home/george/www/property-bag/src/Command/GenerateBagCommand.php' => 
   array (
-    47 => 
-    array (
-    ),
-    48 => 
-    array (
-    ),
     49 => 
     array (
     ),
@@ -3333,10 +4016,10 @@ $coverage->setData(array (
     51 => 
     array (
     ),
-    54 => 
+    52 => 
     array (
     ),
-    55 => 
+    53 => 
     array (
     ),
     56 => 
@@ -3375,10 +4058,10 @@ $coverage->setData(array (
     67 => 
     array (
     ),
-    79 => 
+    68 => 
     array (
     ),
-    80 => 
+    69 => 
     array (
     ),
     81 => 
@@ -3438,10 +4121,10 @@ $coverage->setData(array (
     99 => 
     array (
     ),
-    102 => 
+    100 => 
     array (
     ),
-    103 => 
+    101 => 
     array (
     ),
     104 => 
@@ -3477,16 +4160,16 @@ $coverage->setData(array (
     114 => 
     array (
     ),
+    115 => 
+    array (
+    ),
     116 => 
     array (
     ),
-    117 => 
+    118 => 
     array (
     ),
-    120 => 
-    array (
-    ),
-    121 => 
+    119 => 
     array (
     ),
     122 => 
@@ -3495,16 +4178,16 @@ $coverage->setData(array (
     123 => 
     array (
     ),
+    124 => 
+    array (
+    ),
     125 => 
     array (
     ),
-    126 => 
+    127 => 
     array (
     ),
-    129 => 
-    array (
-    ),
-    130 => 
+    128 => 
     array (
     ),
     131 => 
@@ -3648,7 +4331,13 @@ $coverage->setData(array (
     177 => 
     array (
     ),
+    178 => 
+    array (
+    ),
     179 => 
+    array (
+    ),
+    180 => 
     array (
     ),
     181 => 
@@ -3660,13 +4349,10 @@ $coverage->setData(array (
     183 => 
     array (
     ),
-    184 => 
-    array (
-    ),
     185 => 
     array (
     ),
-    186 => 
+    187 => 
     array (
     ),
     188 => 
@@ -3678,7 +4364,10 @@ $coverage->setData(array (
     190 => 
     array (
     ),
-    193 => 
+    191 => 
+    array (
+    ),
+    192 => 
     array (
     ),
     194 => 
@@ -3690,13 +4379,13 @@ $coverage->setData(array (
     196 => 
     array (
     ),
-    197 => 
-    array (
-    ),
-    198 => 
-    array (
-    ),
     199 => 
+    array (
+    ),
+    200 => 
+    array (
+    ),
+    201 => 
     array (
     ),
     202 => 
@@ -3708,7 +4397,7 @@ $coverage->setData(array (
     204 => 
     array (
     ),
-    207 => 
+    205 => 
     array (
     ),
     208 => 
@@ -3720,13 +4409,13 @@ $coverage->setData(array (
     210 => 
     array (
     ),
-    211 => 
-    array (
-    ),
-    212 => 
-    array (
-    ),
     213 => 
+    array (
+    ),
+    214 => 
+    array (
+    ),
+    215 => 
     array (
     ),
     216 => 
@@ -3738,7 +4427,7 @@ $coverage->setData(array (
     218 => 
     array (
     ),
-    221 => 
+    219 => 
     array (
     ),
     222 => 
@@ -3748,12 +4437,6 @@ $coverage->setData(array (
     array (
     ),
     224 => 
-    array (
-    ),
-    225 => 
-    array (
-    ),
-    226 => 
     array (
     ),
     227 => 
@@ -3810,7 +4493,7 @@ $coverage->setData(array (
     244 => 
     array (
     ),
-    245 => 
+    247 => 
     array (
     ),
     248 => 
@@ -3840,7 +4523,7 @@ $coverage->setData(array (
     256 => 
     array (
     ),
-    257 => 
+    259 => 
     array (
     ),
     260 => 
@@ -3870,10 +4553,10 @@ $coverage->setData(array (
     268 => 
     array (
     ),
-    269 => 
+    271 => 
     array (
     ),
-    272 => 
+    273 => 
     array (
     ),
     274 => 
@@ -3900,7 +4583,7 @@ $coverage->setData(array (
     281 => 
     array (
     ),
-    282 => 
+    284 => 
     array (
     ),
     285 => 
@@ -3915,7 +4598,7 @@ $coverage->setData(array (
     288 => 
     array (
     ),
-    289 => 
+    291 => 
     array (
     ),
     292 => 
@@ -3942,7 +4625,7 @@ $coverage->setData(array (
     299 => 
     array (
     ),
-    300 => 
+    302 => 
     array (
     ),
     303 => 
@@ -4011,7 +4694,7 @@ $coverage->setData(array (
     324 => 
     array (
     ),
-    325 => 
+    327 => 
     array (
     ),
     328 => 
@@ -4047,13 +4730,13 @@ $coverage->setData(array (
     338 => 
     array (
     ),
-    339 => 
+    340 => 
     array (
     ),
     341 => 
     array (
     ),
-    342 => 
+    344 => 
     array (
     ),
     345 => 
@@ -4065,13 +4748,13 @@ $coverage->setData(array (
     347 => 
     array (
     ),
-    348 => 
+    349 => 
     array (
     ),
     350 => 
     array (
     ),
-    351 => 
+    353 => 
     array (
     ),
     354 => 
@@ -4158,13 +4841,13 @@ $coverage->setData(array (
     381 => 
     array (
     ),
-    382 => 
+    383 => 
     array (
     ),
     384 => 
     array (
     ),
-    385 => 
+    387 => 
     array (
     ),
     388 => 
@@ -4173,7 +4856,7 @@ $coverage->setData(array (
     389 => 
     array (
     ),
-    390 => 
+    392 => 
     array (
     ),
     393 => 
@@ -4209,13 +4892,13 @@ $coverage->setData(array (
     403 => 
     array (
     ),
-    404 => 
+    405 => 
     array (
     ),
     406 => 
     array (
     ),
-    407 => 
+    409 => 
     array (
     ),
     410 => 
@@ -4227,13 +4910,13 @@ $coverage->setData(array (
     412 => 
     array (
     ),
-    413 => 
+    414 => 
     array (
     ),
     415 => 
     array (
     ),
-    416 => 
+    418 => 
     array (
     ),
     419 => 
@@ -4242,19 +4925,19 @@ $coverage->setData(array (
     420 => 
     array (
     ),
-    421 => 
+    423 => 
     array (
     ),
     424 => 
     array (
     ),
-    425 => 
+    426 => 
     array (
     ),
-    427 => 
+    429 => 
     array (
     ),
-    430 => 
+    431 => 
     array (
     ),
     432 => 
@@ -4263,16 +4946,16 @@ $coverage->setData(array (
     433 => 
     array (
     ),
-    434 => 
+    435 => 
     array (
     ),
-    436 => 
+    437 => 
     array (
     ),
     438 => 
     array (
     ),
-    439 => 
+    440 => 
     array (
     ),
     441 => 
@@ -4290,7 +4973,7 @@ $coverage->setData(array (
     445 => 
     array (
     ),
-    446 => 
+    447 => 
     array (
     ),
     448 => 
@@ -4308,10 +4991,13 @@ $coverage->setData(array (
     452 => 
     array (
     ),
-    453 => 
+    454 => 
     array (
     ),
     455 => 
+    array (
+    ),
+    456 => 
     array (
     ),
     457 => 
@@ -4323,7 +5009,10 @@ $coverage->setData(array (
     459 => 
     array (
     ),
-    460 => 
+    461 => 
+    array (
+    ),
+    462 => 
     array (
     ),
     463 => 
@@ -4335,22 +5024,22 @@ $coverage->setData(array (
     465 => 
     array (
     ),
-    468 => 
+    466 => 
     array (
     ),
-    469 => 
+    468 => 
     array (
     ),
     470 => 
     array (
     ),
+    471 => 
+    array (
+    ),
+    472 => 
+    array (
+    ),
     473 => 
-    array (
-    ),
-    474 => 
-    array (
-    ),
-    475 => 
     array (
     ),
     476 => 
@@ -4371,9 +5060,6 @@ $coverage->setData(array (
     483 => 
     array (
     ),
-    484 => 
-    array (
-    ),
     486 => 
     array (
     ),
@@ -4383,13 +5069,19 @@ $coverage->setData(array (
     488 => 
     array (
     ),
+    489 => 
+    array (
+    ),
+    490 => 
+    array (
+    ),
     491 => 
     array (
     ),
-    492 => 
+    494 => 
     array (
     ),
-    493 => 
+    495 => 
     array (
     ),
     496 => 
@@ -4398,65 +5090,54 @@ $coverage->setData(array (
     497 => 
     array (
     ),
-    498 => 
+    499 => 
+    array (
+    ),
+    500 => 
     array (
     ),
     501 => 
     array (
     ),
-    502 => 
+    504 => 
     array (
     ),
-    503 => 
+    505 => 
     array (
     ),
     506 => 
     array (
     ),
-    507 => 
+    509 => 
     array (
     ),
-    508 => 
+    510 => 
+    array (
+    ),
+    511 => 
+    array (
+    ),
+    514 => 
+    array (
+    ),
+    515 => 
+    array (
+    ),
+    516 => 
+    array (
+    ),
+    519 => 
+    array (
+    ),
+    520 => 
+    array (
+    ),
+    521 => 
     array (
     ),
   ),
 ));
 $coverage->setTests(array (
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter1' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter2' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter3' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter4' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter5' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\Formatter\\ArrayFormatterTest::testFormatter6' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
   'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter' => 
   array (
     'size' => 'unknown',
@@ -4478,6 +5159,41 @@ $coverage->setTests(array (
     'status' => 0,
   ),
   'PropertyBag\\Formatter\\BoolFormatterTest::testFormatter5' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter1' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter2' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter3' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter4' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter5' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PropertyBag\\Formatter\\CsvRowFormatterTest::testFormatter6' => 
   array (
     'size' => 'unknown',
     'status' => 0,
@@ -4802,11 +5518,6 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'PropertyBag\\Normalizer\\RangeNormalizerTest::testNormalizer' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
   'PropertyBag\\Normalizer\\RegExpNormalizerTest::testNormalizer' => 
   array (
     'size' => 'unknown',
@@ -4867,16 +5578,6 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'PropertyBag\\PropertyBagTest::testCache' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\PropertyBagTest::testCacheProperties' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
   'PropertyBag\\PropertyBagTest::testGet' => 
   array (
     'size' => 'unknown',
@@ -4907,31 +5608,6 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'PropertyBag\\PropertyTest::testConstructor' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\PropertyTest::testGetterSetter' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\PropertyTest::testNormalizer' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\PropertyTest::testFormatter' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'PropertyBag\\PropertyTest::testGetFormattedValue' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
   'UNCOVERED_FILES_FROM_WHITELIST' => 
   array (
     'size' => 'unknown',
@@ -4941,12 +5617,10 @@ $coverage->setTests(array (
 
 $filter = $coverage->filter();
 $filter->setWhitelistedFiles(array (
-  '/home/george/www/property-bag/src/Currencies.php' => true,
-  '/home/george/www/property-bag/src/Property.php' => true,
   '/home/george/www/property-bag/src/PropertyBagInterface.php' => true,
-  '/home/george/www/property-bag/src/Formatter/ArrayFormatter.php' => true,
   '/home/george/www/property-bag/src/Formatter/FormatterInterface.php' => true,
   '/home/george/www/property-bag/src/Formatter/DateTimeFormatter.php' => true,
+  '/home/george/www/property-bag/src/Formatter/CsvRowFormatter.php' => true,
   '/home/george/www/property-bag/src/Formatter/AbstractFormatter.php' => true,
   '/home/george/www/property-bag/src/Formatter/BoolFormatter.php' => true,
   '/home/george/www/property-bag/src/Command/GenerateBagCommand.php' => true,
@@ -4973,10 +5647,11 @@ $filter->setWhitelistedFiles(array (
   '/home/george/www/property-bag/src/Normalizer/EmailNormalizer.php' => true,
   '/home/george/www/property-bag/src/Normalizer/EmptyNormalizer.php' => true,
   '/home/george/www/property-bag/src/Normalizer/IntRangeNormalizer.php' => true,
-  '/home/george/www/property-bag/src/MobileCountryCodes.php' => true,
   '/home/george/www/property-bag/src/Exception/NormalizeException.php' => true,
   '/home/george/www/property-bag/src/Exception/PropertyNotFoundException.php' => true,
-  '/home/george/www/property-bag/src/CountriesAndRegions.php' => true,
+  '/home/george/www/property-bag/src/Accessory/Currencies.php' => true,
+  '/home/george/www/property-bag/src/Accessory/MobileCountryCodes.php' => true,
+  '/home/george/www/property-bag/src/Accessory/CountriesAndRegions.php' => true,
 ));
 
 return $coverage;

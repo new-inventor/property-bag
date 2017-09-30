@@ -18,4 +18,7 @@ Interface NormalizerInterface
     public function normalize($value);
     
     public static function make(...$config): NormalizerInterface;
+    
+    public static function asString(): string;
+    public function __toString(): string;
 }

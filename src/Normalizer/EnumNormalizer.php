@@ -9,6 +9,7 @@ namespace NewInventor\PropertyBag\Normalizer;
 
 
 use NewInventor\PropertyBag\Exception\NormalizeException;
+use NewInventor\TypeChecker\TypeChecker;
 
 class EnumNormalizer extends AbstractNormalizer
 {
@@ -27,6 +28,7 @@ class EnumNormalizer extends AbstractNormalizer
      */
     public function __construct(array $availableValues, NormalizerInterface $normalizer = null)
     {
+        TypeChecker::check($availableValues)->inner()->tscalar()->fail();
         $this->availableValues = array_flip(array_unique($availableValues));
         $this->normalizer = $normalizer;
     }
@@ -57,5 +59,26 @@ class EnumNormalizer extends AbstractNormalizer
             $value,
             "Property should be string and one of $values"
         );
+    }
+    
+    public static function asString(...$config): string
+    {
+        $segments = [];
+        foreach($config[0] as $value){
+            if(is_bool($value)){
+                $segments[] = $value ? 'true': 'false';
+            }else{
+                $segments[] = (string)$value;
+            }
+        }
+        if(isset($config[1])) {
+            $segments[] = (string)$config[1];
+        }
+        return parent::asString(). '_' . implode('_', $segments);
+    }
+    
+    public function __toString(): string
+    {
+        return static::asString($this->availableValues, $this->normalizer);
     }
 }

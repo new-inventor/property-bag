@@ -55,7 +55,7 @@ class PhoneNormalizerTest extends \Codeception\Test\Unit
     {
         $normalizer = PhoneNormalizer::make();
         $this->expectException(TypeException::class);
-        $normalizer->normalize(new PhoneNormalizer());
+        $normalizer->normalize(new \stdClass());
     }
     
     public function testNormalizer3()

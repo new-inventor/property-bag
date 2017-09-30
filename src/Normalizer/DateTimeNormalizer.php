@@ -44,4 +44,18 @@ class DateTimeNormalizer extends AbstractNormalizer
         
         return $value;
     }
+    
+    public static function asString(...$config): string
+    {
+        $res = parent::asString();
+        if(isset($config[0])){
+            $res .= '_' . $config[0];
+        }
+        return $res;
+    }
+    
+    public function __toString(): string
+    {
+        return static::asString($this->format);
+    }
 }

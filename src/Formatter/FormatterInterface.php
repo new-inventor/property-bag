@@ -13,4 +13,6 @@ interface FormatterInterface
     public function format($value);
     
     public static function make(...$config): FormatterInterface;
+    
+    public function __toString(): string;
 }

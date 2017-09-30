@@ -44,4 +44,18 @@ class RegExpNormalizer extends AbstractNormalizer
         
         throw new NormalizeException(static::class, $value);
     }
+    
+    public static function asString(...$config): string
+    {
+        $segments = [];
+        if(isset($config[0])){
+            $segments[] = $config[0];
+        }
+        return parent::asString() . '_' . implode('_', $segments);
+    }
+    
+    public function __toString(): string
+    {
+        return static::asString($this->regExp);
+    }
 }

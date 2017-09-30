@@ -46,7 +46,7 @@ class RegExpNormalizerTest extends \Codeception\Test\Unit
     {
         $normalizer = RegExpNormalizer::make('/\d{3}$/');
         $this->expectException(TypeException::class);
-        $normalizer->normalize(new RegExpNormalizer('/^$/'));
+        $normalizer->normalize(new \stdClass());
     }
     
     public function testNormalizer3()

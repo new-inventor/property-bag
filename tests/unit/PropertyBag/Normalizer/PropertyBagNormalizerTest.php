@@ -27,7 +27,6 @@ class PropertyBagNormalizerTest extends \Codeception\Test\Unit
     // tests
     public function testNormalizer()
     {
-        PropertyBag::setCacheDriver(null);
         $normalizer = PropertyBagNormalizer::make(TestBag::class);
         $this->assertEquals(
             '1234567890',
@@ -50,7 +49,6 @@ class PropertyBagNormalizerTest extends \Codeception\Test\Unit
     
     public function testNormalizer1()
     {
-        PropertyBag::setCacheDriver(null);
         $this->expectException(\RuntimeException::class);
         PropertyBagNormalizer::make('class/not/exists');
     }

@@ -5,7 +5,7 @@
  * Date: 27.09.17
  */
 
-namespace NewInventor\PropertyBag\Command;
+namespace TPMailSender\ApiBundle\Command;
 
 
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
@@ -33,6 +33,8 @@ class GenerateBagCommand extends Command
     private $getters = [];
     private $setters = [];
     private $properties = [];
+    private $formatters = [];
+    private $normalizers = [];
     private $listProperties = [];
     private $constProperties = [];
     private $uses = [];
@@ -53,7 +55,7 @@ class GenerateBagCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('bag:generate')
+            ->setName('bag:qwe')
             ->setDescription('Generate property bag from file or directory')
             ->addArgument('config', InputArgument::REQUIRED, 'Path to config')
             ->addArgument('output-dir', InputArgument::REQUIRED, 'Path to generated files')
@@ -133,6 +135,8 @@ class GenerateBagCommand extends Command
         $this->listProperties = [];
         $this->constProperties = [];
         $this->uses = [];
+        $this->formatters = [];
+        $this->normalizers = [];
         $config = Yaml::parse(file_get_contents($file));
         $this->bag = $this->getPropertyBagTemplate();
         $this->namespace = $config['namespace'] ?? '';
@@ -162,10 +166,12 @@ class GenerateBagCommand extends Command
         $this->getters = array_filter($this->getters);
         $this->setters = array_filter($this->setters);
         $this->bag = str_replace(
-            ['%properties%', '%listProperties%', '%constProperties%', '%getters%', '%setters%'],
+            ['%properties%', '%listProperties%', '%normalizers%', '%formatters%', '%constProperties%', '%getters%', '%setters%'],
             [
                 implode(",\n", $this->properties),
                 implode(",\n", $this->listProperties),
+                implode(",\n", $this->normalizers),
+                implode(",\n", $this->formatters),
                 implode("\n", $this->constProperties),
                 implode("\n\n", $this->getters),
                 implode("\n\n", $this->setters),
@@ -220,28 +226,21 @@ class GenerateBagCommand extends Command
     protected function generateProperty(string $listPropertyStr, $propertyConfig): string
     {
         $propertyStr = str_replace('%listProperty%', $listPropertyStr, $this->propertyTemplate());
-        $normalizer = '';
-        $formatter = '';
-        $default = '';
+        $default = 'null';
         if (is_string($propertyConfig)) {
-            $normalizer = '->setNormalizer(' . $this->generateNormalizer($propertyConfig) . ')';
+            $this->normalizers[] = $listPropertyStr . ' => ' . $this->generateNormalizer($propertyConfig);
         } else if (is_array($propertyConfig)) {
             if (isset($propertyConfig['normalizer'])) {
-                $normalizer =
-                    '->setNormalizer(' . $this->generateNormalizer($propertyConfig['normalizer']) . ')';
+                $this->normalizers[] = $listPropertyStr . ' => ' . $this->generateNormalizer($propertyConfig['normalizer']);
             }
             if (isset($propertyConfig['formatter'])) {
-                $formatter = '->setFormatter(' . $this->generateFormatter($propertyConfig['formatter']) . ')';
+                $this->formatters[] = $listPropertyStr . ' => ' . $this->generateFormatter($propertyConfig['formatter']);
             }
             if (isset($propertyConfig['default'])) {
                 $default = $this->generateDefault($propertyConfig['default']);
             }
         }
-        return str_replace(
-            ['%normalizer%', '%formatter%', '%default%'],
-            [$normalizer, $formatter, $default],
-            $propertyStr
-        );
+        return str_replace('%default%', $default, $propertyStr);
     }
     
     protected function generateGetter($config, $propertyName, $ucCamelCasePropertyName): ?string
@@ -445,10 +444,24 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
         ];
     }
     
-    protected function getProperties(): array
+    protected function initProperties(): array
     {
-        return [
+        $this->properties = [
 %properties%
+        ];
+    }
+    
+    protected function initNormalizers(): array
+    {
+        $this->normalizers = [
+%normalizers%
+        ];
+    }
+    
+    protected function initFormatters(): array
+    {
+        $this->formatters = [
+%formatters%
         ];
     }
     
@@ -473,7 +486,7 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
     {
         return '    public function get%ucfirstName%()
     {
-        return $this->properties[%listPropertyName%]->getValue();
+        return $this->properties[%listPropertyName%];
     }';
     }
     
@@ -481,7 +494,7 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
     {
         return '    public function set%ucfirstName%($%varName%)
     {
-        $this->properties[%listPropertyName%]->setValue($%varName%);
+        $this->set(%listPropertyName%, $%varName%);
         
         return $this;
     }';
@@ -494,16 +507,16 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
     
     protected function propertyTemplate()
     {
-        return "%listProperty% => NewInventor\\PropertyBag\\Property::make(%default%)%normalizer%%formatter%";
+        return '%listProperty% => %default%';
     }
     
     protected function normalizerTemplate()
     {
-        return 'new %normalizerName%(%normalizerParameters%)';
+        return '%normalizerName%::make(%normalizerParameters%)';
     }
     
     protected function formatterTemplate()
     {
-        return 'new %formatterName%(%formatterParameters%)';
+        return '%formatterName%::make(%formatterParameters%)';
     }
 }

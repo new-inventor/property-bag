@@ -8,39 +8,18 @@
 namespace NewInventor\PropertyBag;
 
 
-use NewInventor\PropertyBag\Normalizer\CamelCaseNormalizer;
-use NewInventor\PropertyBag\Normalizer\CurrencyNormalizer;
-use NewInventor\PropertyBag\Normalizer\EmailNormalizer;
-use NewInventor\PropertyBag\Normalizer\MccNormalizer;
-use NewInventor\PropertyBag\Normalizer\PhoneNormalizer;
-use NewInventor\PropertyBag\Normalizer\RegExpNormalizer;
-use Psr\SimpleCache\CacheInterface;
 use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
-use NewInventor\PropertyBag\Formatter\ArrayFormatter;
-use NewInventor\PropertyBag\Formatter\BoolFormatter;
-use NewInventor\PropertyBag\Formatter\DateTimeFormatter;
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
-use NewInventor\PropertyBag\Normalizer\ArrayNormalizer;
-use NewInventor\PropertyBag\Normalizer\BoolNormalizer;
-use NewInventor\PropertyBag\Normalizer\CsvRowNormalizer;
-use NewInventor\PropertyBag\Normalizer\DateTimeNormalizer;
-use NewInventor\PropertyBag\Normalizer\EmptyNormalizer;
-use NewInventor\PropertyBag\Normalizer\EnumNormalizer;
-use NewInventor\PropertyBag\Normalizer\FloatNormalizer;
-use NewInventor\PropertyBag\Normalizer\FloatRangeNormalizer;
-use NewInventor\PropertyBag\Normalizer\IntNormalizer;
-use NewInventor\PropertyBag\Normalizer\IntRangeNormalizer;
 use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
-use NewInventor\PropertyBag\Normalizer\PropertyBagNormalizer;
-use NewInventor\PropertyBag\Normalizer\RangeNormalizer;
-use NewInventor\PropertyBag\Normalizer\StringNormalizer;
 
 class PropertyBag implements PropertyBagInterface
 {
-    /** @var Property[] */
+    /** @var mixed[] */
     protected $properties = [];
-    /** @var CacheInterface */
-    protected static $cacheDriver;
+    /** @var NormalizerInterface[] */
+    protected $normalizers = [];
+    /** @var FormatterInterface[] */
+    protected $formatters = [];
     
     /**
      * PropertyBag constructor.
@@ -48,85 +27,35 @@ class PropertyBag implements PropertyBagInterface
      */
     public function __construct()
     {
-        if (self::$cacheDriver !== null) {
-            $cacheKey = $this->getCacheKey();
-            if (self::$cacheDriver->has($cacheKey)) {
-                $this->preloadClasses();
-                $this->properties = self::$cacheDriver->get($cacheKey);
-            } else {
-                $this->properties = $this->getProperties();
-                self::$cacheDriver->set($cacheKey, $this->properties);
-            }
-        } else {
-            $this->properties = $this->getProperties();
-        }
+        $this->initProperties();
+        $this->initNormalizers();
+        $this->initFormatters();
     }
     
-    public function cacheProperties()
+    protected function initProperties(): void
     {
-        $cacheKey = $this->getCacheKey();
-        if (self::$cacheDriver->has($cacheKey)) {
-            self::$cacheDriver->delete($cacheKey);
-        }
-        self::$cacheDriver->set($cacheKey, $this->properties);
+    
     }
     
-    protected function getCacheKey()
+    protected function initNormalizers(): void
     {
-        return str_replace(['\\', '/'], '_', get_class($this));
+    
     }
     
-    public static function setCacheDriver(CacheInterface $driver = null)
+    protected function initFormatters(): void
     {
-        self::$cacheDriver = $driver;
+    
     }
     
-    public static function getCacheDriver(): ?CacheInterface
-    {
-        return self::$cacheDriver;
-    }
-    
-    protected function preloadClasses()
-    {
-        ArrayNormalizer::class;
-        BoolNormalizer::class;
-        CsvRowNormalizer::class;
-        CurrencyNormalizer::class;
-        DateTimeNormalizer::class;
-        EmailNormalizer::class;
-        EmptyNormalizer::class;
-        EnumNormalizer::class;
-        FloatNormalizer::class;
-        FloatRangeNormalizer::class;
-        IntNormalizer::class;
-        IntRangeNormalizer::class;
-        MccNormalizer::class;
-        NormalizerInterface::class;
-        PhoneNormalizer::class;
-        PropertyBagNormalizer::class;
-        RangeNormalizer::class;
-        RegExpNormalizer::class;
-        StringNormalizer::class;
-        Property::class;
-        __CLASS__;
-        PropertyBagInterface::class;
-        BoolFormatter::class;
-        ArrayFormatter::class;
-        DateTimeFormatter::class;
-        FormatterInterface::class;
-        CamelCaseNormalizer::class;
-    }
-    
-    protected function getProperties(): array
-    {
-        return [];
-    }
-    
-    public function addProperty(string $name, Property $property)
-    {
-        $this->properties[$name] = $property;
-        $this->cacheProperties();
-    
+    public function addProperty(
+        string $name,
+        NormalizerInterface $normalizer = null,
+        FormatterInterface $formatter = null
+    ) {
+        $this->properties[$name] = null;
+        $this->normalizers[$name] = $normalizer;
+        $this->formatters[$name] = $formatter;
+        
         return $this;
     }
     
@@ -140,7 +69,10 @@ class PropertyBag implements PropertyBagInterface
     public function set(string $name, $value)
     {
         $this->failIfNotExist($name);
-        $this->properties[$name]->setValue($value);
+        if ($this->propertyHasNormalizer($name)) {
+            $value = $this->normalizers[$name]->normalize($value);
+        }
+        $this->properties[$name] = $value;
         
         return $this;
     }
@@ -155,7 +87,7 @@ class PropertyBag implements PropertyBagInterface
     {
         $this->failIfNotExist($name);
         
-        return $this->properties[$name]->getValue();
+        return $this->properties[$name];
     }
     
     /**
@@ -168,7 +100,19 @@ class PropertyBag implements PropertyBagInterface
     {
         $this->failIfNotExist($name);
         
-        return $this->properties[$name]->getFormattedValue();
+        return $this->propertyHasFormatter($name) ?
+            $this->formatters[$name]->format($this->properties[$name]) :
+            $this->properties[$name];
+    }
+    
+    protected function propertyHasFormatter($name): bool
+    {
+        return array_key_exists($name, $this->formatters) && $this->formatters[$name] !== null;
+    }
+    
+    protected function propertyHasNormalizer($name): bool
+    {
+        return array_key_exists($name, $this->normalizers) && $this->normalizers[$name] !== null;
     }
     
     /**
@@ -180,7 +124,9 @@ class PropertyBag implements PropertyBagInterface
     {
         $res = $this->toRawArray();
         foreach ($res as $param => $value) {
-            $res[$param] = $this->getFormatted($param);
+            if($this->propertyHasFormatter($param)) {
+                $res[$param] = $this->formatters[$param]->format($value);
+            }
         }
         
         return $res;
@@ -188,16 +134,7 @@ class PropertyBag implements PropertyBagInterface
     
     public function toRawArray(): array
     {
-        $res = [];
-        foreach ($this->properties as $parameterName => $parameter) {
-            $value = $parameter->getValue();
-            if ($value === null) {
-                continue;
-            }
-            $res[$parameterName] = $value;
-        }
-        
-        return $res;
+        return $this->properties;
     }
     
     /**

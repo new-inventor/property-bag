@@ -50,7 +50,7 @@ class EmailNormalizerTest extends \Codeception\Test\Unit
     {
         $normalizer = new EmailNormalizer();
         $this->expectException(TypeException::class);
-        $normalizer->normalize(new EmailNormalizer());
+        $normalizer->normalize(new \stdClass());
     }
     
     // tests

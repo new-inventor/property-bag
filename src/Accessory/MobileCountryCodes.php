@@ -5,7 +5,7 @@
  * Date: 14.09.17
  */
 
-namespace NewInventor\PropertyBag;
+namespace NewInventor\PropertyBag\Accessory;
 
 
 class MobileCountryCodes

@@ -8,7 +8,7 @@
 namespace NewInventor\PropertyBag\Normalizer;
 
 
-use NewInventor\PropertyBag\MobileCountryCodes;
+use NewInventor\PropertyBag\Accessory\MobileCountryCodes;
 
 class MccNormalizer extends EnumNormalizer
 {

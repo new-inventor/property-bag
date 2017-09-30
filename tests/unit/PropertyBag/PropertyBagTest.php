@@ -4,14 +4,8 @@ namespace PropertyBag;
 
 
 use Codeception\Test\Unit;
-use Codeception\Util\Stub;
-use Psr\SimpleCache\CacheInterface;
-use Symfony\Component\Cache\Simple\FilesystemCache;
-use Symfony\Component\Filesystem\Filesystem;
 use TestsPropertyBag\TestBag;
 use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
-use NewInventor\PropertyBag\Normalizer\IntNormalizer;
-use NewInventor\PropertyBag\Property;
 use NewInventor\PropertyBag\PropertyBag;
 
 class PropertyBagTest extends Unit
@@ -27,63 +21,6 @@ class PropertyBagTest extends Unit
     
     protected function _after()
     {
-    }
-    
-    public function testCache()
-    {
-        $cacheDir = __DIR__ . '/cache';
-        $fs = new Filesystem();
-        $fs->remove($cacheDir);
-        $cacheDriver = Stub::construct(
-            FilesystemCache::class,
-            ['', 0, $cacheDir],
-            [
-                'has' => Stub::consecutive(false, true),
-            ]
-        );
-        PropertyBag::setCacheDriver($cacheDriver);
-        TestBag::make();
-        $this->assertGreaterThan(0, $this->folderSize($cacheDir));
-        /** @noinspection SuspiciousAssignmentsInspection */
-        TestBag::make();
-        $this->assertTrue(is_a(PropertyBag::getCacheDriver(), CacheInterface::class));
-        $fs->remove($cacheDir);
-        PropertyBag::setCacheDriver();
-    }
-    
-    public function testCacheProperties()
-    {
-        $cacheDir = __DIR__ . '/cache';
-        $fs = new Filesystem();
-        $fs->remove($cacheDir);
-        $cacheDriver = Stub::construct(
-            FilesystemCache::class,
-            ['', 0, $cacheDir],
-            [
-                'has' => Stub::consecutive(false, true, true),
-            ]
-        );
-        PropertyBag::setCacheDriver($cacheDriver);
-        $testBag = TestBag::make();
-        $beforeSize = $this->folderSize($cacheDir);
-        $this->assertGreaterThan(0, $beforeSize);
-        /** @noinspection SuspiciousAssignmentsInspection */
-        $testBag->addProperty('prop0', Property::make('1')->setNormalizer(IntNormalizer::make()));
-        $this->assertEquals(1, $testBag->get('prop0'));
-        $afterSize = $this->folderSize($cacheDir);
-        $this->assertNotEquals($beforeSize, $afterSize);
-        $fs->remove($cacheDir);
-        PropertyBag::setCacheDriver();
-    }
-    
-    protected function folderSize($dir)
-    {
-        $size = 0;
-        foreach (glob(rtrim($dir, '/') . '/*', GLOB_NOSORT) as $each) {
-            $size += is_file($each) ? filesize($each) : $this->folderSize($each);
-        }
-        
-        return $size;
     }
     
     public function testGet()

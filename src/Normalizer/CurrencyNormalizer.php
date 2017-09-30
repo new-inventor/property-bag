@@ -8,13 +8,14 @@
 namespace NewInventor\PropertyBag\Normalizer;
 
 
-use NewInventor\PropertyBag\Currencies;
+use NewInventor\PropertyBag\Accessory\Currencies;
 use NewInventor\PropertyBag\Exception\NormalizeException;
 
 class CurrencyNormalizer extends EnumNormalizer
 {
     /**
      * CurrencyNormalizer constructor.
+     * @throws \NewInventor\TypeChecker\Exception\TypeException
      */
     public function __construct()
     {

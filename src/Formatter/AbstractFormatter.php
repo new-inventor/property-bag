@@ -10,11 +10,17 @@ namespace NewInventor\PropertyBag\Formatter;
 
 abstract class AbstractFormatter implements FormatterInterface
 {
+    private static $pool = [];
+    
     public static function make(...$config): FormatterInterface
     {
-        /** @noinspection PhpIncompatibleReturnTypeInspection */
-        /** @noinspection PhpMethodParametersCountMismatchInspection */
-        return new static(...$config);
+        $key = static::asString(...$config);
+        if(!isset(self::$pool[$key])){
+            /** @noinspection PhpIncompatibleReturnTypeInspection */
+            /** @noinspection PhpMethodParametersCountMismatchInspection */
+            self::$pool[$key] = new static(...$config);
+        }
+        return self::$pool[$key];
     }
     
     public function format($value)
@@ -37,8 +43,15 @@ abstract class AbstractFormatter implements FormatterInterface
     
     }
     
-    protected function formatInputValue($value)
+    abstract protected function formatInputValue($value);
+    
+    public static function asString(...$config): string
     {
-        return (string)$value;
+        return static::class;
+    }
+    
+    public function __toString(): string
+    {
+        return static::asString();
     }
 }

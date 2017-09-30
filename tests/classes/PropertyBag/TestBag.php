@@ -16,15 +16,28 @@ use NewInventor\PropertyBag\PropertyBag;
 
 class TestBag extends PropertyBag
 {
-    protected function getProperties(): array
+    protected function initProperties(): void
     {
-        return [
-            'prop1' => Property::make(),
-            'prop2' => Property::make(1),
-            'prop3' => Property::make()->setNormalizer(StringNormalizer::make()),
-            'prop4' => Property::make()
-                ->setNormalizer(DateTimeNormalizer::make('d.m.Y'))
-                ->setFormatter(DateTimeFormatter::make('d.m.Y')),
+        $this->properties = [
+            'prop1' => null,
+            'prop2' => 1,
+            'prop3' => null,
+            'prop4' => null,
+        ];
+    }
+    
+    protected function initNormalizers(): void
+    {
+        $this->normalizers = [
+            'prop3' => StringNormalizer::make(),
+            'prop4' => DateTimeNormalizer::make('d.m.Y'),
+        ];
+    }
+    
+    protected function initFormatters(): void
+    {
+        $this->formatters = [
+            'prop4' => DateTimeFormatter::make('d.m.Y')
         ];
     }
 }

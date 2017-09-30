@@ -3,13 +3,14 @@
 namespace PropertyBag\Formatter;
 
 
+use NewInventor\PropertyBag\Normalizer\CsvRowNormalizer;
 use TestsPropertyBag\TestIteratorArrayAccess;
 use TestsPropertyBag\TestStringable;
-use NewInventor\PropertyBag\Formatter\ArrayFormatter;
+use NewInventor\PropertyBag\Formatter\CsvRowFormatter;
 use NewInventor\PropertyBag\Formatter\BoolFormatter;
 use NewInventor\TypeChecker\Exception\TypeException;
 
-class ArrayFormatterTest extends \Codeception\Test\Unit
+class CsvRowFormatterTest extends \Codeception\Test\Unit
 {
     /**
      * @var \UnitTester
@@ -28,15 +29,16 @@ class ArrayFormatterTest extends \Codeception\Test\Unit
     public function testFormatter()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        /** @var ArrayFormatter $formatter */
-        $formatter = ArrayFormatter::make()->setSeparator('|');
+        CsvRowFormatter::setSeparator('|');
+        /** @var CsvRowFormatter $formatter */
+        $formatter = CsvRowFormatter::make();
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->assertSame('|', $formatter->getSeparator());
+        $this->assertSame('|', CsvRowFormatter::getSeparator());
         $this->assertNull($formatter->format(null));
         $this->assertSame('', $formatter->format([]));
         $this->assertSame('', $formatter->format([null]));
         $this->assertSame(
-            '1234567890|1|23232',
+            '1234567890|1|"23232"',
             $formatter->format(
                 [
                     new TestStringable(),
@@ -46,16 +48,16 @@ class ArrayFormatterTest extends \Codeception\Test\Unit
             )
         );
         /** @noinspection PhpUndefinedMethodInspection */
-        $formatter = ArrayFormatter::make(
+        $formatter = CsvRowFormatter::make(
             null,
             null,
             BoolFormatter::make('true', 'false')
-        )->setSeparator('|');
+        );
         $iterator = new TestIteratorArrayAccess();
         $iterator->parameters[] = '1';
         $iterator->parameters[] = 3;
         $iterator->parameters[] = false;
-        $this->assertEquals('1|3|false', $formatter->format($iterator));
+        $this->assertEquals('"1"|3|"false"', $formatter->format($iterator));
         $this->expectException(TypeException::class);
         $formatter->format(
             [
@@ -69,43 +71,43 @@ class ArrayFormatterTest extends \Codeception\Test\Unit
     
     public function testFormatter1()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
         $formatter->format('');
     }
     
     public function testFormatter2()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
         $formatter->format(false);
     }
     
     public function testFormatter3()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
         $formatter->format(1);
     }
     
     public function testFormatter4()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
         $formatter->format(1.1);
     }
     
     public function testFormatter5()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
-        $formatter->format(new ArrayFormatter());
+        $formatter->format(new CsvRowFormatter());
     }
     
     public function testFormatter6()
     {
-        $formatter = ArrayFormatter::make();
+        $formatter = CsvRowFormatter::make();
         $this->expectException(TypeException::class);
-        $formatter->format([new ArrayFormatter()]);
+        $formatter->format([new \stdClass()]);
     }
 }

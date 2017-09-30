@@ -35,7 +35,7 @@ class StringNormalizerTest extends \Codeception\Test\Unit
     {
         $normalizer = StringNormalizer::make();
         $this->expectException(TypeException::class);
-        $normalizer->normalize(new StringNormalizer());
+        $normalizer->normalize(new \stdClass());
     }
     
     public function testNormalizer2()

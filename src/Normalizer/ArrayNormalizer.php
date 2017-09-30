@@ -50,4 +50,18 @@ class ArrayNormalizer extends AbstractNormalizer
         
         return $value;
     }
+    
+    public static function asString(...$config): string
+    {
+        $normalizers = [];
+        foreach($config as $normalizer){
+            $normalizers[] = (string)$normalizer;
+        }
+        return parent::asString() . '_' . implode('_', $normalizers);
+    }
+    
+    public function __toString(): string
+    {
+        return static::asString(...$this->normalizers);
+    }
 }

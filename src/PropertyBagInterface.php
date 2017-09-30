@@ -9,9 +9,16 @@ namespace NewInventor\PropertyBag;
 
 
 use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
+use NewInventor\PropertyBag\Formatter\FormatterInterface;
+use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
 
 interface PropertyBagInterface
 {
+    public function addProperty(
+        string $name,
+        NormalizerInterface $normalizer = null,
+        FormatterInterface $formatter = null
+    );
     /**
      * @param string $name
      * @param mixed  $value
