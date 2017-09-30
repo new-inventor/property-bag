@@ -55,7 +55,7 @@ class GenerateBagCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('bag:qwe')
+            ->setName('bag:generate')
             ->setDescription('Generate property bag from file or directory')
             ->addArgument('config', InputArgument::REQUIRED, 'Path to config')
             ->addArgument('output-dir', InputArgument::REQUIRED, 'Path to generated files')
