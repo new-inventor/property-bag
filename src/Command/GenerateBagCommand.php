@@ -437,28 +437,28 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
     //GeneratedCodeBegin
 %constProperties%
     
-    public static function availableProperties()
+    public static function availableProperties(): array
     {
         return [
 %listProperties%
         ];
     }
     
-    protected function initProperties(): array
+    protected function initProperties(): void
     {
         $this->properties = [
 %properties%
         ];
     }
     
-    protected function initNormalizers(): array
+    protected function initNormalizers(): void
     {
         $this->normalizers = [
 %normalizers%
         ];
     }
     
-    protected function initFormatters(): array
+    protected function initFormatters(): void
     {
         $this->formatters = [
 %formatters%
