@@ -20,7 +20,6 @@
   "require-dev": {
     "codeception/codeception": "2.3.*",
     "phpunit/phpunit": "^5.7",
-    "symfony/cache": "^3.3",
     "symfony/filesystem": "3.3.*"
   },
   "suggest": {
