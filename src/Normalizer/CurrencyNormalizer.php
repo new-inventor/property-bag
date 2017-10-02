@@ -46,4 +46,9 @@ class CurrencyNormalizer extends EnumNormalizer
             "Property should be string and one of $values or same in lower case"
         );
     }
+    
+    public static function asString(...$config): string
+    {
+        return static::class;
+    }
 }

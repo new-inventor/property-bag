@@ -16,4 +16,9 @@ class MccNormalizer extends EnumNormalizer
     {
         parent::__construct(MobileCountryCodes::$list, IntNormalizer::make());
     }
+    
+    public static function asString(...$config): string
+    {
+        return static::class;
+    }
 }

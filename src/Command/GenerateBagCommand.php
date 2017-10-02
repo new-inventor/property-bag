@@ -432,6 +432,8 @@ class GenerateBagCommand extends Command
                 $res[] = $this->generateFormatter($parameter['formatter']);
             } else if (is_string($parameter)) {
                 $res[] = "'$parameter'";
+            } else if (is_bool($parameter)) {
+                $res[] = $parameter ? 'true' : 'false';
             } else if (is_scalar($parameter)) {
                 $res[] = (string)$parameter;
             } else if (is_array($parameter)) {

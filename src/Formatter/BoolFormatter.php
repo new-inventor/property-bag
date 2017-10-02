@@ -40,7 +40,7 @@ class BoolFormatter extends AbstractFormatter
     
     public function validateInputTypes($value)
     {
-        TypeChecker::check($value)->tnull()->tbool()->fail();
+        TypeChecker::check($value)->tnull()->tscalar()->fail();
     }
     
     public static function asString(...$config): string
@@ -54,10 +54,5 @@ class BoolFormatter extends AbstractFormatter
         }
         
         return parent::asString() . '_' . implode('_', $values);
-    }
-    
-    public function __toString(): string
-    {
-        return static::asString($this->true, $this->false);
     }
 }
