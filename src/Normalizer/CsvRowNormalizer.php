@@ -30,6 +30,9 @@ class CsvRowNormalizer extends ArrayNormalizer
                 break;
             }
         }
+        if($i === 0 && !is_string($normalizers[$i])){
+            return;
+        }
         if(count($normalizers) > $i + 3){
             throw new \InvalidArgumentException('Separator, Enclosure, Escepe parameters shoul be in the end of parameters list');
         }

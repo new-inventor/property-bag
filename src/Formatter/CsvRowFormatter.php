@@ -40,6 +40,9 @@ class CsvRowFormatter extends AbstractFormatter
                 break;
             }
         }
+        if($i === 0 && !is_string($formatter[$i])){
+            return;
+        }
         if(count($formatters) > $i + 3){
             throw new \InvalidArgumentException('Separator, Enclosure, Escepe parameters should be in the end of parameters list');
         }
