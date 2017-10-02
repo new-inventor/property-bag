@@ -34,19 +34,19 @@ class CsvRowNormalizerTest extends \Codeception\Test\Unit
         $this->assertNull($normalizer->normalize(null));
         $this->assertSame([null], $normalizer->normalize([null]));
         $this->assertSame([null, 23, 34234], $normalizer->normalize([null, 23, 34234]));
-        CsvRowNormalizer::setSeparator('|');
         /** @var CsvRowNormalizer $normalizer */
-        $normalizer = CsvRowNormalizer::make();
+        $normalizer = CsvRowNormalizer::make('|');
         $this->assertSame(['123', '456', '789'], $normalizer->normalize('123|456|789'));
         $this->assertSame(['123', '456', '', ''], $normalizer->normalize('123|456||'));
         $stringable = new TestStringable();
         $this->assertSame([null, 23, 'dsfadf', $stringable], $normalizer->normalize([null, 23, 'dsfadf', $stringable]));
-        $normalizer = CsvRowNormalizer::make(IntNormalizer::make());
+        $normalizer = CsvRowNormalizer::make(IntNormalizer::make(), '|');
         $this->assertSame([123, 456, 789, 123], $normalizer->normalize('123|456|789|123.2'));
         $normalizer = CsvRowNormalizer::make(
             IntNormalizer::make(),
             IntNormalizer::make(),
-            StringNormalizer::make()
+            StringNormalizer::make(),
+            '|'
         );
         $this->assertSame([123, 456, '789'], $normalizer->normalize('123|456|789'));
         $this->assertSame([123], $normalizer->normalize('123'));

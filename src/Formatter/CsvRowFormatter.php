@@ -15,74 +15,100 @@ class CsvRowFormatter extends AbstractFormatter
     /** @var FormatterInterface[] */
     protected $formatters;
     /** @var string */
-    protected static $separator = ',';
+    protected $separator = ',';
     /** @var string */
-    protected static $enclosure = '"';
+    protected $enclosure = '"';
     /** @var string */
-    protected static $escape = '\\';
+    protected $escape = '\\';
     
     /**
      * ArrayFormatter constructor.
      *
-     * @param FormatterInterface[] $formatters
+     * @param FormatterInterface[]|string[] $formatters
+     *
+     * @throws \NewInventor\TypeChecker\Exception\TypeException
+     * @throws \InvalidArgumentException
      */
     public function __construct(...$formatters)
     {
-        $this->formatters = $formatters;
+        $i = 0;
+        foreach($formatters as $key => $formatter){
+            if($formatter instanceof FormatterInterface || $formatter === null){
+                $this->formatters[] = $formatter;
+            }else{
+                $i = $key;
+                break;
+            }
+        }
+        if(count($formatters) > $i + 3){
+            throw new \InvalidArgumentException('Separator, Enclosure, Escepe parameters should be in the end of parameters list');
+        }
+        if(isset($formatters[$i])){
+            TypeChecker::check($formatters[$i])->tstring()->fail();
+            $this->separator = $formatters[$i];
+        }
+        if(isset($formatters[$i + 1])){
+            TypeChecker::check($formatters[$i])->tstring()->fail();
+            $this->enclosure = $formatters[$i + 1];
+        }
+        if(isset($formatters[$i + 2])){
+            TypeChecker::check($formatters[$i])->tstring()->fail();
+            $this->escape = $formatters[$i + 2];
+        }
     }
     
     /**
      * @return string
      */
-    public static function getSeparator(): string
+    public function getSeparator(): string
     {
-        return self::$separator;
+        return $this->separator;
     }
     
     /**
      * @param string $separator
      */
-    public static function setSeparator(string $separator)
+    public function setSeparator(string $separator)
     {
-        self::$separator = $separator;
+        $this->separator = $separator;
     }
     
     /**
      * @return string
      */
-    public static function getEnclosure(): string
+    public function getEnclosure(): string
     {
-        return self::$enclosure;
+        return $this->enclosure;
     }
     
     /**
      * @param string $enclosure
      */
-    public static function setEnclosure(string $enclosure)
+    public function setEnclosure(string $enclosure)
     {
-        self::$enclosure = $enclosure;
+        $this->enclosure = $enclosure;
     }
     
     /**
      * @return string
      */
-    public static function getEscape(): string
+    public function getEscape(): string
     {
-        return self::$escape;
+        return $this->escape;
     }
     
     /**
      * @param string $escape
      */
-    public static function setEscape(string $escape)
+    public function setEscape(string $escape)
     {
-        self::$escape = $escape;
+        $this->escape = $escape;
     }
     
     protected function formatInputValue($value): ?string
     {
         if (
-            $this->formatters !== [] &&
+            !empty($this->formatters) &&
             (
                 is_array($value) ||
                 (
@@ -93,16 +119,15 @@ class CsvRowFormatter extends AbstractFormatter
             $i = 0;
             $currentFormatter = $this->formatters[$i];
             foreach ($value as $key => $item) {
-                if(!is_scalar($value[$key]) || (is_object($value[$key]) && !method_exists($value[$key], '__toString'))){
-                    throw new \InvalidArgumentException('Inner value of iterator must be scalar or object with __toString() method.');
-                }
-                if ($currentFormatter !== null) {
+                if($currentFormatter !== null){
                     $value[$key] = $currentFormatter->format($item);
                 }
                 if (array_key_exists(++$i, $this->formatters)) {
                     $currentFormatter = $this->formatters[$i];
                 }
             }
+        }
+        if($value instanceof \Iterator && $value instanceof \ArrayAccess){
             $value = iterator_to_array($value);
         }
         array_walk($value, function (&$item, $key, $params){
@@ -115,8 +140,8 @@ class CsvRowFormatter extends AbstractFormatter
                         ) .
                         $params['enclosure'];
             }
-        }, ['enclosure' => self::$enclosure, 'escape' => self::$escape]);
-        $value = implode(self::$separator, $value);
+        }, ['enclosure' => $this->enclosure, 'escape' => $this->escape]);
+        $value = implode($this->separator, $value);
         
         return $value;
     }
@@ -148,7 +173,7 @@ class CsvRowFormatter extends AbstractFormatter
         foreach($config as $normalizer){
             $normalizers[] = (string)$normalizer;
         }
-        return parent::asString() . '_' . implode('_', $normalizers) . '_' . self::$separator . '_' . self::$enclosure . '_' . self::$escape;
+        return parent::asString() . '_' . implode('_', $normalizers);
     }
     
     public function __toString(): string

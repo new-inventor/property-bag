@@ -3,7 +3,6 @@
 namespace PropertyBag\Formatter;
 
 
-use NewInventor\PropertyBag\Normalizer\CsvRowNormalizer;
 use TestsPropertyBag\TestIteratorArrayAccess;
 use TestsPropertyBag\TestStringable;
 use NewInventor\PropertyBag\Formatter\CsvRowFormatter;
@@ -29,11 +28,10 @@ class CsvRowFormatterTest extends \Codeception\Test\Unit
     public function testFormatter()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        CsvRowFormatter::setSeparator('|');
         /** @var CsvRowFormatter $formatter */
-        $formatter = CsvRowFormatter::make();
+        $formatter = CsvRowFormatter::make('|');
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->assertSame('|', CsvRowFormatter::getSeparator());
+        $this->assertSame('|', $formatter->getSeparator());
         $this->assertNull($formatter->format(null));
         $this->assertSame('', $formatter->format([]));
         $this->assertSame('', $formatter->format([null]));
@@ -51,7 +49,8 @@ class CsvRowFormatterTest extends \Codeception\Test\Unit
         $formatter = CsvRowFormatter::make(
             null,
             null,
-            BoolFormatter::make('true', 'false')
+            BoolFormatter::make('true', 'false'),
+            '|'
         );
         $iterator = new TestIteratorArrayAccess();
         $iterator->parameters[] = '1';

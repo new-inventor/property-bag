@@ -13,58 +13,86 @@ use NewInventor\TypeChecker\TypeChecker;
 class CsvRowNormalizer extends ArrayNormalizer
 {
     /** @var string */
-    protected static $separator = ',';
+    protected $separator = ',';
     /** @var string */
-    protected static $enclosure = '"';
+    protected $enclosure = '"';
     /** @var string */
-    protected static $escape = '\\';
+    protected $escape = '\\';
+    
+    public function __construct(...$normalizers)
+    {
+        $i = 0;
+        foreach($normalizers as $key => $normalizer){
+            if($normalizer instanceof NormalizerInterface || $normalizer === null){
+                $this->normalizers[] = $normalizer;
+            }else{
+                $i = $key;
+                break;
+            }
+        }
+        if(count($normalizers) > $i + 3){
+            throw new \InvalidArgumentException('Separator, Enclosure, Escepe parameters shoul be in the end of parameters list');
+        }
+        if(isset($normalizers[$i])){
+            TypeChecker::check($normalizers[$i])->tstring()->fail();
+            $this->separator = $normalizers[$i];
+        }
+        if(isset($normalizers[$i + 1])){
+            TypeChecker::check($normalizers[$i])->tstring()->fail();
+            $this->enclosure = $normalizers[$i + 1];
+        }
+        if(isset($normalizers[$i + 2])){
+            TypeChecker::check($normalizers[$i])->tstring()->fail();
+            $this->escape = $normalizers[$i + 2];
+        }
+    }
     
     /**
      * @return string
      */
-    public static function getSeparator(): string
+    public function getSeparator(): string
     {
-        return self::$separator;
+        return $this->separator;
     }
     
     /**
      * @param string $separator
      */
-    public static function setSeparator(string $separator)
+    public function setSeparator(string $separator)
     {
-        self::$separator = $separator;
+        $this->separator = $separator;
     }
     
     /**
      * @return string
      */
-    public static function getEnclosure(): string
+    public function getEnclosure(): string
     {
-        return self::$enclosure;
+        return $this->enclosure;
     }
     
     /**
      * @param string $enclosure
      */
-    public static function setEnclosure(string $enclosure)
+    public function setEnclosure(string $enclosure)
     {
-        self::$enclosure = $enclosure;
+        $this->enclosure = $enclosure;
     }
     
     /**
      * @return string
      */
-    public static function getEscape(): string
+    public function getEscape(): string
     {
-        return self::$escape;
+        return $this->escape;
     }
     
     /**
      * @param string $escape
      */
-    public static function setEscape(string $escape)
+    public function setEscape(string $escape)
     {
-        self::$escape = $escape;
+        $this->escape = $escape;
     }
     
     protected function validateInputTypes($value)
@@ -83,17 +111,12 @@ class CsvRowNormalizer extends ArrayNormalizer
     protected function parseInputValue($value)
     {
         if (is_string($value)) {
-            $value = str_getcsv($value, self::$separator, self::$enclosure, self::$escape);
+            $value = str_getcsv($value, $this->separator, $this->enclosure, $this->escape);
         }
         if (!is_array($value)) {
             $value = (array)$value;
         }
     
         return $value;
-    }
-    
-    public static function asString(...$config): string
-    {
-        return parent::asString(...$config) . '_' . self::$separator . '_' . self::$enclosure . '_' . self::$escape;
     }
 }

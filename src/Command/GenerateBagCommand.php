@@ -12,6 +12,7 @@ use NewInventor\PropertyBag\Formatter\FormatterInterface;
 use NewInventor\PropertyBag\Normalizer\CamelCaseNormalizer;
 use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
 use NewInventor\PropertyBag\Normalizer\ScreamingCaseNormalizer;
+use NewInventor\PropertyBag\PropertyBag;
 use NewInventor\TypeChecker\TypeChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -27,7 +28,6 @@ class GenerateBagCommand extends Command
     private $fileSystem;
     /** @var string */
     private $callPath;
-    
     private $namespace = '';
     private $className = '';
     private $getters = [];
@@ -44,6 +44,7 @@ class GenerateBagCommand extends Command
     private $baseNamespace;
     private $force;
     
+    protected static $rootParent = PropertyBag::class;
     
     public function __construct($name = null)
     {
@@ -146,35 +147,90 @@ class GenerateBagCommand extends Command
             ["namespace $this->namespace", $this->className],
             $this->bag
         );
-        if (is_array($config['properties'])) {
+        if (isset($config['properties']) && is_array($config['properties'])) {
             foreach ($config['properties'] as $property => $propertyConfig) {
                 $screamingCasePropertyName = ScreamingCaseNormalizer::make()->normalize($property);
                 $camelCasePropertyName = CamelCaseNormalizer::make()->normalize($property);
                 $ucCamelCasePropertyName = ucfirst($camelCasePropertyName);
                 $listPropertyStr = $this->generateListProperty($screamingCasePropertyName);
-                $this->listProperties[] = '            ' . $listPropertyStr;
+                $this->listProperties[] = '                ' . $listPropertyStr;
                 $this->constProperties[] = $this->generateConstProperty($property, $screamingCasePropertyName);
-                $this->properties[] = $this->generateProperty('            ' . $listPropertyStr, $propertyConfig);
+                $this->properties[] = $this->generateProperty('                ' . $listPropertyStr, $propertyConfig);
                 if (isset($config['getters'])) {
-                    $this->getters[] = $this->generateGetter($config['getters'], $listPropertyStr, $ucCamelCasePropertyName);
+                    $this->getters[] =
+                        $this->generateGetter($config['getters'], $property, $listPropertyStr, $ucCamelCasePropertyName);
                 }
                 if (isset($config['setters'])) {
-                    $this->setters[] = $this->generateSetter($config['setters'], $listPropertyStr, $ucCamelCasePropertyName, $camelCasePropertyName);
+                    $this->setters[] = $this->generateSetter(
+                        $config['setters'],
+                        $property,
+                        $listPropertyStr,
+                        $ucCamelCasePropertyName,
+                        $camelCasePropertyName
+                    );
                 }
             }
         }
         $this->getters = array_filter($this->getters);
         $this->setters = array_filter($this->setters);
-        $this->bag = str_replace(
-            ['%properties%', '%listProperties%', '%normalizers%', '%formatters%', '%constProperties%', '%getters%', '%setters%'],
-            [
+        $parent = $config['parent'] ?? self::$rootParent;
+        $abstract = $this->isAbstract($config) ? 'abstract ' : '';
+        $propertiesIniter = '';
+        if(count($this->properties) > 0){
+            $template = $this->propertiesIniterTemplate();
+            if($parent !== self::$rootParent){
+                $template = $this->propertiesChildIniterTemplate();
+            }
+            $propertiesIniter = str_replace(
+                '%properties%',
                 implode(",\n", $this->properties),
-                implode(",\n", $this->listProperties),
+                $template
+            );
+        }
+        $normalizersIniter = '';
+        if(count($this->normalizers) > 0){
+            $template = $this->normalizersIniterTemplate();
+            if($parent !== self::$rootParent){
+                $template = $this->normalizersChildIniterTemplate();
+            }
+            $normalizersIniter = str_replace(
+                '%normalizers%',
                 implode(",\n", $this->normalizers),
+                $template
+            );
+        }
+        $formattersIniter = '';
+        if(count($this->formatters) > 0){
+            $template = $this->formattersIniterTemplate();
+            if($parent !== self::$rootParent){
+                $template = $this->formattersChildIniterTemplate();
+            }
+            $formattersIniter = str_replace(
+                '%formatters%',
                 implode(",\n", $this->formatters),
+                $template
+            );
+        }
+        $this->bag = str_replace(
+            [
+                '%propertiesIniter%',
+                '%normalizersIniter%',
+                '%formattersIniter%',
+                '%constProperties%',
+                '%getters%',
+                '%setters%',
+                '%parent%',
+                '%abstract%',
+            ],
+            [
+                $propertiesIniter,
+                $normalizersIniter,
+                $formattersIniter,
                 implode("\n", $this->constProperties),
                 implode("\n\n", $this->getters),
                 implode("\n\n", $this->setters),
+                $parent,
+                $abstract,
             ],
             $this->bag
         );
@@ -183,6 +239,7 @@ class GenerateBagCommand extends Command
         $this->generateUses($config);
         /** @noinspection NotOptimalRegularExpressionsInspection */
         $this->bag = preg_replace('/(\\\\?\w+(?:\\\\\w+)*\\\\)(?=\w+(?:::|->|\(|\n))/', '', $this->bag);
+        $this->bag = preg_replace('/\n{4,}/', "\n", $this->bag);
         
         if (!$this->force && file_exists($fileName)) {
             $currentContent = file_get_contents($fileName);
@@ -193,6 +250,11 @@ class GenerateBagCommand extends Command
         
         $this->fileSystem->mkdir($dirName);
         $this->fileSystem->dumpFile($fileName, $this->bag);
+    }
+    
+    protected function isAbstract($config)
+    {
+        return isset($config['abstract']) && $config['abstract'];
     }
     
     protected function getOutputDirName($namespace)
@@ -231,39 +293,44 @@ class GenerateBagCommand extends Command
             $this->normalizers[] = $listPropertyStr . ' => ' . $this->generateNormalizer($propertyConfig);
         } else if (is_array($propertyConfig)) {
             if (isset($propertyConfig['normalizer'])) {
-                $this->normalizers[] = $listPropertyStr . ' => ' . $this->generateNormalizer($propertyConfig['normalizer']);
+                $this->normalizers[] =
+                    $listPropertyStr . ' => ' . $this->generateNormalizer($propertyConfig['normalizer']);
             }
             if (isset($propertyConfig['formatter'])) {
-                $this->formatters[] = $listPropertyStr . ' => ' . $this->generateFormatter($propertyConfig['formatter']);
+                $this->formatters[] =
+                    $listPropertyStr . ' => ' . $this->generateFormatter($propertyConfig['formatter']);
             }
             if (isset($propertyConfig['default'])) {
                 $default = $this->generateDefault($propertyConfig['default']);
             }
         }
+        
         return str_replace('%default%', $default, $propertyStr);
     }
     
-    protected function generateGetter($config, $propertyName, $ucCamelCasePropertyName): ?string
+    protected function generateGetter($config, $propertyName, $listPropertyName, $ucCamelCasePropertyName): ?string
     {
         if ($this->canGenerateGetterOrSetter($config, $propertyName)) {
             return str_replace(
                 ['%listPropertyName%', '%ucfirstName%'],
-                [$propertyName, $ucCamelCasePropertyName],
+                [$listPropertyName, $ucCamelCasePropertyName],
                 $this->getterTemplate()
             );
         }
+        
         return null;
     }
     
-    protected function generateSetter($config, $propertyName, $ucCamelCasePropertyName, $camelCasePropertyName): ?string
+    protected function generateSetter($config, $propertyName, $listPropertyName, $ucCamelCasePropertyName, $camelCasePropertyName): ?string
     {
         if ($this->canGenerateGetterOrSetter($config, $propertyName)) {
             return str_replace(
                 ['%listPropertyName%', '%ucfirstName%', '%varName%'],
-                [$propertyName, $ucCamelCasePropertyName, $camelCasePropertyName],
+                [$listPropertyName, $ucCamelCasePropertyName, $camelCasePropertyName],
                 $this->setterTemplate()
             );
         }
+        
         return null;
     }
     
@@ -274,6 +341,10 @@ class GenerateBagCommand extends Command
         $matches = array_unique($matches[0]);
         foreach ($matches as $use) {
             if ($use === $config['namespace'] . '\\' . $this->className) {
+                continue;
+            }
+            $namespaceLength = strlen($config['namespace']);
+            if(strpos($use, $config['namespace']) !== false && strpos($use, '\\', $namespaceLength + 2) === false){
                 continue;
             }
             $this->uses[] = str_replace('%class%', $use, $this->useTemplate());
@@ -330,10 +401,10 @@ class GenerateBagCommand extends Command
             $res['fullName'] = $this->getNormalizerFullName($normalizer);
             $res['parameters'] = '';
         } else if (is_array($normalizer)) {
-            $res['fullName'] = $this->getNormalizerFullName($normalizer['name']);
-            $res['parameters'] = $this->generateParameters($normalizer['params']);
+            $res['fullName'] = $this->getNormalizerFullName(array_keys($normalizer)[0]);
+            $res['parameters'] = $this->generateParameters(array_values($normalizer)[0]);
         } else {
-            throw new \InvalidArgumentException('Normalizer must be string or array');
+            throw new \InvalidArgumentException('Normalizer must be string or array(<name> => <params>)');
         }
         $template = $this->normalizerTemplate();
         
@@ -342,11 +413,11 @@ class GenerateBagCommand extends Command
     
     protected function getNormalizerFullName(string $name): string
     {
-        if (!class_exists($name) || !is_a($name, NormalizerInterface::class)) {
-            return 'NewInventor\PropertyBag\Normalizer\\' . ucfirst($name) . 'Normalizer';
+        if (class_exists($name) && in_array(NormalizerInterface::class, class_implements($name), true)) {
+            return $name;
         }
         
-        return $name;
+        return 'NewInventor\PropertyBag\Normalizer\\' . ucfirst($name) . 'Normalizer';
     }
     
     protected function generateParameters(array $parameters): string
@@ -367,7 +438,7 @@ class GenerateBagCommand extends Command
                 TypeChecker::check($parameter)->inner()->tscalar()->fail();
                 $data = [];
                 foreach ($parameter as $name => $value) {
-                    if(is_string($value)){
+                    if (is_string($value)) {
                         $value = "'$value'";
                     }
                     if ($name === 'as_is') {
@@ -388,15 +459,15 @@ class GenerateBagCommand extends Command
         return substr($namespace, strrpos($namespace, '\\') + 1);
     }
     
-    protected function generateFormatter($normalizer)
+    protected function generateFormatter($formatter)
     {
         $res = [];
-        if (is_string($normalizer)) {
-            $res['fullName'] = $this->getFormatterFullName($normalizer);
+        if (is_string($formatter)) {
+            $res['fullName'] = $this->getFormatterFullName($formatter);
             $res['parameters'] = '';
-        } else if (is_array($normalizer)) {
-            $res['fullName'] = $this->getFormatterFullName($normalizer['name']);
-            $res['parameters'] = $this->generateParameters($normalizer['params']);
+        } else if (is_array($formatter)) {
+            $res['fullName'] = $this->getFormatterFullName(array_keys($formatter)[0]);
+            $res['parameters'] = $this->generateParameters(array_values($formatter)[0]);
         } else {
             throw new \InvalidArgumentException('Formatter must be string or array');
         }
@@ -407,11 +478,11 @@ class GenerateBagCommand extends Command
     
     protected function getFormatterFullName($name)
     {
-        if (!class_exists($name) || !is_a($name, FormatterInterface::class)) {
-            return 'NewInventor\PropertyBag\Formatter\\' . ucfirst($name) . 'Formatter';
+        if (class_exists($name) && in_array(FormatterInterface::class, class_implements($name), true)) {
+            return $name;
         }
+        return 'NewInventor\PropertyBag\Formatter\\' . ucfirst($name) . 'Formatter';
         
-        return $name;
     }
     
     protected function generateDefault($default)
@@ -428,7 +499,7 @@ class GenerateBagCommand extends Command
 
 %use%
 
-class %class% extends NewInventor\PropertyBag\PropertyBag
+%abstract%class %class% extends %parent%
 {
     //CustomCodeBegin
     
@@ -436,40 +507,92 @@ class %class% extends NewInventor\PropertyBag\PropertyBag
     
     //GeneratedCodeBegin
 %constProperties%
-    
-    public static function availableProperties(): array
-    {
-        return [
-%listProperties%
-        ];
-    }
-    
-    protected function initProperties(): void
-    {
-        $this->properties = [
-%properties%
-        ];
-    }
-    
-    protected function initNormalizers(): void
-    {
-        $this->normalizers = [
-%normalizers%
-        ];
-    }
-    
-    protected function initFormatters(): void
-    {
-        $this->formatters = [
-%formatters%
-        ];
-    }
-    
+%propertiesIniter%
+%normalizersIniter%
+%formattersIniter%
 %getters%
 
 %setters%
     //GeneratedCodeEnd
 }';
+    }
+    
+    protected function propertiesIniterTemplate()
+    {
+        return '
+    protected function initProperties(): void
+    {
+        $this->properties = [
+%properties%
+        ];
+    }';
+    }
+    
+    protected function normalizersIniterTemplate()
+    {
+        return '
+    protected function initNormalizers(): void
+    {
+        $this->normalizers = [
+%normalizers%
+        ];
+    }';
+    }
+    
+    protected function formattersIniterTemplate()
+    {
+        return '
+    protected function initFormatters(): void
+    {
+        $this->formatters = [
+%formatters%
+        ];
+    }';
+    }
+    
+    protected function propertiesChildIniterTemplate()
+    {
+        return '
+    protected function initProperties(): void
+    {
+        parent::initProperties();
+        $this->properties = array_merge(
+            $this->properties,
+            [
+%properties%
+            ]
+        );
+    }';
+    }
+    
+    protected function normalizersChildIniterTemplate()
+    {
+        return '
+    protected function initNormalizers(): void
+    {
+        parent::initNormalizers();
+        $this->normalizers = array_merge(
+            $this->normalizers,
+            [
+%normalizers%
+            ]
+        );
+    }';
+    }
+    
+    protected function formattersChildIniterTemplate()
+    {
+        return '
+    protected function initFormatters(): void
+    {
+        parent::initFormatters();
+        $this->formatters = array_merge(
+            $this->formatters,
+            [
+%formatters%
+            ]
+        );
+    }';
     }
     
     protected function listPropertyTemplate()

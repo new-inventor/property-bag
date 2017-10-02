@@ -32,6 +32,11 @@ class PropertyBag implements PropertyBagInterface
         $this->initFormatters();
     }
     
+    public function getAvailableProperties(): array
+    {
+        return array_keys($this->properties);
+    }
+    
     protected function initProperties(): void
     {
     
@@ -55,6 +60,80 @@ class PropertyBag implements PropertyBagInterface
         $this->properties[$name] = null;
         $this->normalizers[$name] = $normalizer;
         $this->formatters[$name] = $formatter;
+        
+        return $this;
+    }
+    
+    public function removeProperty(string $name)
+    {
+        unset($this->properties[$name], $this->normalizers[$name], $this->formatters[$name]);
+        
+        return $this;
+    }
+    
+    public function hasProperty(string $name): bool
+    {
+        return array_key_exists($name, $this->properties);
+    }
+    
+    public function propertyHasFormatter($name): bool
+    {
+        return array_key_exists($name, $this->formatters) && $this->formatters[$name] !== null;
+    }
+    
+    public function propertyGetFormatter(string $name): ?FormatterInterface
+    {
+        $this->failIfNotExist($name);
+        if ($this->propertyHasFormatter($name)) {
+            return $this->formatters[$name];
+        }
+        
+        return null;
+    }
+    
+    public function propertySetFormatter(string $name, FormatterInterface $formatter)
+    {
+        $this->failIfNotExist($name);
+        $this->formatters[$name] = $formatter;
+        
+        return $this;
+    }
+    
+    public function propertyRemoveFormatter(string $name)
+    {
+        $this->failIfNotExist($name);
+        unset($this->formatters[$name]);
+        
+        return $this;
+    }
+    
+    public function propertyHasNormalizer($name): bool
+    {
+        return array_key_exists($name, $this->normalizers) && $this->normalizers[$name] !== null;
+    }
+    
+    public function propertyGetNormalizer(string $name): ?NormalizerInterface
+    {
+        $this->failIfNotExist($name);
+        if ($this->propertyHasNormalizer($name)) {
+            return $this->normalizers[$name];
+        }
+        
+        return null;
+    }
+    
+    public function propertySetNormalizer(string $name, NormalizerInterface $normalizer)
+    {
+        $this->failIfNotExist($name);
+        $this->normalizers[$name] = $normalizer;
+        
+        return $this;
+    }
+    
+    public function propertyRemoveNormalizer(string $name)
+    {
+        $this->failIfNotExist($name);
+        unset($this->normalizers[$name]);
         
         return $this;
     }
@@ -105,16 +184,6 @@ class PropertyBag implements PropertyBagInterface
             $this->properties[$name];
     }
     
-    protected function propertyHasFormatter($name): bool
-    {
-        return array_key_exists($name, $this->formatters) && $this->formatters[$name] !== null;
-    }
-    
-    protected function propertyHasNormalizer($name): bool
-    {
-        return array_key_exists($name, $this->normalizers) && $this->normalizers[$name] !== null;
-    }
-    
     /**
      * Returns multidimensional array of strings
      * @return array
@@ -124,7 +193,7 @@ class PropertyBag implements PropertyBagInterface
     {
         $res = $this->toRawArray();
         foreach ($res as $param => $value) {
-            if($this->propertyHasFormatter($param)) {
+            if ($this->propertyHasFormatter($param)) {
                 $res[$param] = $this->formatters[$param]->format($value);
             }
         }
@@ -144,7 +213,7 @@ class PropertyBag implements PropertyBagInterface
      */
     public function failIfNotExist($name): void
     {
-        if (!array_key_exists($name, $this->properties)) {
+        if (!$this->hasProperty($name)) {
             throw new PropertyNotFoundException($name, get_class($this));
         }
     }

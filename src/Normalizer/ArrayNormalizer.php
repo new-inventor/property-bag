@@ -35,11 +35,11 @@ class ArrayNormalizer extends AbstractNormalizer
     
     protected function normalizeInputValue($value)
     {
-        if ($this->normalizers !== []) {
+        if (!empty($this->normalizers)) {
             $i = 0;
             $currentNormalizer = $this->normalizers[$i];
             foreach ($value as $key => $item) {
-                if ($currentNormalizer !== null) {
+                if($currentNormalizer !== null){
                     $value[$key] = $currentNormalizer->normalize($item);
                 }
                 if (array_key_exists(++$i, $this->normalizers)) {

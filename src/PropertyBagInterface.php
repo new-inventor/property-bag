@@ -19,6 +19,27 @@ interface PropertyBagInterface
         NormalizerInterface $normalizer = null,
         FormatterInterface $formatter = null
     );
+    
+    public function removeProperty(string $name);
+    
+    public function hasProperty(string $name): bool;
+    
+    public function propertyHasFormatter($name): bool;
+    
+    public function propertyGetFormatter(string $name): ?FormatterInterface;
+    
+    public function propertySetFormatter(string $name, FormatterInterface $formatter);
+    
+    public function propertyRemoveFormatter(string $name);
+    
+    public function propertyHasNormalizer($name): bool;
+    
+    public function propertyGetNormalizer(string $name): ?NormalizerInterface;
+    
+    public function propertySetNormalizer(string $name, NormalizerInterface $normalizer);
+    
+    public function propertyRemoveNormalizer(string $name);
+    
     /**
      * @param string $name
      * @param mixed  $value
