@@ -1,17 +1,17 @@
 <?php
 /**
- * Project: TP messaging service
+ * Project: property-bag
  * User: george
- * Date: 29.08.17
+ * Date: 04.10.17
  */
 
 namespace NewInventor\DataStructure\Exception;
 
 
-class PropertyNotFoundException extends PropertyException
+class PropertyInvalidTypeException extends PropertyException
 {
-    /** @var string */
-    protected $symbolCode = 'PROPERTY_NOT_FOUND';
+    protected $symbolCode = 'TYPE_EXCEPTION';
+    
     /**
      * PropertyException constructor.
      *
@@ -20,6 +20,6 @@ class PropertyNotFoundException extends PropertyException
      */
     public function __construct(string $propertyName, \Throwable $previous = null)
     {
-        parent::__construct($propertyName, "Property '$propertyName' not found", $previous);
+        parent::__construct($propertyName, "Property '$propertyName' has invalid value type", $previous);
     }
 }

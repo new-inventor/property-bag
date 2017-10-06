@@ -4,9 +4,8 @@ namespace PropertyBag;
 
 
 use Codeception\Test\Unit;
+use NewInventor\DataStructure\Exception\PropertyNotFoundException;
 use TestsPropertyBag\TestBag;
-use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
-use NewInventor\PropertyBag\PropertyBag;
 
 class PropertyBagTest extends Unit
 {
@@ -25,8 +24,6 @@ class PropertyBagTest extends Unit
     
     public function testGet()
     {
-        $bag = PropertyBag::make();
-        $this->assertEquals([], $bag->toRawArray());
         $bag = TestBag::make();
         $this->assertEquals(null, $bag->get('prop1'));
         $this->assertEquals(1, $bag->get('prop2'));
@@ -45,51 +42,19 @@ class PropertyBagTest extends Unit
         $this->assertEquals('1', $bag->get('prop2'));
         $bag->set('prop3', 123);
         $this->assertEquals('123', $bag->get('prop3'));
+        $bag->set('prop5', true);
         $this->expectException(PropertyNotFoundException::class);
         $bag->set('jhdsfkjdhfksdf', 'sdfhsgdfj');
     }
     
-    public function testGetFormatted()
-    {
-        $bag = TestBag::make();
-        $bag->set('prop1', 123);
-        $this->assertEquals('123', $bag->getFormatted('prop1'));
-        $bag->set('prop2', '1');
-        $this->assertEquals('1', $bag->getFormatted('prop2'));
-        $bag->set('prop3', '123');
-        $this->assertEquals('123', $bag->getFormatted('prop3'));
-        $bag->set('prop4', '06.12.2017');
-        $this->assertEquals('06.12.2017', $bag->getFormatted('prop4'));
-        $this->expectException(PropertyNotFoundException::class);
-        $bag->getFormatted('jhdsfkjdhfksdf');
-    }
-    
-    public function testToFormattedArray()
-    {
-        $bag = TestBag::make();
-        $bag->set('prop1', 123);
-        $bag->set('prop2', '1');
-        $bag->set('prop3', '123');
-        $bag->set('prop4', '06.12.2017');
-        $this->assertEquals(
-            [
-                'prop1' => '123',
-                'prop2' => '1',
-                'prop3' => '123',
-                'prop4' => '06.12.2017',
-            ],
-            $bag->toFormattedArray()
-        );
-    }
-    
-    public function testToRawArray()
+    public function testToArray()
     {
         $bag = TestBag::make();
         $bag->set('prop1', null);
         $bag->set('prop2', '1');
         $bag->set('prop3', 123);
-        $bag->set('prop4', '06.12.2017');
-        $array = $bag->toRawArray();
+        $bag->set('prop4', \DateTime::createFromFormat('d.m.Y', '06.12.2017'));
+        $array = $bag->toArray();
         $this->assertFalse(isset($array['prop1']));
         $this->assertEquals('1', $array['prop2']);
         $this->assertEquals('123', $array['prop3']);
@@ -104,10 +69,10 @@ class PropertyBagTest extends Unit
                 'prop1' => 123,
                 'prop2' => '1',
                 'prop3' => 123,
-                'prop4' => '06.12.2017',
+                'prop4' => \DateTime::createFromFormat('d.m.Y', '06.12.2017'),
             ]
         );
-        $array = $bag->toRawArray();
+        $array = $bag->toArray();
         $this->assertEquals(123, $array['prop1']);
         $this->assertEquals('1', $array['prop2']);
         $this->assertEquals('123', $array['prop3']);
@@ -123,5 +88,10 @@ class PropertyBagTest extends Unit
                 'dfsdfsdf' => '06.12.2017',
             ]
         );
+    }
+    
+    public function testFailOnFistError()
+    {
+        $bag = TestBag::make();
     }
 }

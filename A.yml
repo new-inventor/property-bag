@@ -1,0 +1,20 @@
+properties:
+  prop1:
+    transformer:
+      Array: ~
+      ArrayToLoadable:
+        metadataPath:
+        class: A
+  prop2:
+    transformer: ToInt
+    validators:
+      - GreaterThan:
+          value: 5
+          message: "Field 'per page' must be > {{ compared_value }}"
+      - LessThanOrEqual:
+          value: 1000
+          message: "Field 'per page' must be <= {{ compared_value }}"
+  prop3:
+    transformers:
+      ToBool:
+        - ['TestsDataStructure\TestStatic', 'GetTrue']

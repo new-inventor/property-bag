@@ -5,40 +5,34 @@
  * Date: 29.08.17
  */
 
-namespace NewInventor\PropertyBag;
+namespace NewInventor\DataStructure;
 
 
-use NewInventor\PropertyBag\Exception\PropertyNotFoundException;
-use NewInventor\PropertyBag\Formatter\FormatterInterface;
-use NewInventor\PropertyBag\Normalizer\NormalizerInterface;
+use NewInventor\DataStructure\Exception\PropertyNotFoundException;
 
 interface PropertyBagInterface
 {
-    public function addProperty(
-        string $name,
-        NormalizerInterface $normalizer = null,
-        FormatterInterface $formatter = null
-    );
+    /**
+     * @param string $name
+     * @param mixed  $value
+     *
+     * @return $this
+     */
+    public function add(string $name, $value = null);
     
-    public function removeProperty(string $name);
+    /**
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function has(string $name): bool;
     
-    public function hasProperty(string $name): bool;
-    
-    public function propertyHasFormatter($name): bool;
-    
-    public function propertyGetFormatter(string $name): ?FormatterInterface;
-    
-    public function propertySetFormatter(string $name, FormatterInterface $formatter);
-    
-    public function propertyRemoveFormatter(string $name);
-    
-    public function propertyHasNormalizer($name): bool;
-    
-    public function propertyGetNormalizer(string $name): ?NormalizerInterface;
-    
-    public function propertySetNormalizer(string $name, NormalizerInterface $normalizer);
-    
-    public function propertyRemoveNormalizer(string $name);
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function remove(string $name);
     
     /**
      * @param string $name
@@ -58,33 +52,8 @@ interface PropertyBagInterface
     public function get(string $name);
     
     /**
-     * @param string $name
-     *
-     * @return mixed
-     * @throws PropertyNotFoundException
-     */
-    public function getFormatted(string $name);
-    
-    /**
-     * Returns multidimensional array of strings
-     * @return array
-     */
-    public function toFormattedArray(): array;
-    
-    public function toRawArray(): array;
-    
-    /**
-     * @param $name
-     *
-     * @throws PropertyNotFoundException
-     */
-    public function failIfNotExist($name): void;
-    
-    /**
      * @return static
      * @throws PropertyNotFoundException
      */
     public static function make();
-    
-    public function load(array $properties = []);
 }

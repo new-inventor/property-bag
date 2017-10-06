@@ -1,20 +1,23 @@
 {
-  "name": "new-inventor/property-bag",
+  "name": "new-inventor/data-structure",
   "license": "MIT",
   "description": "Property bag with automatic value normalizing and formatting",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
     "php": "^7.1",
-    "new-inventor/php-type-checker": "^5.0"
+    "new-inventor/php-type-checker": "^5.0",
+    "symfony/validator": "^3.3",
+    "symfony/cache": "^3.3",
+    "symfony/yaml": "3.3.*"
   },
   "config": {
     "sort-packages": true
   },
   "autoload": {
     "psr-4": {
-      "NewInventor\\PropertyBag\\": "src/",
-      "TestsPropertyBag\\": "tests/classes/PropertyBag"
+      "NewInventor\\DataStructure\\": "src/",
+      "TestsDataStructure\\": "tests/classes/DataStructure"
     }
   },
   "require-dev": {
@@ -23,7 +26,6 @@
     "symfony/filesystem": "3.3.*"
   },
   "suggest": {
-    "symfony/console": "3.3.*",
-    "symfony/yaml": "3.3.*"
+    "symfony/console": "3.3.*"
   }
 }

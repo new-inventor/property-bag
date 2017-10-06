@@ -5,7 +5,7 @@
  * Date: 13.09.17
  */
 
-namespace NewInventor\PropertyBag\Accessory;
+namespace NewInventor\DataStructure\Accessory;
 
 
 class Currencies

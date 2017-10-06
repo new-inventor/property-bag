@@ -5,7 +5,7 @@
  * Date: 27.09.17
  */
 
-namespace NewInventor\PropertyBag\Command;
+namespace NewInventor\DataStructure\Command;
 
 
 use NewInventor\PropertyBag\Formatter\FormatterInterface;
