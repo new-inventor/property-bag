@@ -25,6 +25,7 @@ class TestBag extends PropertyBag
             'prop6' => null,
             'prop7' => null,
             'prop8' => null,
+            'prop9' => null,
         ];
     }
     

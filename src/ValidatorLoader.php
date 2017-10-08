@@ -13,15 +13,15 @@ use Symfony\Component\Validator\Mapping\Loader\LoaderInterface;
 
 class ValidatorLoader implements LoaderInterface
 {
-    /** @var DataStructureMetadata */
+    /** @var Metadata */
     protected $metadata;
     
     /**
      * ValidatorLoader constructor.
      *
-     * @param DataStructureMetadata $metadata
+     * @param Metadata $metadata
      */
-    public function __construct(DataStructureMetadata $metadata)
+    public function __construct(Metadata $metadata)
     {
         $this->metadata = $metadata;
     }

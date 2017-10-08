@@ -8,8 +8,6 @@
 namespace NewInventor\DataStructure;
 
 
-use NewInventor\DataStructure\Transformer\Property\TransformerInterface;
-
 interface Loadable
 {
     // fail if property does not exists
@@ -22,15 +20,10 @@ interface Loadable
     /**
      * Load object properties from array
      *
-     * @param array                $properties
-     * @param TransformerInterface $forwardTransformer
-     * @param int                  $strategy
+     * @param array $properties
+     * @param int   $strategy
      *
      * @return $this
      */
-    public function load(
-        array $properties = [],
-        TransformerInterface $forwardTransformer,
-        int $strategy = self::STRATEGY_STRICT
-    );
+    public function load(array $properties = [], int $strategy = self::STRATEGY_STRICT);
 }
