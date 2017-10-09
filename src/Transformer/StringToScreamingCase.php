@@ -18,7 +18,7 @@ class StringToScreamingCase extends Transformer
         $value = preg_replace_callback('/_?(?:[A-Z]+|\d+)/', function ($matches) {
             return '_' . $matches[0];
         }, $value);
-        $value = preg_replace('/_+/', '_', $value);
+        $value = preg_replace(['/_+/', '/(?:^_+|_+$)/'], ['_', ''], $value);
         return strtoupper($value);
     }
     

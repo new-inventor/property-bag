@@ -22,7 +22,7 @@ class ToArray extends Transformer
             $value = iterator_to_array($value);
         }
         if (!is_array($value)) {
-            $value = (array)$value;
+            $value = [$value];
         }
         
         return $value;
