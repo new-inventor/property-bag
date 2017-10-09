@@ -15,11 +15,12 @@ class TransformationException extends \InvalidArgumentException
      *
      * @param string     $normalizerClass
      * @param \Throwable $previous
+     * @param string     $message
      */
-    public function __construct(string $normalizerClass, \Throwable $previous)
+    public function __construct(string $normalizerClass, \Throwable $previous, $message = '')
     {
         parent::__construct(
-            "Normalization failed: Normalizer {$normalizerClass} can not normalize value",
+            "Transformation failed: Transformer {$normalizerClass} can not normalize value.\n$message",
             0,
             $previous
         );

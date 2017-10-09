@@ -12,6 +12,10 @@ class DataStructureRecursiveConstructor
 {
     /** @var MetadataLoader */
     protected $metadataLoader;
+    /** @var array */
+    protected $errors = [];
+    /** @var bool */
+    protected $failOnFirstError = true;
     
     /**
      * DataStructureRecursiveConstructor constructor.
@@ -24,6 +28,34 @@ class DataStructureRecursiveConstructor
     }
     
     /**
+     * @return bool
+     */
+    public function isFailOnFirstError(): bool
+    {
+        return $this->failOnFirstError;
+    }
+    
+    /**
+     * @param bool $failOnFirstError
+     *
+     * @return $this
+     */
+    public function setFailOnFirstError(bool $failOnFirstError)
+    {
+        $this->failOnFirstError = $failOnFirstError;
+        
+        return $this;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getErrors(): array
+    {
+        return $this->errors;
+    }
+    
+    /**
      * @param string $className
      * @param array  $properties
      *
@@ -33,7 +65,7 @@ class DataStructureRecursiveConstructor
     public function construct(string $className, array $properties = [])
     {
         $metadata = $this->metadataLoader->loadMetadataFor($className);
-        $transformedProperties = $metadata->getTransformer('load')->transform($properties);
+        $transformedProperties = $this->transform($properties, $metadata);
         $constructedNested = $this->constructNested($metadata->getNested(), $transformedProperties);
         $transformedProperties = array_merge($transformedProperties, $constructedNested);
         if (
@@ -54,6 +86,16 @@ class DataStructureRecursiveConstructor
         );
     }
     
+    protected function transform($properties, Metadata $metadata)
+    {
+        $transformer = $metadata->getTransformer('load');
+        $transformer->setFailOnFirstError($this->failOnFirstError);
+        $transformedProperties = $transformer->transform($properties);
+        $this->errors = array_merge($this->errors, $transformer->getErrors());
+        
+        return $transformedProperties;
+    }
+    
     /**
      * @param array $nestedConfigs
      * @param array $properties
@@ -66,7 +108,11 @@ class DataStructureRecursiveConstructor
         $res = [];
         if (count($nestedConfigs) > 0) {
             foreach ($nestedConfigs as $propertyName => $config) {
-                $res[$propertyName] = $this->constructConcreteNested($properties[$propertyName], $config);
+                $res[$propertyName] = $this->constructConcreteNested(
+                    $properties[$propertyName],
+                    $propertyName,
+                    $config
+                );
             }
         }
         
@@ -75,21 +121,25 @@ class DataStructureRecursiveConstructor
     
     /**
      * @param $propertyValue
+     * @param $propertyName
      * @param $config
      *
      * @return mixed
      * @throws \LogicException
      */
-    protected function constructConcreteNested($propertyValue, $config)
+    protected function constructConcreteNested($propertyValue, $propertyName, $config)
     {
         if (isset($nestedConfig['metadata'])) {
             $metadataLoader = new MetadataLoader($config['metadata']['path'], $config['metadata']['baseNamespace']);
             $nestedConstructor = new self($metadataLoader);
-            
-            return $nestedConstructor->construct($config['class'], $propertyValue);
+        } else {
+            $nestedConstructor = new self($this->metadataLoader);
         }
-        $nestedConstructor = new self($this->metadataLoader);
-        
-        return $nestedConstructor->construct($config['class'], $propertyValue);
+        $nestedConstructor->setFailOnFirstError($this->failOnFirstError);
+    
+        $result = $nestedConstructor->construct($config['class'], $propertyValue);
+        $this->errors = array_merge($this->errors, [$propertyName => $nestedConstructor->getErrors()]);
+    
+        return $result;
     }
 }

@@ -50,4 +50,34 @@ class DataStructureRecursiveConstructorTest extends \Codeception\Test\Unit
         $this->assertSame(3, $nested->getProp2());
         $this->assertTrue($nested->getProp3());
     }
+    
+    public function test1()
+    {
+        $loader = new \NewInventor\DataStructure\MetadataLoader(__DIR__ . '/data', 'TestsDataStructure');
+        $constructor = new \NewInventor\DataStructure\DataStructureRecursiveConstructor($loader);
+        $constructor->setFailOnFirstError(false);
+        $properties = [
+            'prop1' => '6545',
+            'prop2' => 'asd',
+            'prop3' => true,
+            'prop4' => [
+                'prop1' => '123,asd,true,123.3423',
+                'prop2' => 'zxc',
+                'prop3' => '1',
+            ],
+        ];
+        $constructor->construct('TestsDataStructure\TestBag3', $properties);
+        $errors = $constructor->getErrors();
+        
+        $this->assertEquals(
+            [
+                'prop2' => ['TYPE_EXCEPTION' => "The type of the variable in the method NewInventor\\DataStructure\\Transformer\\ToInt->validateInputTypes is incorrect.\nRequired type is: numeric \nType received: string",],
+                'prop4' => [
+                    'prop1' => ['TRANSFORMATION_EXCEPTION' => "Transformation failed: Transformer NewInventor\\DataStructure\\Transformer\\InnerTransformer can not normalize value.\nType exception in element 1: \nThe type of the variable in the method NewInventor\\DataStructure\\Transformer\\ToInt->validateInputTypes is incorrect.\nRequired type is: numeric \nType received: string",],
+                    'prop2' => ['TYPE_EXCEPTION' => "The type of the variable in the method NewInventor\\DataStructure\\Transformer\\ToInt->validateInputTypes is incorrect.\nRequired type is: numeric \nType received: string",],
+                ],
+            ],
+            $errors
+        );
+    }
 }

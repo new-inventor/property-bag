@@ -8,6 +8,8 @@
 namespace NewInventor\DataStructure\Transformer;
 
 
+use NewInventor\DataStructure\Exception\TransformationException;
+use NewInventor\TypeChecker\Exception\TypeException;
 use NewInventor\TypeChecker\TypeChecker;
 
 class InnerTransformer extends Transformer implements TransformerContainerInterface
@@ -32,7 +34,15 @@ class InnerTransformer extends Transformer implements TransformerContainerInterf
             $transformer = $this->transformers[$i];
             foreach ($value as $key => $item) {
                 if ($transformer !== null) {
-                    $value[$key] = $transformer->transform($value[$key]);
+                    try {
+                        $value[$key] = $transformer->transform($value[$key]);
+                    } catch (TypeException $e) {
+                        throw new \InvalidArgumentException("Type exception in element $key: \n{$e->getMessage()}");
+                    } catch (TransformationException $e) {
+                        throw new \InvalidArgumentException(
+                            "Transformation exception in element $key: \n{$e->getMessage()}"
+                        );
+                    }
                 }
                 if (array_key_exists(++$i, $this->transformers)) {
                     $transformer = $this->transformers[$i];

@@ -38,7 +38,7 @@ abstract class Transformer implements TransformerInterface
         } catch (TypeException $e) {
             throw $e;
         } catch (\Throwable $e) {
-            throw new TransformationException(get_class($this), $e);
+            throw new TransformationException(get_class($this), $e, $e->getMessage());
         }
     }
     
