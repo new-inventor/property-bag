@@ -13,18 +13,10 @@ use NewInventor\TypeChecker\Exception\TypeException;
 
 abstract class Transformer implements TransformerInterface
 {
-    private static $pool = [];
-    
     public static function make(...$config): TransformerInterface
     {
-        $key = static::asString(...$config);
-        if (!isset(self::$pool[$key])) {
-            /** @noinspection PhpIncompatibleReturnTypeInspection */
-            /** @noinspection PhpMethodParametersCountMismatchInspection */
-            self::$pool[$key] = new static(...$config);
-        }
-    
-        return self::$pool[$key];
+        /** @noinspection PhpMethodParametersCountMismatchInspection */
+        return new static(...$config);
     }
     
     /**
@@ -68,15 +60,5 @@ abstract class Transformer implements TransformerInterface
     protected function transformInputValue($value)
     {
         return $value;
-    }
-    
-    public static function asString(...$config): string
-    {
-        return static::class;
-    }
-    
-    public function __toString(): string
-    {
-        return static::asString();
     }
 }

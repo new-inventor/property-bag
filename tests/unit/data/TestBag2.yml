@@ -13,7 +13,7 @@ validation:
     prop0:
       - GreaterThan: 0
 properties:
-  prop1: ToInt
+  prop1: NewInventor\DataStructure\Transformer\ToInt
   prop2:
     transformers:
       - ToInt: ~
@@ -46,21 +46,20 @@ properties:
           - groups: backward
   prop6:
     transformers:
-      - ToString:
+      - NewInventor\DataStructure\Transformer\ChainTransformer:
+          - ToString: ~
+          - CsvStringToArray: ~
+          - NewInventor\DataStructure\Transformer\InnerTransformer:
+              - ToInt: ~
           - groups: forward
-      - CsvStringToArray:
-          - groups: forward
-      - InnerTransformer:
-          - groups: forward
-          - ToInt: ~
       - ArrayToCsvString:
           - groups: backward
   prop7:
     default: 2222
     transformers:
-      - ToString: ~
-      - StringToDateTime:
-          - 'd.m.Y'
+      - ChainTransformer:
+          - ToString:
+          - StringToDateTime: 'd.m.Y'
           - groups: forward
   prop8:
     transformers:
@@ -69,9 +68,6 @@ properties:
   prop9: ~
 getters:
   generate: true
-  except:
-    - prop0
-    - prop1
 setters:
   generate: true
   only:

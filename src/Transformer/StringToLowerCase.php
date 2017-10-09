@@ -12,7 +12,7 @@ use NewInventor\TypeChecker\TypeChecker;
 
 class StringToLowerCase extends Transformer
 {
-    protected function normalizeInputValue($value)
+    protected function transformInputValue($value)
     {
         return strtolower($value);
     }

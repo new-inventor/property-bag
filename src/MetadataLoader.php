@@ -21,7 +21,11 @@ class MetadataLoader
     
     public function __construct(string $path, string $baseNamespace = '')
     {
-        $this->path = $path;
+        if (file_exists($path)) {
+            $this->path = $path;
+        } else {
+            throw new \InvalidArgumentException("Path '$path' does not exists");
+        }
         $this->baseNamespace = $baseNamespace;
     }
     
@@ -55,11 +59,31 @@ class MetadataLoader
     
     public function loadMetadataFor(string $class): Metadata
     {
+        if ($this->isReadableDir($this->path)) {
+            $path = $this->getFilePath($class);
+            if ($this->isReadableFile($path)) {
+                return $this->getMatadataObj($path);
+            }
+            throw new \InvalidArgumentException("Path for class '$class' does not exists.");
+        }
+        throw new \RuntimeException('Path is file, so use "loadMetadata" method.');
+    }
+    
+    public function loadMetadata(): Metadata
+    {
+        if ($this->isReadableFile($this->path)) {
+            return $this->getMatadataObj($this->path);
+        }
+        throw new \RuntimeException('Path is directory, so use "loadMetadataFor" method.');
+    }
+    
+    protected function getMatadataObj(string $path)
+    {
         if ($this->cacheDriver !== null) {
-            $key = $this->getCacheKey($class);
+            $key = $this->getCacheKey($path);
             $item = $this->cacheDriver->getItem($key);
             if (!$item->isHit()) {
-                $config = $this->getMetadataObj($class);
+                $config = (new Metadata())->loadConfig($path);
                 $item->set($config);
                 $this->cacheDriver->save($item);
             }
@@ -67,35 +91,28 @@ class MetadataLoader
             return $item->get();
         }
         
-        return $this->getMetadataObj($class);
-    }
-    
-    protected function getMetadataObj(string $class)
-    {
-        $path = $this->getFilePath($class);
-        if (!file_exists($path)) {
-            throw new \RuntimeException('Metadata file does not exist');
-        }
-    
         return (new Metadata())->loadConfig($path);
     }
     
     protected function getCacheKey(string $class)
     {
-        return str_replace('\\', '_', $class);
+        return preg_replace('/[\\\\{}()\\/@]+/', '_', $class);
     }
     
-    public function getFilePath(string $class)
+    public function getFilePath(string $class): string
     {
-        if (is_dir($this->path) && is_readable($this->path)) {
-            return $this->path .
-                   DIRECTORY_SEPARATOR .
-                   str_replace([$this->baseNamespace, '\\'], ['', DIRECTORY_SEPARATOR], $class) .
-                   '.yml';
-        }
-        if (is_file($this->path) && is_readable($this->path)) {
-            return $this->path;
-        }
-        throw new \RuntimeException('Invalid metadata file path.');
+        return $this->path .
+               str_replace([$this->baseNamespace, '\\'], ['', DIRECTORY_SEPARATOR], $class) .
+               '.yml';
+    }
+    
+    protected function isReadableDir(string $path): bool
+    {
+        return is_dir($path) && is_readable($path);
+    }
+    
+    protected function isReadableFile(string $path): bool
+    {
+        return is_file($path) && is_readable($path);
     }
 }

@@ -12,7 +12,7 @@ use NewInventor\TypeChecker\TypeChecker;
 
 class StringToUpperCase extends Transformer
 {
-    protected function normalizeInputValue($value)
+    protected function transformInputValue($value)
     {
         return strtoupper($value);
     }

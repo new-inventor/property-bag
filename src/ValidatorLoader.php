@@ -13,15 +13,15 @@ use Symfony\Component\Validator\Mapping\Loader\LoaderInterface;
 
 class ValidatorLoader implements LoaderInterface
 {
-    /** @var Metadata */
+    /** @var ClassMetadata */
     protected $metadata;
     
     /**
      * ValidatorLoader constructor.
      *
-     * @param Metadata $metadata
+     * @param ClassMetadata $metadata
      */
-    public function __construct(Metadata $metadata)
+    public function __construct(ClassMetadata $metadata)
     {
         $this->metadata = $metadata;
     }
@@ -35,7 +35,16 @@ class ValidatorLoader implements LoaderInterface
      */
     public function loadClassMetadata(ClassMetadata $metadata)
     {
-        $metadata = $this->metadata->getClassValidationMetadata();
+        if ($metadata->name !== $this->metadata->name) {
+            return true;
+        }
+        $metadata->defaultGroup = $this->metadata->defaultGroup;
+        $metadata->members = $this->metadata->members;
+        $metadata->properties = $this->metadata->properties;
+        $metadata->getters = $this->metadata->getters;
+        $metadata->groupSequence = $this->metadata->groupSequence;
+        $metadata->groupSequenceProvider = $this->metadata->groupSequenceProvider;
+        $metadata->traversalStrategy = $this->metadata->traversalStrategy;
         
         return true;
     }

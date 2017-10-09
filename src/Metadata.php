@@ -44,6 +44,8 @@ class Metadata
     protected $getters = [];
     /** @var string[] */
     protected $setters = [];
+    /** @var array[] */
+    protected $nested = [];
     
     public static function getConfig(string $file)
     {
@@ -91,7 +93,7 @@ class Metadata
     
     protected function createValidator(): RecursiveValidator
     {
-        $metadataFactory = new LazyLoadingMetadataFactory(new ValidatorLoader($this), null);
+        $metadataFactory = new LazyLoadingMetadataFactory(new ValidatorLoader($this->classValidationMetadata), null);
         
         $validatorFactory = new ConstraintValidatorFactory();
         $translator = new IdentityTranslator();
@@ -121,13 +123,13 @@ class Metadata
     protected function prepareProperty($propertyName, $metadata): void
     {
         $this->properties[$propertyName] = $metadata['default'];
+        if (isset($metadata['nested'])) {
+            $this->nested[$propertyName] = $metadata['nested'];
+        }
     
         $transformerGroups = $this->prepareTransformersList($metadata['transformers'], true);
         foreach ($transformerGroups as $group => $transformers) {
             $transformer = null;
-            if (count($transformers) === 0) {
-                continue;
-            }
             if (count($transformers) === 1) {
                 $transformer = $transformers[0];
             } else {
@@ -259,13 +261,6 @@ class Metadata
         }
     }
     
-    protected function prepareClassValidators(array $validators): void
-    {
-        foreach ($validators as $validator) {
-            $this->classValidationMetadata->addConstraint($this->prepareValidator($validator));
-        }
-    }
-    
     protected function prepareValidator($validator)
     {
         $validatorClass = $validatorName = array_keys($validator)[0];
@@ -301,14 +296,6 @@ class Metadata
     public function getClassName(): string
     {
         return $this->className;
-    }
-    
-    /**
-     * @return ClassMetadata
-     */
-    public function getClassValidationMetadata(): ClassMetadata
-    {
-        return $this->classValidationMetadata;
     }
     
     /**
@@ -367,5 +354,13 @@ class Metadata
     public function getSetters(): array
     {
         return $this->setters;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getNested(): array
+    {
+        return $this->nested;
     }
 }

@@ -107,11 +107,13 @@ class PropertiesTransformer implements StructureTransformerInterface
                     throw new PropertyInvalidTypeException($name, $e);
                 }
                 $this->errors[$name]['TYPE_EXCEPTION'] = $e->getMessage();
+                $res[$name] = $value;
             } catch (TransformationException $e) {
                 if ($this->failOnFirstError) {
                     throw new PropertyTransformationException($name, $e);
                 }
                 $this->errors[$name]['TRANSFORMATION_EXCEPTION'] = $e->getPrevious()->getMessage();
+                $res[$name] = $value;
             }
         }
         

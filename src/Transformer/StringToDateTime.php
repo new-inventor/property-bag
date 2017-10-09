@@ -30,7 +30,7 @@ class StringToDateTime extends Transformer
         TypeChecker::check($value)->tstring()->fail();
     }
     
-    protected function parseInputValue($value)
+    protected function transformInputValue($value)
     {
         $value = \DateTime::createFromFormat($this->format, $value);
         if ($value !== false) {

@@ -96,6 +96,7 @@ class MetadataConfiguration implements ConfigurationInterface
             )
             ->end()
             ->append($this->getDefaultNode())
+            ->append($this->getNestedNode())
             ->append($this->getTransformersNode())
             ->append($this->getPropertyValidationNode())
             ->end();
@@ -112,6 +113,28 @@ class MetadataConfiguration implements ConfigurationInterface
             ->end()
             ->defaultNull()
             ->example(1);
+    }
+    
+    protected function getNestedNode()
+    {
+        return (new ArrayNodeDefinition('nested'))
+            ->beforeNormalization()
+            ->ifString()
+            ->then(
+                function ($v) {
+                    return ['class' => $v];
+                }
+            )
+            ->end()
+            ->children()
+            ->arrayNode('metadata')
+            ->children()
+            ->scalarNode('path')->isRequired()->end()
+            ->scalarNode('baseNamespace')->defaultValue('')->end()
+            ->end()
+            ->end()
+            ->scalarNode('class')->isRequired()->end()
+            ->end();
     }
     
     protected function getTransformersNode()
@@ -293,11 +316,10 @@ class MetadataConfiguration implements ConfigurationInterface
                     [$className, $staticName] = $parameter['static'];
                     $v[$key] = $className::$$staticName;
                 } else if (isset($parameter['groups'])) {
+                    $groupSet = true;
                     if ($parameter['groups'] === null) {
-                        $groupSet = true;
                         $v[$key]['groups'] = [self::DEFAULT_GROUP_NAME];
                     } else if (is_string($parameter['groups'])) {
-                        $groupSet = true;
                         $v[$key]['groups'] = [$parameter['groups']];
                     } else if (!is_array($parameter['groups'])) {
                         throw new \InvalidArgumentException('groups must be string or array');

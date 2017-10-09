@@ -1,11 +1,8 @@
 <?php
 
-namespace PropertyBag;
-
-
 use Codeception\Test\Unit;
 use NewInventor\DataStructure\Exception\PropertyNotFoundException;
-use TestsPropertyBag\TestBag;
+use TestsDataStructure\TestBag;
 
 class PropertyBagTest extends Unit
 {
