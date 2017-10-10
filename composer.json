@@ -1,16 +1,12 @@
 {
-  "name": "new-inventor/data-structure",
+  "name": "new-inventor/property-bag",
   "license": "MIT",
   "description": "Property bag with automatic value normalizing and formatting",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
     "php": "^7.1",
-    "new-inventor/php-type-checker": "^5.0",
-    "symfony/validator": "^3.3",
-    "symfony/cache": "^3.3",
-    "symfony/yaml": "^3.3",
-    "symfony/config": "^3.3"
+    "new-inventor/data-structure": "^1.0"
   },
   "config": {
     "sort-packages": true
