@@ -5,7 +5,7 @@
  * Date: 29.08.17
  */
 
-namespace NewInventor\DataStructure;
+namespace NewInventor\PropertyBag;
 
 
 use NewInventor\DataStructure\Exception\PropertyNotFoundException;

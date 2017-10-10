@@ -1,6 +1,6 @@
 namespace: TestsDataStructure
 properties:
-  prop1: NewInventor\DataStructure\Transformer\ToInt
+  prop1: NewInventor\PropertyBag\Transformer\ToInt
   prop2:
     transformers:
       - ToInt:

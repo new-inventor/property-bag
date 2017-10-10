@@ -6,14 +6,14 @@ validation:
     - Callback: ['TestsDataStructure\TestStatic', 'GetTrue']
   getters:
     prop1:
-      - NewInventor\DataStructure\Transformer\ToInt:
+      - NewInventor\PropertyBag\Transformer\ToInt:
           value: 0
           message: "Field 'prop1' must be greater than {{ compared_value }}"
   properties:
     prop0:
       - GreaterThan: 0
 properties:
-  prop1: NewInventor\DataStructure\Transformer\ToInt
+  prop1: NewInventor\PropertyBag\Transformer\ToInt
   prop2:
     transformers:
       - ToInt: ~

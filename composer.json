@@ -13,8 +13,8 @@
   },
   "autoload": {
     "psr-4": {
-      "NewInventor\\DataStructure\\": "src/",
-      "TestsDataStructure\\": "tests/classes/DataStructure"
+      "NewInventor\\PropertyBag\\": "src/",
+      "TestsPropertyBag\\": "tests/classes"
     }
   },
   "require-dev": {

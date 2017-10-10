@@ -2,7 +2,7 @@
 
 use Codeception\Test\Unit;
 use NewInventor\DataStructure\Exception\PropertyNotFoundException;
-use TestsDataStructure\TestBag;
+use TestsPropertyBag\Bag;
 
 class PropertyBagTest extends Unit
 {
@@ -21,7 +21,7 @@ class PropertyBagTest extends Unit
     
     public function testGet()
     {
-        $bag = TestBag::make();
+        $bag = new Bag();
         $this->assertEquals(null, $bag->get('prop1'));
         $this->assertEquals(1, $bag->get('prop2'));
         $bag->set('prop3', 123);
@@ -32,7 +32,7 @@ class PropertyBagTest extends Unit
     
     public function testSet()
     {
-        $bag = TestBag::make();
+        $bag = new Bag();
         $bag->set('prop1', 123);
         $this->assertEquals(123, $bag->get('prop1'));
         $bag->set('prop2', '1');
@@ -46,7 +46,7 @@ class PropertyBagTest extends Unit
     
     public function testToArray()
     {
-        $bag = TestBag::make();
+        $bag = new Bag();
         $bag->set('prop1', null);
         $bag->set('prop2', '1');
         $bag->set('prop3', 123);
@@ -61,7 +61,7 @@ class PropertyBagTest extends Unit
     
     public function testLoad()
     {
-        $bag = TestBag::make()->load(
+        $bag = (new Bag())->load(
             [
                 'prop1' => 123,
                 'prop2' => '1',
@@ -76,7 +76,7 @@ class PropertyBagTest extends Unit
         /** @noinspection PhpUndefinedMethodInspection */
         $this->assertEquals('06.12.2017', $array['prop4']->format('d.m.Y'));
         $this->expectException(PropertyNotFoundException::class);
-        TestBag::make()->load(
+        (new Bag())->load(
             [
                 'prop1'    => 123,
                 'prop2'    => '1',
@@ -89,6 +89,6 @@ class PropertyBagTest extends Unit
     
     public function testFailOnFistError()
     {
-        $bag = TestBag::make();
+        $bag = new Bag();
     }
 }

@@ -5,10 +5,14 @@
  * Date: 29.08.17
  */
 
-namespace NewInventor\DataStructure;
+namespace NewInventor\PropertyBag;
 
 
+use NewInventor\DataStructure\Arrayable;
+use NewInventor\DataStructure\DataStructureInterface;
+use NewInventor\DataStructure\Exception\PropertyException;
 use NewInventor\DataStructure\Exception\PropertyNotFoundException;
+use NewInventor\DataStructure\Loadable;
 
 class PropertyBag implements PropertyBagInterface, Loadable, Arrayable, DataStructureInterface
 {
@@ -65,7 +69,7 @@ class PropertyBag implements PropertyBagInterface, Loadable, Arrayable, DataStru
      * @param mixed  $value
      *
      * @return $this
-     * @throws \NewInventor\DataStructure\Exception\PropertyException
+     * @throws PropertyException
      * @throws PropertyNotFoundException
      */
     public function set(string $name, $value)

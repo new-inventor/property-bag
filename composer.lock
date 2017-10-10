@@ -4,9 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-  "content-hash": "bf81c74a931435725c040463e82198e4",
+  "content-hash": "4df6fec5d7d061847154a541883ad5dd",
     "packages": [
         {
+          "name": "new-inventor/data-structure",
+          "version": "1.0.3",
+          "source": {
+            "type": "git",
+            "url": "https://github.com/new-inventor/data-structure.git",
+            "reference": "0b49025f25d817ac5f93357b0b52f8b50c2a3858"
+          },
+          "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/0b49025f25d817ac5f93357b0b52f8b50c2a3858",
+            "reference": "0b49025f25d817ac5f93357b0b52f8b50c2a3858",
+            "shasum": ""
+          },
+          "require": {
+            "new-inventor/php-type-checker": "^5.0",
+            "new-inventor/transformers": "^1.0",
+            "php": "^7.1",
+            "symfony/cache": "^3.3",
+            "symfony/config": "^3.3",
+            "symfony/validator": "^3.3",
+            "symfony/yaml": "^3.3"
+          },
+          "require-dev": {
+            "codeception/codeception": "2.3.*",
+            "phpunit/phpunit": "^5.7",
+            "symfony/filesystem": "3.3.*"
+          },
+          "type": "library",
+          "autoload": {
+            "psr-4": {
+              "NewInventor\\DataStructure\\": "src/",
+              "TestsDataStructure\\": "tests/classes"
+            }
+          },
+          "notification-url": "https://packagist.org/downloads/",
+          "license": [
+            "MIT"
+          ],
+          "description": "Data structure transformers and validators config",
+          "time": "2017-10-10T15:20:29+00:00"
+        },
+      {
             "name": "new-inventor/php-type-checker",
             "version": "5.0.0",
             "source": {
@@ -48,50 +90,86 @@
             "time": "2017-09-18T12:19:22+00:00"
         },
         {
-          "name": "psr/cache",
-          "version": "1.0.1",
+          "name": "new-inventor/transformers",
+          "version": "1.0.2",
           "source": {
             "type": "git",
-            "url": "https://github.com/php-fig/cache.git",
-            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            "url": "https://github.com/new-inventor/transformers.git",
+            "reference": "8dd17ef6334387f49784a2fa847ca02f25fc6966"
           },
           "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
-            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+            "url": "https://api.github.com/repos/new-inventor/transformers/zipball/8dd17ef6334387f49784a2fa847ca02f25fc6966",
+            "reference": "8dd17ef6334387f49784a2fa847ca02f25fc6966",
             "shasum": ""
           },
           "require": {
-            "php": ">=5.3.0"
+            "new-inventor/php-type-checker": "^5.0",
+            "php": ">=7.0"
+          },
+          "require-dev": {
+            "codeception/codeception": "2.3.*",
+            "phpunit/phpunit": "^5.7"
           },
           "type": "library",
-          "extra": {
-            "branch-alias": {
-              "dev-master": "1.0.x-dev"
-            }
-          },
           "autoload": {
             "psr-4": {
-              "Psr\\Cache\\": "src/"
+              "NewInventor\\Transformers\\": "src/",
+              "TestsTransformers\\": "tests/classes"
             }
           },
           "notification-url": "https://packagist.org/downloads/",
           "license": [
             "MIT"
           ],
-          "authors": [
-            {
-              "name": "PHP-FIG",
-              "homepage": "http://www.php-fig.org/"
-            }
-          ],
-          "description": "Common interface for caching libraries",
-          "keywords": [
-            "cache",
-            "psr",
-            "psr-6"
-          ],
-          "time": "2016-08-06T20:24:11+00:00"
+          "description": "Property bag with automatic value normalizing and formatting",
+          "time": "2017-10-10T14:35:12+00:00"
+        },
+      {
+        "name": "psr/cache",
+        "version": "1.0.1",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/php-fig/cache.git",
+          "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+        },
+        "dist": {
+          "type": "zip",
+          "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+          "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+          "shasum": ""
+        },
+        "require": {
+          "php": ">=5.3.0"
+        },
+        "type": "library",
+        "extra": {
+          "branch-alias": {
+            "dev-master": "1.0.x-dev"
+          }
+        },
+        "autoload": {
+          "psr-4": {
+            "Psr\\Cache\\": "src/"
+          }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+          "MIT"
+        ],
+        "authors": [
+          {
+            "name": "PHP-FIG",
+            "homepage": "http://www.php-fig.org/"
+          }
+        ],
+        "description": "Common interface for caching libraries",
+        "keywords": [
+          "cache",
+          "psr",
+          "psr-6"
+        ],
+        "time": "2016-08-06T20:24:11+00:00"
         },
       {
         "name": "psr/log",

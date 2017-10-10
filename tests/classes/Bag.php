@@ -5,12 +5,12 @@
  * Date: 06.09.17
  */
 
-namespace TestsDataStructure;
+namespace TestsPropertyBag;
 
 
-use NewInventor\DataStructure\PropertyBag;
+use NewInventor\PropertyBag\PropertyBag;
 
-class TestBag extends PropertyBag
+class Bag extends PropertyBag
 {
     private $prop0 = 1;
     
