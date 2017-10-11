@@ -10,6 +10,7 @@ namespace NewInventor\PropertyBag\Metadata;
 
 use NewInventor\DataStructure\Metadata\Metadata as BaseMetadata;
 use NewInventor\PropertyBag\PropertyBag;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Metadata extends BaseMetadata
 {
@@ -22,9 +23,9 @@ class Metadata extends BaseMetadata
     /** @var string[] */
     protected $setters = [];
     
-    public function loadConfig(string $file)
+    public function loadConfig(string $file, ConfigurationInterface $configuration)
     {
-        parent::loadConfig($file);
+        parent::loadConfig($file, $configuration);
         if (isset($this->configArray['parent'])) {
             $this->parent = $this->configArray['parent'];
         }
@@ -37,7 +38,6 @@ class Metadata extends BaseMetadata
         if (isset($this->configArray['setters'])) {
             $this->setters = $this->prepareMethods($this->configArray['setters']);
         }
-        
         return $this;
     }
     
