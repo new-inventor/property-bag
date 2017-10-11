@@ -87,22 +87,7 @@ class GenerateBagCommand extends Command
             $files = $this->getFilesInDir($this->configPath, ['yml']);
             foreach ($files as $file) {
                 $metadata = $loader->loadMetadataFor(
-                    $this->baseNamespace . '\\' .
-                    trim(
-                        str_replace(
-                            [
-                                $this->configPath,
-                                pathinfo($file, PATHINFO_BASENAME),
-                            ],
-                            [
-                                '',
-                                '',
-                            ],
-                            $file
-                        ),
-                        '\t\n\r\0\x0B\\/'
-                    ) .
-                    pathinfo($file, PATHINFO_FILENAME),
+                    $this->getClassName($file),
                     $configuration
                 );
                 $this->generateFile($metadata);
@@ -110,6 +95,20 @@ class GenerateBagCommand extends Command
             }
         }
         $output->writeln('Generation complete');
+    }
+    
+    protected function getClassName(string $file)
+    {
+        return $this->baseNamespace . '\\' .
+               str_replace(
+                   '/',
+                   '\\',
+                   trim(
+                       str_replace($this->configPath, '', pathinfo($file, PATHINFO_DIRNAME)),
+                       "\t\n\r\0\x0B\\/"
+                   )
+               ) . '\\' .
+               pathinfo($file, PATHINFO_FILENAME);
     }
     
     protected function getFilesInDir(string $dir, array $extensions = [], array &$results = []): array
@@ -153,7 +152,7 @@ class GenerateBagCommand extends Command
                 $metadata->getClassName(),
                 $metadata->getParent(),
                 $this->preparePropertiesConstants($propertyData),
-                $this->prepareInitPropertiesMethod($propertyData, $metadata->getParent() !== ''),
+                $this->prepareInitPropertiesMethod($propertyData, $metadata->getParent() !== PropertyBag::class),
                 $this->prepareGetters($propertyData, $metadata->getGetters()),
                 $this->prepareSetters($propertyData, $metadata->getSetters()),
             ],
@@ -433,8 +432,7 @@ class GenerateBagCommand extends Command
     
     protected function getterTemplate()
     {
-        return '
-    public function get%ucfirstName%()
+        return '    public function get%ucfirstName%()
     {
         return $this->get(%selfConstant%);
     }
@@ -443,8 +441,7 @@ class GenerateBagCommand extends Command
     
     protected function setterTemplate()
     {
-        return '
-    public function set%ucfirstName%($%camelName%)
+        return '    public function set%ucfirstName%($%camelName%)
     {
         $this->set(%selfConstant%, $%camelName%);
         
