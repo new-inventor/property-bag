@@ -374,7 +374,7 @@ class GenerateBagCommand extends Command
     {
         return '<?php
 
-%namespace%;
+%namespace%
 
 
 %use%
@@ -387,10 +387,8 @@ class GenerateBagCommand extends Command
     
     //GeneratedCodeBegin
 %propertyConstants%
-
 %initProperty%
 %getters%
-
 %setters%
     //GeneratedCodeEnd
 }';
@@ -404,7 +402,8 @@ class GenerateBagCommand extends Command
         $this->properties = [
 %properties%
         ];
-    }';
+    }
+    ';
     }
     
     protected function propertiesChildIniterTemplate()
@@ -434,20 +433,24 @@ class GenerateBagCommand extends Command
     
     protected function getterTemplate()
     {
-        return '    public function get%ucfirstName%()
+        return '
+            public function get%ucfirstName%()
     {
         return $this->get(%selfConstant%);
-    }';
+    }
+    ';
     }
     
     protected function setterTemplate()
     {
-        return '    public function set%ucfirstName%($%camelName%)
+        return '
+            public function set%ucfirstName%($%camelName%)
     {
         $this->set(%selfConstant%, $%camelName%);
         
         return $this;
-    }';
+    }
+    ';
     }
     
     protected function useTemplate()
