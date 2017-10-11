@@ -434,7 +434,7 @@ class GenerateBagCommand extends Command
     protected function getterTemplate()
     {
         return '
-            public function get%ucfirstName%()
+    public function get%ucfirstName%()
     {
         return $this->get(%selfConstant%);
     }
@@ -444,7 +444,7 @@ class GenerateBagCommand extends Command
     protected function setterTemplate()
     {
         return '
-            public function set%ucfirstName%($%camelName%)
+    public function set%ucfirstName%($%camelName%)
     {
         $this->set(%selfConstant%, $%camelName%);
         
