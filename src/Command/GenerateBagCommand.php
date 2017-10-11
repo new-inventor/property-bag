@@ -9,6 +9,7 @@ namespace NewInventor\PropertyBag\Command;
 
 
 use NewInventor\DataStructure\Metadata\Loader;
+use NewInventor\PropertyBag\Metadata\Configuration;
 use NewInventor\PropertyBag\Metadata\Metadata;
 use NewInventor\PropertyBag\PropertyBag;
 use NewInventor\Transformers\Transformer\StringToCamelCase;
@@ -77,8 +78,9 @@ class GenerateBagCommand extends Command
         }
         $output->writeln('Start generation');
         $loader = new Loader($this->configPath, $this->baseNamespace, Metadata::class);
+        $configuration = new Configuration();
         if (is_file($this->configPath)) {
-            $metadata = $loader->loadMetadata();
+            $metadata = $loader->loadMetadata($configuration);
             $this->generateFile($metadata);
             $output->writeln("File '$this->configPath' processed");
         } else if (is_dir($this->configPath)) {
@@ -100,7 +102,8 @@ class GenerateBagCommand extends Command
                         ),
                         '\t\n\r\0\x0B\\/'
                     ) .
-                    pathinfo($file, PATHINFO_FILENAME)
+                    pathinfo($file, PATHINFO_FILENAME),
+                    $configuration
                 );
                 $this->generateFile($metadata);
                 $output->writeln("File '$file' processed");
