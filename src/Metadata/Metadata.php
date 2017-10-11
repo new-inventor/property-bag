@@ -9,12 +9,12 @@ namespace NewInventor\PropertyBag\Metadata;
 
 
 use NewInventor\DataStructure\Metadata\Metadata as BaseMetadata;
-use Symfony\Component\Config\Definition\Processor;
+use NewInventor\PropertyBag\PropertyBag;
 
 class Metadata extends BaseMetadata
 {
     /** @var string */
-    protected $parent = '';
+    protected $parent = PropertyBag::class;
     /** @var bool */
     protected $abstract = false;
     /** @var string[] */
@@ -24,34 +24,19 @@ class Metadata extends BaseMetadata
     
     public function loadConfig(string $file)
     {
-        $config = self::getConfig($file);
-        $this->className = self::getClassNameFromFile($file);
-        $processor = new Processor();
-        $config = $processor->processConfiguration(new Configuration(), [$config]);
-        if (isset($config['namespace'])) {
-            $this->namespace = $config['namespace'];
+        parent::loadConfig($file);
+        if (isset($this->configArray['parent'])) {
+            $this->parent = $this->configArray['parent'];
         }
-        $this->initValidation($config);
-        if (isset($config['parent'])) {
-            $this->parent = $config['parent'];
+        if (isset($this->configArray['abstract'])) {
+            $this->abstract = $this->configArray['abstract'];
         }
-        if (isset($config['abstract'])) {
-            $this->abstract = $config['abstract'];
+        if (isset($this->configArray['getters'])) {
+            $this->getters = $this->prepareMethods($this->configArray['getters']);
         }
-        if (isset($config['properties'])) {
-            foreach ($config['properties'] as $propertyName => $metadata) {
-                $this->prepareProperty($propertyName, $metadata);
-            }
+        if (isset($this->configArray['setters'])) {
+            $this->setters = $this->prepareMethods($this->configArray['setters']);
         }
-        if (isset($config['getters'])) {
-            $this->getters = $this->prepareMethods($config['getters']);
-        }
-        if (isset($config['setters'])) {
-            $this->setters = $this->prepareMethods($config['setters']);
-        }
-        
-        $this->classValidator = $this->createValidator();
-        unset($this->classValidationMetadata);
         
         return $this;
     }

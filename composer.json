@@ -6,7 +6,8 @@
   "prefer-stable": true,
   "require": {
     "php": "^7.1",
-    "new-inventor/data-structure": "^1.0"
+    "new-inventor/data-structure": "^1.0",
+    "new-inventor/transformers": "^1.0"
   },
   "config": {
     "sort-packages": true
@@ -23,6 +24,7 @@
     "symfony/filesystem": "3.3.*"
   },
   "suggest": {
-    "symfony/console": "3.3.*"
+    "symfony/console": "3.3.*",
+    "symfony/filesystem": "3.3.*"
   }
 }
