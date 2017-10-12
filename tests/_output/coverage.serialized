@@ -3,7 +3,7 @@ $coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $coverage->setData(array (
   '/home/george/www/property-bag/src/PropertyBag.php' => 
   array (
-    24 => 
+    22 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
@@ -11,7 +11,7 @@ $coverage->setData(array (
       3 => 'PropertyBagTest::testLoad',
       4 => 'PropertyBagTest::testFailOnFistError',
     ),
-    25 => 
+    23 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
@@ -19,132 +19,101 @@ $coverage->setData(array (
       3 => 'PropertyBagTest::testLoad',
       4 => 'PropertyBagTest::testFailOnFistError',
     ),
-    30 => 
+    28 => 
+    array (
+    ),
+    38 => 
     array (
     ),
     40 => 
     array (
     ),
-    42 => 
+    41 => NULL,
+    50 => 
     array (
     ),
-    43 => NULL,
     52 => 
     array (
     ),
-    54 => 
-    array (
-    ),
-    55 => NULL,
-    64 => 
+    53 => NULL,
+    62 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
       2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
     ),
-    65 => NULL,
-    77 => 
+    63 => NULL,
+    75 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
       2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
+    ),
+    76 => 
+    array (
+      0 => 'PropertyBagTest::testGet',
+      1 => 'PropertyBagTest::testSet',
+      2 => 'PropertyBagTest::testToArray',
     ),
     78 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
       2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
     ),
-    80 => 
+    79 => NULL,
+    89 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
-      2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
     ),
-    81 => NULL,
     91 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
     ),
-    93 => 
-    array (
-      0 => 'PropertyBagTest::testGet',
-      1 => 'PropertyBagTest::testSet',
-    ),
-    94 => NULL,
-    101 => 
+    92 => NULL,
+    99 => 
     array (
       0 => 'PropertyBagTest::testToArray',
-      1 => 'PropertyBagTest::testLoad',
     ),
-    102 => NULL,
-    111 => 
+    100 => NULL,
+    109 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
       2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
+    ),
+    110 => 
+    array (
+      0 => 'PropertyBagTest::testGet',
+      1 => 'PropertyBagTest::testSet',
     ),
     112 => 
     array (
       0 => 'PropertyBagTest::testGet',
       1 => 'PropertyBagTest::testSet',
-      2 => 'PropertyBagTest::testLoad',
-    ),
-    114 => 
-    array (
-      0 => 'PropertyBagTest::testGet',
-      1 => 'PropertyBagTest::testSet',
       2 => 'PropertyBagTest::testToArray',
-      3 => 'PropertyBagTest::testLoad',
     ),
-    128 => 
+    126 => 
     array (
     ),
-    129 => NULL,
-    133 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    135 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    136 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    137 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    138 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    140 => 
-    array (
-    ),
-    141 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    146 => 
-    array (
-      0 => 'PropertyBagTest::testLoad',
-    ),
-    147 => NULL,
+    127 => NULL,
   ),
   '/home/george/www/property-bag/src/PropertyBagInterface.php' => 
   array (
   ),
-  '/home/george/www/property-bag/src/Metadata/Metadata.php' => 
+  '/home/george/www/property-bag/src/Metadata/Parser.php' => 
   array (
+    23 => 
+    array (
+    ),
+    24 => 
+    array (
+    ),
+    25 => 
+    array (
+    ),
     26 => 
     array (
     ),
@@ -181,16 +150,16 @@ $coverage->setData(array (
     37 => 
     array (
     ),
-    38 => 
-    array (
-    ),
-    39 => 
-    array (
-    ),
     40 => 
     array (
     ),
     41 => 
+    array (
+    ),
+    42 => 
+    array (
+    ),
+    43 => 
     array (
     ),
     44 => 
@@ -202,60 +171,15 @@ $coverage->setData(array (
     46 => 
     array (
     ),
-    47 => 
-    array (
-    ),
     48 => 
     array (
     ),
     49 => 
     array (
     ),
-    50 => 
-    array (
-    ),
-    52 => 
-    array (
-    ),
-    53 => 
-    array (
-    ),
-    59 => 
-    array (
-    ),
-    60 => 
-    array (
-    ),
-    61 => 
-    array (
-    ),
-    67 => 
-    array (
-    ),
-    68 => 
-    array (
-    ),
-    69 => 
-    array (
-    ),
-    75 => 
-    array (
-    ),
-    76 => 
-    array (
-    ),
-    77 => 
-    array (
-    ),
-    83 => 
-    array (
-    ),
-    84 => 
-    array (
-    ),
-    85 => 
-    array (
-    ),
+  ),
+  '/home/george/www/property-bag/src/Metadata/Metadata.php' => 
+  array (
   ),
   '/home/george/www/property-bag/src/Metadata/Configuration.php' => 
   array (
@@ -350,6 +274,33 @@ $coverage->setData(array (
     array (
     ),
   ),
+  '/home/george/www/property-bag/src/Metadata/Factory.php' => 
+  array (
+    25 => 
+    array (
+    ),
+    26 => 
+    array (
+    ),
+    27 => 
+    array (
+    ),
+    28 => 
+    array (
+    ),
+    29 => 
+    array (
+    ),
+    30 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+  ),
   '/home/george/www/property-bag/src/Command/GenerateBagCommand.php' => 
   array (
     36 => 
@@ -409,9 +360,6 @@ $coverage->setData(array (
     56 => 
     array (
     ),
-    70 => 
-    array (
-    ),
     71 => 
     array (
     ),
@@ -451,9 +399,6 @@ $coverage->setData(array (
     83 => 
     array (
     ),
-    84 => 
-    array (
-    ),
     85 => 
     array (
     ),
@@ -473,12 +418,6 @@ $coverage->setData(array (
     array (
     ),
     91 => 
-    array (
-    ),
-    92 => 
-    array (
-    ),
-    93 => 
     array (
     ),
     94 => 
@@ -517,12 +456,6 @@ $coverage->setData(array (
     105 => 
     array (
     ),
-    106 => 
-    array (
-    ),
-    107 => 
-    array (
-    ),
     108 => 
     array (
     ),
@@ -530,6 +463,12 @@ $coverage->setData(array (
     array (
     ),
     110 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    112 => 
     array (
     ),
     113 => 
@@ -556,25 +495,22 @@ $coverage->setData(array (
     120 => 
     array (
     ),
-    121 => 
-    array (
-    ),
     122 => 
     array (
     ),
     123 => 
     array (
     ),
-    124 => 
-    array (
-    ),
-    125 => 
+    126 => 
     array (
     ),
     127 => 
     array (
     ),
     128 => 
+    array (
+    ),
+    129 => 
     array (
     ),
     131 => 
@@ -587,6 +523,9 @@ $coverage->setData(array (
     array (
     ),
     134 => 
+    array (
+    ),
+    135 => 
     array (
     ),
     136 => 
@@ -643,9 +582,6 @@ $coverage->setData(array (
     153 => 
     array (
     ),
-    154 => 
-    array (
-    ),
     155 => 
     array (
     ),
@@ -655,16 +591,16 @@ $coverage->setData(array (
     157 => 
     array (
     ),
-    158 => 
+    159 => 
     array (
     ),
     160 => 
     array (
     ),
-    161 => 
+    162 => 
     array (
     ),
-    162 => 
+    163 => 
     array (
     ),
     164 => 
@@ -673,10 +609,10 @@ $coverage->setData(array (
     165 => 
     array (
     ),
-    167 => 
+    166 => 
     array (
     ),
-    168 => 
+    167 => 
     array (
     ),
     169 => 
@@ -688,9 +624,6 @@ $coverage->setData(array (
     171 => 
     array (
     ),
-    172 => 
-    array (
-    ),
     174 => 
     array (
     ),
@@ -698,6 +631,12 @@ $coverage->setData(array (
     array (
     ),
     176 => 
+    array (
+    ),
+    177 => 
+    array (
+    ),
+    178 => 
     array (
     ),
     179 => 
@@ -727,19 +666,13 @@ $coverage->setData(array (
     187 => 
     array (
     ),
-    188 => 
-    array (
-    ),
     189 => 
     array (
     ),
     190 => 
     array (
     ),
-    191 => 
-    array (
-    ),
-    192 => 
+    193 => 
     array (
     ),
     194 => 
@@ -748,13 +681,16 @@ $coverage->setData(array (
     195 => 
     array (
     ),
+    196 => 
+    array (
+    ),
+    197 => 
+    array (
+    ),
     198 => 
     array (
     ),
     199 => 
-    array (
-    ),
-    200 => 
     array (
     ),
     201 => 
@@ -763,16 +699,19 @@ $coverage->setData(array (
     202 => 
     array (
     ),
-    203 => 
-    array (
-    ),
-    204 => 
+    205 => 
     array (
     ),
     206 => 
     array (
     ),
     207 => 
+    array (
+    ),
+    208 => 
+    array (
+    ),
+    209 => 
     array (
     ),
     210 => 
@@ -832,43 +771,43 @@ $coverage->setData(array (
     228 => 
     array (
     ),
-    229 => 
-    array (
-    ),
     230 => 
     array (
     ),
     231 => 
     array (
     ),
-    232 => 
-    array (
-    ),
     233 => 
     array (
     ),
-    235 => 
+    234 => 
     array (
     ),
-    236 => 
+    237 => 
     array (
     ),
     238 => 
     array (
     ),
-    239 => 
+    240 => 
     array (
     ),
-    242 => 
+    241 => 
     array (
     ),
-    243 => 
+    244 => 
     array (
     ),
     245 => 
     array (
     ),
     246 => 
+    array (
+    ),
+    247 => 
+    array (
+    ),
+    248 => 
     array (
     ),
     249 => 
@@ -892,25 +831,25 @@ $coverage->setData(array (
     255 => 
     array (
     ),
-    256 => 
-    array (
-    ),
     257 => 
     array (
     ),
     258 => 
     array (
     ),
-    259 => 
-    array (
-    ),
-    260 => 
+    261 => 
     array (
     ),
     262 => 
     array (
     ),
     263 => 
+    array (
+    ),
+    264 => 
+    array (
+    ),
+    265 => 
     array (
     ),
     266 => 
@@ -928,25 +867,25 @@ $coverage->setData(array (
     270 => 
     array (
     ),
-    271 => 
-    array (
-    ),
     272 => 
     array (
     ),
     273 => 
     array (
     ),
-    274 => 
-    array (
-    ),
-    275 => 
+    276 => 
     array (
     ),
     277 => 
     array (
     ),
     278 => 
+    array (
+    ),
+    279 => 
+    array (
+    ),
+    280 => 
     array (
     ),
     281 => 
@@ -976,19 +915,13 @@ $coverage->setData(array (
     289 => 
     array (
     ),
-    290 => 
-    array (
-    ),
     291 => 
     array (
     ),
     292 => 
     array (
     ),
-    293 => 
-    array (
-    ),
-    294 => 
+    295 => 
     array (
     ),
     296 => 
@@ -1006,16 +939,16 @@ $coverage->setData(array (
     302 => 
     array (
     ),
+    303 => 
+    array (
+    ),
     305 => 
     array (
     ),
     306 => 
     array (
     ),
-    307 => 
-    array (
-    ),
-    308 => 
+    309 => 
     array (
     ),
     310 => 
@@ -1024,16 +957,16 @@ $coverage->setData(array (
     311 => 
     array (
     ),
+    312 => 
+    array (
+    ),
+    313 => 
+    array (
+    ),
     314 => 
     array (
     ),
     315 => 
-    array (
-    ),
-    316 => 
-    array (
-    ),
-    317 => 
     array (
     ),
     318 => 
@@ -1048,13 +981,19 @@ $coverage->setData(array (
     323 => 
     array (
     ),
-    324 => 
-    array (
-    ),
     325 => 
     array (
     ),
+    326 => 
+    array (
+    ),
+    327 => 
+    array (
+    ),
     328 => 
+    array (
+    ),
+    329 => 
     array (
     ),
     330 => 
@@ -1084,19 +1023,13 @@ $coverage->setData(array (
     338 => 
     array (
     ),
-    339 => 
-    array (
-    ),
     340 => 
     array (
     ),
     341 => 
     array (
     ),
-    342 => 
-    array (
-    ),
-    343 => 
+    344 => 
     array (
     ),
     345 => 
@@ -1105,22 +1038,28 @@ $coverage->setData(array (
     346 => 
     array (
     ),
+    347 => 
+    array (
+    ),
     349 => 
     array (
     ),
     350 => 
     array (
     ),
-    351 => 
-    array (
-    ),
-    352 => 
+    353 => 
     array (
     ),
     354 => 
     array (
     ),
     355 => 
+    array (
+    ),
+    356 => 
+    array (
+    ),
+    357 => 
     array (
     ),
     358 => 
@@ -1132,28 +1071,19 @@ $coverage->setData(array (
     360 => 
     array (
     ),
-    361 => 
-    array (
-    ),
     362 => 
     array (
     ),
     363 => 
     array (
     ),
-    364 => 
-    array (
-    ),
-    365 => 
+    366 => 
     array (
     ),
     367 => 
     array (
     ),
-    368 => 
-    array (
-    ),
-    371 => 
+    369 => 
     array (
     ),
     372 => 
@@ -1162,10 +1092,13 @@ $coverage->setData(array (
     374 => 
     array (
     ),
-    377 => 
+    375 => 
     array (
     ),
-    379 => 
+    376 => 
+    array (
+    ),
+    378 => 
     array (
     ),
     380 => 
@@ -1174,7 +1107,13 @@ $coverage->setData(array (
     381 => 
     array (
     ),
+    382 => 
+    array (
+    ),
     383 => 
+    array (
+    ),
+    384 => 
     array (
     ),
     385 => 
@@ -1183,10 +1122,10 @@ $coverage->setData(array (
     386 => 
     array (
     ),
-    388 => 
+    387 => 
     array (
     ),
-    389 => 
+    390 => 
     array (
     ),
     391 => 
@@ -1201,6 +1140,12 @@ $coverage->setData(array (
     394 => 
     array (
     ),
+    395 => 
+    array (
+    ),
+    396 => 
+    array (
+    ),
     397 => 
     array (
     ),
@@ -1208,12 +1153,6 @@ $coverage->setData(array (
     array (
     ),
     399 => 
-    array (
-    ),
-    400 => 
-    array (
-    ),
-    401 => 
     array (
     ),
     402 => 
@@ -1226,6 +1165,12 @@ $coverage->setData(array (
     array (
     ),
     405 => 
+    array (
+    ),
+    406 => 
+    array (
+    ),
+    407 => 
     array (
     ),
     408 => 
@@ -1249,12 +1194,6 @@ $coverage->setData(array (
     414 => 
     array (
     ),
-    415 => 
-    array (
-    ),
-    416 => 
-    array (
-    ),
     417 => 
     array (
     ),
@@ -1264,7 +1203,7 @@ $coverage->setData(array (
     419 => 
     array (
     ),
-    420 => 
+    422 => 
     array (
     ),
     423 => 
@@ -1273,7 +1212,7 @@ $coverage->setData(array (
     424 => 
     array (
     ),
-    425 => 
+    427 => 
     array (
     ),
     428 => 
@@ -1285,13 +1224,13 @@ $coverage->setData(array (
     430 => 
     array (
     ),
+    431 => 
+    array (
+    ),
+    432 => 
+    array (
+    ),
     433 => 
-    array (
-    ),
-    434 => 
-    array (
-    ),
-    435 => 
     array (
     ),
     436 => 
@@ -1301,6 +1240,9 @@ $coverage->setData(array (
     array (
     ),
     438 => 
+    array (
+    ),
+    439 => 
     array (
     ),
     441 => 
@@ -1315,16 +1257,13 @@ $coverage->setData(array (
     444 => 
     array (
     ),
-    446 => 
-    array (
-    ),
     447 => 
     array (
     ),
     448 => 
     array (
     ),
-    451 => 
+    449 => 
     array (
     ),
     452 => 
@@ -1333,13 +1272,7 @@ $coverage->setData(array (
     453 => 
     array (
     ),
-    456 => 
-    array (
-    ),
-    457 => 
-    array (
-    ),
-    458 => 
+    454 => 
     array (
     ),
   ),
@@ -1363,7 +1296,7 @@ $coverage->setTests(array (
   'PropertyBagTest::testLoad' => 
   array (
     'size' => 'unknown',
-    'status' => 0,
+    'status' => 4,
   ),
   'PropertyBagTest::testFailOnFistError' => 
   array (
@@ -1380,8 +1313,10 @@ $coverage->setTests(array (
 $filter = $coverage->filter();
 $filter->setWhitelistedFiles(array (
   '/home/george/www/property-bag/src/PropertyBagInterface.php' => true,
+  '/home/george/www/property-bag/src/Metadata/Parser.php' => true,
   '/home/george/www/property-bag/src/Metadata/Metadata.php' => true,
   '/home/george/www/property-bag/src/Metadata/Configuration.php' => true,
+  '/home/george/www/property-bag/src/Metadata/Factory.php' => true,
   '/home/george/www/property-bag/src/Command/GenerateBagCommand.php' => true,
   '/home/george/www/property-bag/src/PropertyBag.php' => true,
 ));

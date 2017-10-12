@@ -125,4 +125,20 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
         /** @noinspection PhpMethodParametersCountMismatchInspection */
         return new static(...$config);
     }
+    
+    /**
+     * @param array $properties
+     *
+     * @return $this
+     * @throws PropertyException
+     * @throws PropertyNotFoundException
+     */
+    public function load(array $properties = [])
+    {
+        foreach ($properties as $name => $value) {
+            $this->set($name, $value);
+        }
+        
+        return $this;
+    }
 }

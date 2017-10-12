@@ -52,6 +52,19 @@ interface PropertyBagInterface
     public function get(string $name);
     
     /**
+     * @return array
+     */
+    public function toArray(): array;
+    
+    /**
+     * @param array $properties
+     *
+     * @return $this
+     * @throws PropertyNotFoundException
+     */
+    public function load(array $properties = []);
+    
+    /**
      * @return static
      * @throws PropertyNotFoundException
      */

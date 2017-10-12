@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-  "content-hash": "9c47215995f8a88ff428e0cec49ea5e8",
+  "content-hash": "e22ba4147111f5bba9f4afe87cc11b32",
     "packages": [
         {
           "name": "new-inventor/data-structure",
-          "version": "2.0.0",
+          "version": "2.0.2",
           "source": {
             "type": "git",
             "url": "https://github.com/new-inventor/data-structure.git",
-            "reference": "ce8e3d418fd57d952619ef2b14b39c805ff944be"
+            "reference": "dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429"
           },
           "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/ce8e3d418fd57d952619ef2b14b39c805ff944be",
-            "reference": "ce8e3d418fd57d952619ef2b14b39c805ff944be",
+            "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429",
+            "reference": "dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429",
             "shasum": ""
           },
           "require": {
@@ -46,7 +46,7 @@
             "MIT"
           ],
           "description": "Data structure transformers and validators config",
-          "time": "2017-10-12T13:26:04+00:00"
+          "time": "2017-10-12T14:12:00+00:00"
         },
       {
             "name": "new-inventor/php-type-checker",
