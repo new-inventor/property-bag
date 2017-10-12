@@ -8,13 +8,11 @@
 namespace NewInventor\PropertyBag;
 
 
-use NewInventor\DataStructure\Arrayable;
 use NewInventor\DataStructure\DataStructureInterface;
 use NewInventor\DataStructure\Exception\PropertyException;
 use NewInventor\DataStructure\Exception\PropertyNotFoundException;
-use NewInventor\DataStructure\Loadable;
 
-class PropertyBag implements PropertyBagInterface, Loadable, Arrayable, DataStructureInterface
+class PropertyBag implements PropertyBagInterface, DataStructureInterface
 {
     /** @var mixed[] */
     protected $properties = [];
@@ -126,23 +124,5 @@ class PropertyBag implements PropertyBagInterface, Loadable, Arrayable, DataStru
     {
         /** @noinspection PhpMethodParametersCountMismatchInspection */
         return new static(...$config);
-    }
-    
-    public function load(array $properties = [], int $strategy = self::STRATEGY_STRICT)
-    {
-        foreach ($properties as $name => $value) {
-            try {
-                $this->set($name, $value);
-            } catch (PropertyNotFoundException $e) {
-                if ($strategy === self::STRATEGY_STRICT) {
-                    throw $e;
-                }
-                if ($strategy === self::STRATEGY_ADD) {
-                    $this->add($name, $value);
-                }
-            }
-        }
-        
-        return $this;
     }
 }

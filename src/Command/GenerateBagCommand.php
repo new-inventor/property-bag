@@ -8,8 +8,7 @@
 namespace NewInventor\PropertyBag\Command;
 
 
-use NewInventor\DataStructure\Metadata\Loader;
-use NewInventor\PropertyBag\Metadata\Configuration;
+use NewInventor\PropertyBag\Metadata\Factory;
 use NewInventor\PropertyBag\Metadata\Metadata;
 use NewInventor\PropertyBag\PropertyBag;
 use NewInventor\Transformers\Transformer\StringToCamelCase;
@@ -61,6 +60,7 @@ class GenerateBagCommand extends Command
      * @param OutputInterface $output
      *
      * @return int|null|void
+     * @throws \Psr\Cache\InvalidArgumentException
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Symfony\Component\Filesystem\Exception\IOException
@@ -77,19 +77,12 @@ class GenerateBagCommand extends Command
             $this->fileSystem->mkdir($this->outputPath);
         }
         $output->writeln('Start generation');
-        $loader = new Loader($this->configPath, $this->baseNamespace, Metadata::class);
-        $configuration = new Configuration();
-        if (is_file($this->configPath)) {
-            $metadata = $loader->loadMetadata($configuration);
-            $this->generateFile($metadata);
-            $output->writeln("File '$this->configPath' processed");
-        } else if (is_dir($this->configPath)) {
+        $factory = new Factory($this->configPath, $this->baseNamespace);
+        if (is_dir($this->configPath)) {
             $files = $this->getFilesInDir($this->configPath, ['yml']);
             foreach ($files as $file) {
-                $metadata = $loader->loadMetadataFor(
-                    $this->getClassName($file),
-                    $configuration
-                );
+                /** @var Metadata $metadata */
+                $metadata = $factory->getMetadata($this->getClassName($file));
                 $this->generateFile($metadata);
                 $output->writeln("File '$file' processed");
             }
@@ -132,7 +125,7 @@ class GenerateBagCommand extends Command
     protected function generateFile(Metadata $metadata)
     {
         $bag = $this->getPropertyBagTemplate();
-        $properties = $metadata->getProperties();
+        $properties = $metadata->properties;
         $propertyData = $this->initPropertyNames($properties);
         
         $bag = str_replace(
@@ -148,13 +141,13 @@ class GenerateBagCommand extends Command
             ],
             [
                 $this->prepareNamespace($metadata->getNamespace()),
-                $metadata->isAbstract() ? 'abstract ' : '',
+                $metadata->abstract ? 'abstract ' : '',
                 $metadata->getClassName(),
-                $metadata->getParent(),
+                $metadata->parent,
                 $this->preparePropertiesConstants($propertyData),
-                $this->prepareInitPropertiesMethod($propertyData, $metadata->getParent() !== PropertyBag::class),
-                $this->prepareGetters($propertyData, $metadata->getGetters()),
-                $this->prepareSetters($propertyData, $metadata->getSetters()),
+                $this->prepareInitPropertiesMethod($propertyData, $metadata->parent !== PropertyBag::class),
+                $this->prepareGetters($propertyData, $metadata->getters),
+                $this->prepareSetters($propertyData, $metadata->setters),
             ],
             $bag
         );
