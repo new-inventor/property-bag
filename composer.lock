@@ -8,16 +8,16 @@
     "packages": [
         {
           "name": "new-inventor/data-structure",
-          "version": "2.0.2",
+          "version": "2.2.0",
           "source": {
             "type": "git",
             "url": "https://github.com/new-inventor/data-structure.git",
-            "reference": "dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429"
+            "reference": "b8b304206e1295ef3ce651cfb3ebbf4988618d09"
           },
           "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429",
-            "reference": "dafb2856a0d58d9a2529fd7d89d6c9b8b9dba429",
+            "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/b8b304206e1295ef3ce651cfb3ebbf4988618d09",
+            "reference": "b8b304206e1295ef3ce651cfb3ebbf4988618d09",
             "shasum": ""
           },
           "require": {
@@ -46,7 +46,7 @@
             "MIT"
           ],
           "description": "Data structure transformers and validators config",
-          "time": "2017-10-12T14:12:00+00:00"
+          "time": "2017-10-13T12:03:19+00:00"
         },
       {
             "name": "new-inventor/php-type-checker",
@@ -91,16 +91,16 @@
         },
         {
           "name": "new-inventor/transformers",
-          "version": "1.0.2",
+          "version": "1.2.0",
           "source": {
             "type": "git",
             "url": "https://github.com/new-inventor/transformers.git",
-            "reference": "8dd17ef6334387f49784a2fa847ca02f25fc6966"
+            "reference": "4d548bede26e642730ac4fb4988e249009cf4573"
           },
           "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/new-inventor/transformers/zipball/8dd17ef6334387f49784a2fa847ca02f25fc6966",
-            "reference": "8dd17ef6334387f49784a2fa847ca02f25fc6966",
+            "url": "https://api.github.com/repos/new-inventor/transformers/zipball/4d548bede26e642730ac4fb4988e249009cf4573",
+            "reference": "4d548bede26e642730ac4fb4988e249009cf4573",
             "shasum": ""
           },
           "require": {
@@ -123,7 +123,7 @@
             "MIT"
           ],
           "description": "Property bag with automatic value normalizing and formatting",
-          "time": "2017-10-10T14:35:12+00:00"
+          "time": "2017-10-13T11:19:17+00:00"
         },
       {
         "name": "psr/cache",
