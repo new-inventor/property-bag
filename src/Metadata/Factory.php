@@ -11,6 +11,8 @@ namespace NewInventor\PropertyBag\Metadata;
 use NewInventor\DataStructure\Metadata\Factory as BaseFactory;
 use NewInventor\DataStructure\Metadata\Loader;
 use NewInventor\DataStructure\Metadata\MetadataInterface;
+use NewInventor\DataStructure\PropertiesTransformer;
+use NewInventor\PropertyBag\PropertyBag;
 
 class Factory extends BaseFactory
 {
@@ -28,6 +30,22 @@ class Factory extends BaseFactory
         $parser = new Parser($config);
         $loader = new Loader($this->basePath, $parser, $this->baseNamespace);
         $loader->loadMetadata($metadata);
+        if ($metadata->parent !== PropertyBag::class) {
+            /** @var Metadata $parentMetadata */
+            $parentMetadata = $this->constructMetadata($metadata->parent);
+            /**
+             * @var string                $group
+             * @var PropertiesTransformer $transformer
+             */
+            foreach ($parentMetadata->transformers as $group => $transformer) {
+                $parentTransformers = $transformer->getTransformers();
+                foreach ($parentTransformers as $propertyName => $propertyTransformer) {
+                    if ($metadata->transformers[$group]->getTransformer($propertyName) === null) {
+                        $metadata->transformers[$group]->setTransformer($propertyName, $propertyTransformer);
+                    }
+                }
+            }
+        }
         
         return $metadata;
     }
