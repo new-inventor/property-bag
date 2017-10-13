@@ -16,10 +16,13 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
 {
     /** @var mixed[] */
     protected $properties = [];
+    /** @var bool */
+    protected $filIfNotExist;
     
-    public function __construct()
+    public function __construct($filIfNotExist = true)
     {
         $this->initProperties();
+        $this->filIfNotExist = $filIfNotExist;
     }
     
     protected function initProperties()
@@ -72,7 +75,11 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
      */
     public function set(string $name, $value)
     {
-        $this->failIfNotExist($name);
+        if ($this->filIfNotExist) {
+            $this->failIfNotExist($name);
+        } else {
+            return $this;
+        }
         $this->properties[$name] = $value;
         
         return $this;
@@ -86,7 +93,11 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
      */
     public function get(string $name)
     {
-        $this->failIfNotExist($name);
+        if ($this->filIfNotExist) {
+            $this->failIfNotExist($name);
+        } else {
+            return null;
+        }
         
         return $this->properties[$name];
     }
