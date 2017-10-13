@@ -75,12 +75,14 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
      */
     public function set(string $name, $value)
     {
-        if ($this->filIfNotExist) {
-            $this->failIfNotExist($name);
-            $this->properties[$name] = $value;
-        } else if ($this->has($name)) {
-            $this->properties[$name] = $value;
+        if (!$this->has($name)) {
+            if ($this->filIfNotExist) {
+                throw new PropertyNotFoundException($name);
+            }
+        
+            return $this;
         }
+        $this->properties[$name] = $value;
         
         return $this;
     }
@@ -93,16 +95,15 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
      */
     public function get(string $name)
     {
-        if ($this->filIfNotExist) {
-            $this->failIfNotExist($name);
-    
-            return $this->properties[$name];
+        if (!$this->has($name)) {
+            if ($this->filIfNotExist) {
+                throw new PropertyNotFoundException($name);
+            }
+        
+            return null;
         }
-        if ($this->has($name)) {
-            return $this->properties[$name];
-        }
     
-        return null;
+        return $this->properties[$name];
     }
     
     /**
