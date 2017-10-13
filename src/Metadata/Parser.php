@@ -23,16 +23,16 @@ class Parser extends BaseParser
     {
         parent::parse($file, $metadata);
         if (isset($this->metadata->configArray['parent'])) {
-            $metadata->parent = $this->metadata->configArray['parent'];
+            $this->metadata->parent = $this->metadata->configArray['parent'];
         }
         if (isset($this->metadata->configArray['abstract'])) {
-            $metadata->abstract = $this->metadata->configArray['abstract'];
+            $this->metadata->abstract = $this->metadata->configArray['abstract'];
         }
         if (isset($this->metadata->configArray['getters'])) {
-            $metadata->getters = $this->prepareMethods($this->metadata->configArray['getters']);
+            $this->metadata->getters = $this->prepareMethods($this->metadata->configArray['getters']);
         }
         if (isset($this->metadata->configArray['setters'])) {
-            $metadata->setters = $this->prepareMethods($this->metadata->configArray['setters']);
+            $this->metadata->setters = $this->prepareMethods($this->metadata->configArray['setters']);
         }
     }
     
