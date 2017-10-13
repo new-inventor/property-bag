@@ -77,10 +77,10 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
     {
         if ($this->filIfNotExist) {
             $this->failIfNotExist($name);
-        } else {
-            return $this;
+            $this->properties[$name] = $value;
+        } else if ($this->has($name)) {
+            $this->properties[$name] = $value;
         }
-        $this->properties[$name] = $value;
         
         return $this;
     }
@@ -95,11 +95,14 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
     {
         if ($this->filIfNotExist) {
             $this->failIfNotExist($name);
-        } else {
-            return null;
+    
+            return $this->properties[$name];
         }
-        
-        return $this->properties[$name];
+        if ($this->has($name)) {
+            return $this->properties[$name];
+        }
+    
+        return null;
     }
     
     /**
