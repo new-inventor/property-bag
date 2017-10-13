@@ -40,6 +40,9 @@ class Factory extends BaseFactory
             foreach ($parentMetadata->transformers as $group => $transformer) {
                 $parentTransformers = $transformer->getTransformers();
                 foreach ($parentTransformers as $propertyName => $propertyTransformer) {
+                    if (!isset($metadata->transformers[$group])) {
+                        $metadata->transformers[$group] = new PropertiesTransformer();
+                    }
                     if ($metadata->transformers[$group]->getTransformer($propertyName) === null) {
                         $metadata->transformers[$group]->setTransformer($propertyName, $propertyTransformer);
                     }
