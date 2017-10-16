@@ -92,16 +92,19 @@ class GenerateBagCommand extends Command
     
     protected function getClassName(string $file)
     {
-        return $this->baseNamespace . '\\' .
-               str_replace(
-                   '/',
-                   '\\',
-                   trim(
-                       str_replace($this->configPath, '', pathinfo($file, PATHINFO_DIRNAME)),
-                       "\t\n\r\0\x0B\\/"
-                   )
-               ) . '\\' .
-               pathinfo($file, PATHINFO_FILENAME);
+        $res = $this->baseNamespace . '\\';
+        $dir = str_replace(
+            '/',
+            '\\',
+            trim(str_replace($this->configPath, '', pathinfo($file, PATHINFO_DIRNAME)), "\t\n\r\0\x0B\\/")
+        );
+        $res .= $dir;
+        if ($dir !== '') {
+            $res .= '\\';
+        }
+        $res .= pathinfo($file, PATHINFO_FILENAME);
+    
+        return $res;
     }
     
     protected function getFilesInDir(string $dir, array $extensions = [], array &$results = []): array
