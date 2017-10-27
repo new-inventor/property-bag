@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "new-inventor/data-structure",
-            "version": "2.2.3",
+          "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/new-inventor/data-structure.git",
-                "reference": "6143103418e9d75b78d1d66f0253beaaf0cefc22"
+              "reference": "4c51fdb55e624b0fc370714033f7ffbfe924e06f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/6143103418e9d75b78d1d66f0253beaaf0cefc22",
-                "reference": "6143103418e9d75b78d1d66f0253beaaf0cefc22",
+              "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/4c51fdb55e624b0fc370714033f7ffbfe924e06f",
+              "reference": "4c51fdb55e624b0fc370714033f7ffbfe924e06f",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "MIT"
             ],
             "description": "Data structure transformers and validators config",
-            "time": "2017-10-16T10:13:24+00:00"
+          "time": "2017-10-27T07:13:04+00:00"
         },
         {
             "name": "new-inventor/php-type-checker",
@@ -91,16 +91,16 @@
         },
         {
             "name": "new-inventor/transformers",
-            "version": "1.2.0",
+          "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/new-inventor/transformers.git",
-                "reference": "4d548bede26e642730ac4fb4988e249009cf4573"
+              "reference": "123e5de11ad3127cbe9ae78f7f9ac5bb7ccf8789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/new-inventor/transformers/zipball/4d548bede26e642730ac4fb4988e249009cf4573",
-                "reference": "4d548bede26e642730ac4fb4988e249009cf4573",
+              "url": "https://api.github.com/repos/new-inventor/transformers/zipball/123e5de11ad3127cbe9ae78f7f9ac5bb7ccf8789",
+              "reference": "123e5de11ad3127cbe9ae78f7f9ac5bb7ccf8789",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
                 "MIT"
             ],
             "description": "Property bag with automatic value normalizing and formatting",
-            "time": "2017-10-13T11:19:17+00:00"
+          "time": "2017-10-27T07:03:39+00:00"
         },
         {
             "name": "psr/cache",
@@ -449,16 +449,16 @@
         },
         {
             "name": "symfony/polyfill-apcu",
-            "version": "v1.5.0",
+          "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "cec32398a973a9bfe9d2f94f4b5d5e186b40b698"
+              "reference": "04f62674339602def515bff4bc6901fc1d4951e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/cec32398a973a9bfe9d2f94f4b5d5e186b40b698",
-                "reference": "cec32398a973a9bfe9d2f94f4b5d5e186b40b698",
+              "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/04f62674339602def515bff4bc6901fc1d4951e8",
+              "reference": "04f62674339602def515bff4bc6901fc1d4951e8",
                 "shasum": ""
             },
             "require": {
@@ -467,10 +467,13 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                  "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
+              "psr-4": {
+                "Symfony\\Polyfill\\Apcu\\": ""
+              },
                 "files": [
                     "bootstrap.php"
                 ]
@@ -498,20 +501,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-07-05T15:09:33+00:00"
+          "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.5.0",
+          "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
+              "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+              "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+              "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
                 "shasum": ""
             },
             "require": {
@@ -523,7 +526,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                  "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -557,7 +560,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14T15:44:48+00:00"
+          "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/translation",
@@ -1202,37 +1205,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+          "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+              "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+              "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+              "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+              "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+              "doctrine/collections": "^1.0",
+              "doctrine/common": "^2.6",
+              "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+              "files": [
+                "src/DeepCopy/deep_copy.php"
+              ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -1240,7 +1246,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+          "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

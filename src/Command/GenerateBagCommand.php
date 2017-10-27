@@ -20,6 +20,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
+// TODO fix bug with parent namespace
 class GenerateBagCommand extends Command
 {
     /** @var Filesystem */
