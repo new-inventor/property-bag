@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "new-inventor/data-structure",
-          "version": "2.2.5",
+          "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/new-inventor/data-structure.git",
-              "reference": "4c51fdb55e624b0fc370714033f7ffbfe924e06f"
+              "reference": "c1a55ffacf6b2ad8fc36521028073c55c1ac362f"
             },
             "dist": {
                 "type": "zip",
-              "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/4c51fdb55e624b0fc370714033f7ffbfe924e06f",
-              "reference": "4c51fdb55e624b0fc370714033f7ffbfe924e06f",
+              "url": "https://api.github.com/repos/new-inventor/data-structure/zipball/c1a55ffacf6b2ad8fc36521028073c55c1ac362f",
+              "reference": "c1a55ffacf6b2ad8fc36521028073c55c1ac362f",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "MIT"
             ],
             "description": "Data structure transformers and validators config",
-          "time": "2017-10-27T07:13:04+00:00"
+          "time": "2017-10-27T12:02:07+00:00"
         },
         {
             "name": "new-inventor/php-type-checker",

@@ -13,7 +13,7 @@ validation:
     prop0:
       - GreaterThan: 0
 properties:
-  prop1: NewInventor\PropertyBag\Transformer\ToInt
+  prop1: NewInventor\Transformers\Transformer\ToInt
   prop2:
     transformers:
       - ToInt: ~

@@ -30,7 +30,7 @@ class Factory extends BaseFactory
         $parser = new Parser($config);
         $loader = new Loader($this->basePath, $parser, $this->baseNamespace);
         $loader->loadMetadata($metadata);
-        if ($metadata->parent !== PropertyBag::class) {
+        if ($metadata->parent !== PropertyBag::class && strpos($metadata->parent, $this->baseNamespace) !== false) {
             /** @var Metadata $parentMetadata */
             $parentMetadata = $this->constructMetadata($metadata->parent);
             /**
