@@ -8,7 +8,10 @@
 namespace NewInventor\PropertyBag\Command;
 
 
+use NewInventor\DataStructure\Configuration\Parser\Yaml;
+use NewInventor\PropertyBag\Configuration\Configuration;
 use NewInventor\PropertyBag\Metadata\Factory;
+use NewInventor\PropertyBag\Metadata\Loader;
 use NewInventor\PropertyBag\Metadata\Metadata;
 use NewInventor\PropertyBag\PropertyBag;
 use NewInventor\Transformers\Transformer\StringToCamelCase;
@@ -20,7 +23,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
-// TODO fix bug with parent namespace
 class GenerateBagCommand extends Command
 {
     /** @var Filesystem */
@@ -61,6 +63,8 @@ class GenerateBagCommand extends Command
      * @param OutputInterface $output
      *
      * @return int|null|void
+     * @throws \Symfony\Component\Yaml\Exception\ParseException
+     * @throws \NewInventor\TypeChecker\Exception\TypeException
      * @throws \Psr\Cache\InvalidArgumentException
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \RuntimeException
@@ -78,12 +82,15 @@ class GenerateBagCommand extends Command
             $this->fileSystem->mkdir($this->outputPath);
         }
         $output->writeln('Start generation');
-        $factory = new Factory($this->configPath, $this->baseNamespace);
+        
+        $parser = new Yaml(new Configuration());
+        $loader = new Loader($this->configPath, $parser, $this->baseNamespace);
+        $factory = new Factory($loader);
         if (is_dir($this->configPath)) {
             $files = $this->getFilesInDir($this->configPath, ['yml']);
             foreach ($files as $file) {
                 /** @var Metadata $metadata */
-                $metadata = $factory->getMetadata($this->getClassName($file));
+                $metadata = $factory->getMetadataFor($this->getClassName($file));
                 $this->generateFile($metadata);
                 $output->writeln("File '$file' processed");
             }
@@ -104,7 +111,7 @@ class GenerateBagCommand extends Command
             $res .= '\\';
         }
         $res .= pathinfo($file, PATHINFO_FILENAME);
-    
+        
         return $res;
     }
     

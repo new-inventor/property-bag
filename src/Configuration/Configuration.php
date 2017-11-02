@@ -5,10 +5,10 @@
  * Date: 08.10.17
  */
 
-namespace NewInventor\PropertyBag\Metadata;
+namespace NewInventor\PropertyBag\Configuration;
 
 
-use NewInventor\DataStructure\Metadata\Configuration as BaseConfiguration;
+use NewInventor\DataStructure\Configuration\Configuration as BaseConfiguration;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\BooleanNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\ScalarNodeDefinition;

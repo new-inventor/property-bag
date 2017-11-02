@@ -6,7 +6,7 @@
   "prefer-stable": true,
   "require": {
     "php": "^7.1",
-    "new-inventor/data-structure": "^2.0",
+    "new-inventor/data-structure": "^3.0",
     "new-inventor/transformers": "^1.0"
   },
   "config": {

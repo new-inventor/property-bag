@@ -9,7 +9,6 @@ namespace NewInventor\PropertyBag\Metadata;
 
 
 use NewInventor\DataStructure\Metadata\Factory as BaseFactory;
-use NewInventor\DataStructure\Metadata\Loader;
 use NewInventor\DataStructure\Metadata\MetadataInterface;
 use NewInventor\DataStructure\PropertiesTransformer;
 use NewInventor\PropertyBag\PropertyBag;
@@ -20,17 +19,18 @@ class Factory extends BaseFactory
      * @param string $class
      *
      * @return MetadataInterface
+     * @throws \NewInventor\TypeChecker\Exception\TypeException
      * @throws \Symfony\Component\Yaml\Exception\ParseException
      * @throws \InvalidArgumentException
      */
-    protected function constructMetadata(string $class): MetadataInterface
+    protected function constructMetadata($class): MetadataInterface
     {
-        $config = new Configuration();
-        $metadata = new Metadata($class, $this->validationCache);
-        $parser = new Parser($config);
-        $loader = new Loader($this->basePath, $parser, $this->baseNamespace);
-        $loader->loadMetadata($metadata);
-        if ($metadata->parent !== PropertyBag::class && strpos($metadata->parent, $this->baseNamespace) !== false) {
+        $metadata = new Metadata($class);
+        $this->loader->load($metadata);
+        if (
+            $metadata->parent !== PropertyBag::class &&
+            strpos($metadata->parent, $this->loader->getBaseNamespace()) !== false
+        ) {
             /** @var Metadata $parentMetadata */
             $parentMetadata = $this->constructMetadata($metadata->parent);
             /**
