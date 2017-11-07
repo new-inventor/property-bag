@@ -31,6 +31,14 @@ class PropertyBag implements PropertyBagInterface, DataStructureInterface
     }
     
     /**
+     * @return bool
+     */
+    public function isFailIfNotExist(): bool
+    {
+        return $this->failIfNotExist;
+    }
+    
+    /**
      * @param string $name
      * @param mixed  $value
      *
