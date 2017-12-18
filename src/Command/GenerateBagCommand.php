@@ -14,6 +14,7 @@ use NewInventor\PropertyBag\Metadata\Factory;
 use NewInventor\PropertyBag\Metadata\Loader;
 use NewInventor\PropertyBag\Metadata\Metadata;
 use NewInventor\PropertyBag\PropertyBag;
+use NewInventor\Transformers\Transformer\CsvStringToArray;
 use NewInventor\Transformers\Transformer\StringToCamelCase;
 use NewInventor\Transformers\Transformer\StringToScreamingSnakeCase;
 use Symfony\Component\Console\Command\Command;
@@ -45,7 +46,7 @@ class GenerateBagCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('bag:generate')
+            ->setName('generate:bag')
             ->setDescription('Generate property bag from file or directory')
             ->addArgument('config', InputArgument::REQUIRED, 'Path to config')
             ->addArgument('output-dir', InputArgument::REQUIRED, 'Path to generated files')
@@ -55,7 +56,13 @@ class GenerateBagCommand extends Command
                 InputOption::VALUE_OPTIONAL,
                 'Provide base namespace for all config files',
                 ''
-            )->addOption('force', 'f', InputOption::VALUE_NONE, 'Force rewrite files');
+            )->addOption('force', 'f', InputOption::VALUE_NONE, 'Force rewrite files')
+            ->addOption(
+                'only',
+                'o',
+                InputOption::VALUE_OPTIONAL,
+                'Coma separated namespaces from config directory to process only it. With leader slash. (\<namespace>)'
+            );
     }
     
     /**
@@ -82,6 +89,7 @@ class GenerateBagCommand extends Command
             $this->fileSystem->mkdir($this->outputPath);
         }
         $output->writeln('Start generation');
+        $only = CsvStringToArray::make()->transform($input->getOption('only'));
         
         $parser = new Yaml(new Configuration());
         $loader = new Loader($this->configPath, $parser, $this->baseNamespace);
@@ -89,8 +97,13 @@ class GenerateBagCommand extends Command
         if (is_dir($this->configPath)) {
             $files = $this->getFilesInDir($this->configPath, ['yml']);
             foreach ($files as $file) {
+                $className = $this->getClassName($file);
+                $withoutBase = str_replace($this->baseNamespace, '', $className);
+                if (!\in_array($withoutBase, $only, true)) {
+                    continue;
+                }
                 /** @var Metadata $metadata */
-                $metadata = $factory->getMetadataFor($this->getClassName($file));
+                $metadata = $factory->getMetadataFor($className);
                 $this->generateFile($metadata);
                 $output->writeln("File '$file' processed");
             }
