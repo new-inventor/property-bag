@@ -83,7 +83,7 @@ class GenerateBagCommand extends Command
     {
         $this->configPath = $this->getAbsolutePath($input->getArgument('config'));
         $this->outputPath = $this->getAbsolutePath($input->getArgument('output-dir'));
-        $this->baseNamespace = trim($input->getOption('base-namespace'), '\t\n\r\0\x0B\\');
+        $this->baseNamespace = trim($input->getOption('base-namespace'), "\t\n\r\0\x0B\\");
         $this->force = $input->getOption('force');
         if (!is_dir($this->outputPath)) {
             $this->fileSystem->mkdir($this->outputPath);
