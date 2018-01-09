@@ -1,165 +1,161 @@
 # Property bag
-This utility provide to you some normalizers and formatters plus class that handle properties as normalizable and formattable objects.
+This utility provide to you:
+* base property bag class
+* property bab interface
+* configuration for property bag
+* metadata classes for property bag
+* generator command to generate classes from configuration
 
 #### Installation
 
 composer require new-inventor/property-bag
 
-### Simple usage of normalizer
 
-```php
-$normalizer = new IntNormalizer();
-$value = $normalizer->normalize($value);
-or
-$value = IntNormalizer::make()->normalize($value);
-```
+## PropertyBag usage
 
-### Simple usage of formatter
+### Property bag creation
 
-```php
-$formatter = new ArrayFormatter();
-$value = $formatter->format($value);
-or
-$value = ArrayFormatter::make()->format($value);
-```
+1. Create property bag configuration.
+2. run `php bin/console generate:bag <configuration path> <destination path> [--base-namespace="Base\Namespase"] [-f(to force rewrite destination files)]`
+3. check if file exist in destination folder
+4. if you want, you can write some code between comments `CustomCodeBegin` and `CustomCodeEnd`
 
-**Normalizers** normalize values from different types to needed type
-
-**Formatters** format values to strings
-
-Some normalizers and formatters have parameters in constructor.
-
-### Signatures of normalizer constructors
-* ArrayNormalizer - __construct(...$normalizers) // normalizers must implement NormalizerInterface
-* BoolNormalizer - __construct(array $true = [], array $false = [])
-* CsvRowNormalizer - __construct(...$normalizers) // normalizers must implement NormalizerInterface
-* CurrencyNormalizer - __construct()
-* DateTimeNormalizer - __construct(string $format = 'd.m.Y H:i:s')
-* EmailNormalizer - __construct()
-* EmptyNormalizer - __construct()
-* EnumNormalizer - __construct(array $availableValues, NormalizerInterface $normalizer = null)
-* FloatNormalizer - __construct()
-* FloatRangeNormalizer - __construct(float $min = null, float $max = null)
-* IntNormalizer - __construct()
-* IntRangeNormalizer - __construct(int $min = null, int $max = null)
-* MccNormalizer - __construct()
-* PhoneNormalizer - __construct()
-* PropertyBagNormalizer - __construct(string $class) // class must implement PropertyBagInterface
-* RangeNormalizer - __construct($min = null, $max = null, callable $compareFunction = null)
-* RegExpNormalizer - __construct(string $regExp)
-* StringNormalizer - __construct()
-
-### Signatures of formatter constructors
-* ArrayFormatter - __construct(...$formatters) // formatters must implement FormatterInterface
-* BoolFormatter - __construct(string $true = '1', string $false = '0')
-* DateTimeFormatter - __construct(string $format = 'd.m.Y H:i:s')
-
-## Usage of Property
-Property is the representation of property that can be prepared and formatted
-
-If you does not provide normalizer or formatter, then value will be passed as is.
-
-You can do some actions like this:
-```php
-$property = new Property();
-$property->setNormalizer(DateTimeNormalizer('d.m.Y'));
-$property->setFormatter(DateTimeFormatter('d.m.Y'));
-or
-$property = Property::make()
-    ->setNormalizer(DateTimeNormalizer('d.m.Y'))
-    ->setFormatter(DateTimeFormatter('d.m.Y'));
-
-$property->setValue('2000');// NormalizerException throwed
-$property->setValue('12.02.2000');
-$property->getValue(); // \DateTime object
-$property->getFormattedValue(); // '12.02.2000'
-```
-
-## Usage of PropertyBag
-
-Property bag can work as **stand alone** object or as **parent** for custom class (the second way is preferred).
-
+### Stand alone object with no configuration
 ```php
 $propertyBag = new PropertyBag();
+$propertyBag->add('time', new \DateTime());
+$propertyBag->add('value');
+$propertyBag->get('time');
+$propertyBag->set('value', 123);
+$propertyBag->get('value');
 ```
 
-#### As stand alone
-When it works as stand alone object, properties can-not be cached by inner mechanism so you should write your own cache.
+### Object with configuration
 
-You can add property by calling this method:
+####Configuration file
+```yaml
+parent: Some1\Some2\Some3\Parent
+abstract: true
+validation:
+  constraints:
+    - Callback: ['TestsDataStructure\TestStatic', 'GetTrue']
+  getters:
+    prop1:
+      - GreaterThan:
+          value: 0
+          message: "Field 'prop1' must be greater than {{ compared_value }}"
+  properties:
+    prop0:
+      - GreaterThan: 0
+properties:
+  prop1: NewInventor\Transformers\Transformer\ToInt
+  prop2:
+    transformers:
+      - ToInt: ~
+    validation:
+      - GreaterThan:
+          value: 5
+          message: "Field 'prop2' must be > {{ compared_value }}"
+      - LessThanOrEqual:
+          value: 1000
+          message: "Field 'prop2' must be <= {{ compared_value }}"
+  prop3:
+    transformers:
+      - ToBool:
+          - ['TestsDataStructure\TestStatic', 'GetTrue']
+  prop4:
+    transformers:
+      - ToBool:
+          - groups: forward
+      - BoolToMixed:
+          - static: ['TestsDataStructure\TestStatic', 'bbb']
+          - const: ['TestsDataStructure\TestStatic', 'AAA']
+          - groups: backward
+  prop5:
+    transformers:
+      - ToBool:
+          - groups: forward
+      - BoolToMixed:
+          - 1
+          - 0
+          - groups: backward
+  prop6:
+    transformers:
+      - ToString:
+          - groups: forward
+      - CsvStringToArray:
+          - groups: forward
+      - InnerTransformer:
+          - groups: forward
+          - ToInt: ~
+      - ArrayToCsvString:
+          - groups: backward
+  prop7:
+    default: 2222
+    transformers:
+      - ToString: ~
+      - StringToDateTime:
+          - 'd.m.Y'
+          - groups: forward
+  prop8:
+    nested:
+      class: TestsDataStructure\TestBag2
+      array: true
+  prop9:
+    nested:
+      class: TestsDataStructure\TestBag1
+getters:
+  generate: true
+  except:
+    - prop0
+    - prop1
+setters:
+  generate: true
+  only:
+    - prop0
+```
+
+Where:
+* parent(root) - parent class. If does not specified, then `NewInventor\PropertyBag\PropertyBag`
+* abstract(root) - is generated class abstract
+* validation(root) - symfony validation config
+* properties(root) - list of properties
+* validation(in property) - symfony validation for class getter
+* transformers(in property) - short class names from [https://github.com/new-inventor/transformers] or full class name from you code
+* nested(in property) - property is nested class so it must provide class and can provide array key(to be an array)
+* default(in property) - default value of property 
+* getters(root) - can be bool or object. Which getters generate in class.
+* setters(root) - can be bool or object. Which setters generate in class.
+
+In transformers you can specify group, transformer parameters. In `InnerTransformer` and `ChainTransformer` you must pass as parameters another Transformers. 
+
+If you do not specify the group, then it will be 'default'.
+
+You can pass to parameters scalars, arrays, callable, and special arrays with one element(const, static).
+
+#### Usage
+
 ```php
-$propertyBag->addProperty('name', new Property());
+$parser = new NewInventor\DataStructure\Configuration\Parser\Yaml(new NewInventor\PropertyBag\Configuration\Configuration())
+
+$metadataLoader = new NewInventor\PropertyBag\Metadata\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+$metadataFactory = new NewInventor\PropertyBag\Metadata\Factory($loader, Psr\Cache\CacheItemPoolInterface);
+
+$validationLoader = new NewInventor\DataStructure\Validation\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+$validationFactory = new NewInventor\DataStructure\Validation\Factory($loader, Symfony\Component\Validator\Mapping\Cache\CacheInterface);
+
+$bag = new TestBag();
+$values = [1, 'qwe', 4, 'qweqw'];
+
+$metadataLoader = new NewInventor\PropertyBag\Metadata\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+$metadataFactory = new NewInventor\PropertyBag\Metadata\Factory($loader, Psr\Cache\CacheItemPoolInterface);
+$transformer = $metadataFactory->getTransformer('default');
+$values = $transfirmer->transform($values);
+$bag->load($values);
+$validationLoader = new NewInventor\DataStructure\Validation\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+$validationFactory = new NewInventor\DataStructure\Validation\Factory($loader, Symfony\Component\Validator\Mapping\Cache\CacheInterface);
+$errors = $validationFactory->getValidator()->validate($bag)->getErrors();
+
+... do some staff
+
 ```
-
-Then you can set/get/getFormatted value of property as shown below:
-```php
-$propertyBag->set('name', $value);
-$name = $propertyBag->get('name');
-$name = $propertyBag->getFormatted('name');
-```
-
-Also you can load array into the property bag:
-
-```php
-$propertyBag->load([
-    'name0' => $value0,
-    'name1' => $value1,
-    'name2' => $value2,
-]);
-```
-
-If property name does not exists in property bag the PropertyNotFoundException will be thrown.
-
-If you want to convert property bag to array, you can call one of this two methods:
-
-```php
-$propertyBag->toRawArray();// Return array of values by calling get() method
-$propertyBag->toFormattedArray(); // Return array of values by calling getFormatted() method
-```
-
-If property value is `null` no property is returned.
-
-#### As parent
-
-You can do all staff of stand alone object but you should overwrite the getProperties method, like this:
-
-```php
-class Parameters {
-    protected function getProperties(): array
-    {
-        return [
-            'id' => Property::make()->setNormalizer(new IntNormalizer()),
-            'name' => Property::make()->setNormalizer(new StringNormalizer()),
-            'createdAt' => Property::make()
-                ->setNormalizer(DateTimeNormalizer::make('d.m.Y'))
-                ->setFormatter(DateTimeFormatter::make('d.m.Y')),
-        ];
-    }
-}
-```
-
-In this case you can specify the cache driver
-```php
-PropertyBag::setCacheDriver(<Psr\SimpleCache\CacheInterface>);
-```
-and properties will be cached automatically.
-
-**You should remember that anonymous functions can not be cached**
-
-Now you can set and get properties like in 'Stand alone' section.
-
-### Custom normalizers and formatters
-
-* Custom normalizers should implement NormalizerInterface or extend AbstractNormalizer class
-* Custom formatters should implement FormatterInterface or extend AbstractFormatter class
-
-To cache this custom normalizers/formatters you should overwrite `preloadClasses` method:
-```php
-    protected function preloadClasses()
-    {
-        parent:: preloadClasses();
-        CustomNormalizer::class;
-        CustomFormatter::class;
-    }
-```
-to preload classes before unserialize;
