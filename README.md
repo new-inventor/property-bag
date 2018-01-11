@@ -32,7 +32,7 @@ $propertyBag->get('value');
 
 ### Object with configuration
 
-####Configuration file
+#### Configuration file
 ```yaml
 parent: Some1\Some2\Some3\Parent
 abstract: true
@@ -136,26 +136,35 @@ You can pass to parameters scalars, arrays, callable, and special arrays with on
 #### Usage
 
 ```php
+//We use parser to parse configuration files into array.
+//Configuration is a description of configuration fields
 $parser = new NewInventor\DataStructure\Configuration\Parser\Yaml(new NewInventor\PropertyBag\Configuration\Configuration())
 
+// MetadataLoader constructs the metadata object with transformers parameters and nested elements. It loads config from path by class name and removes from class name BaseNamespace 
 $metadataLoader = new NewInventor\PropertyBag\Metadata\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+//Factory is the main class that loads Metadata and caches it.
 $metadataFactory = new NewInventor\PropertyBag\Metadata\Factory($loader, Psr\Cache\CacheItemPoolInterface);
 
+// Validation loader is the wrapper for Symfony metadata loader. it parses config file and loads class validation
 $validationLoader = new NewInventor\DataStructure\Validation\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
+// Factory is the class that construct validator object.
 $validationFactory = new NewInventor\DataStructure\Validation\Factory($loader, Symfony\Component\Validator\Mapping\Cache\CacheInterface);
-
+// TestBag class is generated(or Written) propertyBag
 $bag = new TestBag();
 $values = [1, 'qwe', 4, 'qweqw'];
 
 $metadataLoader = new NewInventor\PropertyBag\Metadata\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
 $metadataFactory = new NewInventor\PropertyBag\Metadata\Factory($loader, Psr\Cache\CacheItemPoolInterface);
-$transformer = $metadataFactory->getTransformer('default');
+//transformer make transformation on arrays and prepare data to loading to the object
+$transformer = $metadataFactory->getMetadataFor(TestBag::class)->getTransformer('default');
 $values = $transfirmer->transform($values);
+//method loads values to the object from array
 $bag->load($values);
 $validationLoader = new NewInventor\DataStructure\Validation\Loader('/path/To/Generated/Bags', $parser, 'Base\Namespace');
 $validationFactory = new NewInventor\DataStructure\Validation\Factory($loader, Symfony\Component\Validator\Mapping\Cache\CacheInterface);
+//If validation fails then $errors will be a not empty array otherwise it will be an empty array
 $errors = $validationFactory->getValidator()->validate($bag)->getErrors();
-
+//after this preparations object will be clear? walid and ready to manipulations on it.
 ... do some staff
 
 ```
