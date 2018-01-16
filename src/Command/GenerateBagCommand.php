@@ -90,6 +90,9 @@ class GenerateBagCommand extends Command
         }
         $output->writeln('Start generation');
         $only = CsvStringToArray::make()->transform($input->getOption('only'));
+        if($only === null){
+            $only = [];
+        }
         
         $parser = new Yaml(new Configuration());
         $loader = new Loader($this->configPath, $parser, $this->baseNamespace);
@@ -99,7 +102,7 @@ class GenerateBagCommand extends Command
             foreach ($files as $file) {
                 $className = $this->getClassName($file);
                 $withoutBase = str_replace($this->baseNamespace, '', $className);
-                if (!\in_array($withoutBase, $only, true)) {
+                if (!\in_array($withoutBase, $only, true) && $only !== []) {
                     continue;
                 }
                 /** @var Metadata $metadata */
