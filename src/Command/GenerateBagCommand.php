@@ -116,7 +116,7 @@ class GenerateBagCommand extends Command
     
     protected function getClassName(string $file)
     {
-        $res = $this->baseNamespace . '\\';
+        $res = $this->baseNamespace !== '' ? $this->baseNamespace . '\\' : '';
         $dir = str_replace(
             '/',
             '\\',
@@ -343,7 +343,10 @@ class GenerateBagCommand extends Command
     
     protected function getOutputFileName($dirName, Metadata $metadata)
     {
-        return $dirName . DIRECTORY_SEPARATOR . $metadata->getClassName() . '.php';
+        $dirName = rtrim($dirName, '/\\');
+        $res = $dirName . DIRECTORY_SEPARATOR . trim($metadata->getClassName(), '/\\') . '.php';
+    
+        return $res;
     }
     
     protected function generateUses($bag, Metadata $metadata)
@@ -353,6 +356,9 @@ class GenerateBagCommand extends Command
         $namespace = $metadata->getNamespace();
         $matches = array_unique($matches[0]);
         $uses = [];
+        if ($namespace === '') {
+            return [];
+        }
         foreach ($matches as $use) {
             if ($use === $namespace . '\\' . $metadata->getClassName()) {
                 continue;
